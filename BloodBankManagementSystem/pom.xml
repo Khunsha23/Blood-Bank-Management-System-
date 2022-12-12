@@ -60,7 +60,7 @@
                         <!-- Default configuration for running with: mvn clean javafx:run -->
                         <id>default-cli</id>
                         <configuration>
-                            <mainClass>bbms.bloodbankmanagementsystem/bbms.bloodbankmanagementsystem.main1
+                            <mainClass>bbms.bloodbankmanagementsystem/bbms.bloodbankmanagementsystem.HelloApplication
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>
