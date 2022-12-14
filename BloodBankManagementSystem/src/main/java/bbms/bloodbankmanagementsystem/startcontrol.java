@@ -19,7 +19,7 @@ public class startcontrol {
     AnchorPane reportAnchorPane;
 
     public void switchToAdmin(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("firstpage.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("InventoryPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -35,21 +35,21 @@ public class startcontrol {
         stage.show();
     }
     public void switchToSignUpDonor(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("loginreceiver.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("signUpPage.fxml"));
         stage = (Stage) root1.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void switchToSignInDonor(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("loginreceiver.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("logindonor.fxml"));
         stage = (Stage) root1.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
     public void switchToSignUpReceiver(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("loginreceiver.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("SignUpReceiver.fxml"));
         stage = (Stage) root1.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -64,8 +64,15 @@ public class startcontrol {
 
 
     }
-    public void switchToInventory(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("loginreceiver.fxml"));
+    public void switchToInventoryReciever(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("receiverInventory.fxml"));
+        stage = (Stage) root1.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToInventoryDonor(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("donorInventory.fxml"));
         stage = (Stage) root1.getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

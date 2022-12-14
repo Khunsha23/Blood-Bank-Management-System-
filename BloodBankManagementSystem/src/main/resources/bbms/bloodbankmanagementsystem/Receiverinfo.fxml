@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.HelloController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.ReceiverInfoControl">
     <children>
         <BorderPane layoutX="-6.0" layoutY="-2.0" prefHeight="400.0" prefWidth="608.0">
             <top>
@@ -32,7 +32,7 @@
                                 <Image url="@../../Images/icons8-logout-rounded-50.png" />
                             </image>
                         </ImageView>
-                        <Button layoutX="524.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchTocontactus" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" />
+                        <Button layoutX="524.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToStartPage" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" />
                     </children>
                 </AnchorPane>
             </top>
@@ -99,8 +99,8 @@
                                                 <Insets right="10.0" />
                                             </opaqueInsets>
                                         </Label>
-                              <Button fx:id="requestbutton" layoutX="114.0" layoutY="303.0" mnemonicParsing="false" onAction="#requestbutton" prefHeight="26.0" prefWidth="77.0" text="Request" />
-                              <TextField fx:id="requested" layoutX="256.0" layoutY="304.0" prefHeight="26.0" prefWidth="230.0" style="-fx-background-color: transparent;" />
+                              <Button layoutX="114.0" layoutY="303.0" mnemonicParsing="false" onAction="#requestbutton" prefHeight="26.0" prefWidth="77.0" text="Request" />
+                                        <TextField layoutX="256.0" layoutY="304.0" prefHeight="26.0" prefWidth="230.0" style="-fx-background-color: transparent;" />
                                     </children>
                                     <opaqueInsets>
                                         <Insets right="10.0" />

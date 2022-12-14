@@ -11,18 +11,21 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.HelloController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.Donorinfocontrol">
    <children>
       <BorderPane layoutX="-6.0" layoutY="-2.0" prefHeight="400.0" prefWidth="608.0">
          <top>
             <AnchorPane prefHeight="35.0" prefWidth="608.0" style="-fx-background-color: #fa3d3b;" BorderPane.alignment="CENTER">
                <children>
-                  <HBox layoutY="2.0" prefHeight="31.0" prefWidth="154.0">
+                  <HBox layoutX="-11.0" layoutY="2.0" prefHeight="31.0" prefWidth="127.0">
                      <children>
-                        <ImageView fitHeight="36.0" fitWidth="153.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="30.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../Images/BLOOD%20(1).png" />
+                              <Image url="@../../Images/startpagefinal.jpg" />
                            </image>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </ImageView>
                      </children>
                   </HBox>
@@ -31,7 +34,7 @@
                         <Image url="@../../Images/icons8-logout-rounded-50.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="524.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchTocontactus" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" />
+                  <Button layoutX="524.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToStartPage" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" />
                </children>
             </AnchorPane>
          </top>

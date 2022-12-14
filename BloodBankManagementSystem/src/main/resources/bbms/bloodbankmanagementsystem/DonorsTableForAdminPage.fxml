@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Stylesheets/MenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.HelloController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@../../Stylesheets/MenuStyle.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.DonorTableControl">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <top>
@@ -23,6 +23,12 @@
                                 <Image url="@../../Images/LogoWhiteColor.png" />
                             </image>
                         </ImageView>
+                  <ImageView fitHeight="27.0" fitWidth="24.0" layoutX="562.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/icons8-logout-rounded-50.png" />
+                     </image>
+                  </ImageView>
+                  <Button layoutX="556.0" layoutY="5.0" mnemonicParsing="false" onAction="#switchToStartPage" opacity="0.0" prefHeight="25.0" prefWidth="32.0" text="Button" />
                     </children>
                 </Pane>
             </top>
@@ -33,7 +39,7 @@
                             <children>
                                 <HBox alignment="CENTER">
                                     <children>
-                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Home">
+                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToHome" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Home">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
@@ -49,7 +55,7 @@
                                 </HBox>
                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
                                     <children>
-                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToPage2" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px; -fx-background-color: #cf2f25; -fx-text-fill: White;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Donors">
+                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToDonor" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px; -fx-background-color: #cf2f25; -fx-text-fill: White;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Donors">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
@@ -66,7 +72,7 @@
                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="47.0" />
                                 <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="84.0">
                                     <children>
-                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Requests">
+                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToRequests" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Requests">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
@@ -83,7 +89,7 @@
                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="121.0" />
                                 <HBox alignment="CENTER" layoutX="10.0" layoutY="158.0">
                                     <children>
-                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Users">
+                                        <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToUser" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/MenuStyle.css" text="Users">
                                             <font>
                                                 <Font name="System Bold" size="13.0" />
                                             </font>
