@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root1" prefHeight="400.0" prefWidth="600.0" styleClass="bodysub" stylesheets="@../../Stylesheets/startpage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.startcontrol">
+   <children>
+      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="610.0" spacing="30.0" style="-fx-background-color: #FF1616;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <ImageView fitHeight="32.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" styleClass="bodysub" HBox.hgrow="ALWAYS">
+               <image>
+                  <Image url="@../../Images/BLOOD (1).png" />
+               </image>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </ImageView>
+            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAdmin" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: RED;" stylesheets="@Stylesheets/startpage.css" text="ADMIN" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: RED;" styleClass="menubutton" stylesheets="@Stylesheets/startpage.css" text="DONOR" textFill="WHITE" HBox.hgrow="ALWAYS">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#switchToSignInDonor" text="SIGN IN" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToSignUpDonor" text="SIGN UP" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToInventory" text="INVENTORY" />
+              </items>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </MenuButton>
+            <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: RED;" styleClass="menubutton" stylesheets="@Stylesheets/startpage.css" text="RECEIVER" textFill="WHITE" HBox.hgrow="ALWAYS">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#switchToSignInReceiver" text="SIGN IN" />
+                <MenuItem mnemonicParsing="false" onAction="#switchToSignUpReceiver" text="SIGN UP" />
+                  <MenuItem mnemonicParsing="false" onAction="#switchToInventory" text="INVENTORY" />
+              </items>
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </MenuButton>
+            <Button layoutX="481.0" layoutY="17.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToContactUs" style="-fx-background-color: RED;" stylesheets="@Stylesheets/startpage.css" text="CONTACT US" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+      <Pane layoutY="42.0" prefHeight="359.0" prefWidth="610.0" style="-fx-border-color: RED;" styleClass="bodysub" stylesheets="@../../Stylesheets/startpage.css" />
+   </children>
+</AnchorPane>
