@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+    <center>
+        <AnchorPane prefHeight="353.0" prefWidth="596.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
+            <children>
+                <VBox alignment="CENTER" layoutX="128.0" layoutY="23.0" prefHeight="331.0" prefWidth="379.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="23.0">
+                    <children>
+                        <Label alignment="CENTER" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Welcome" textFill="WHITE">
+                            <font>
+                                <Font name="Arial Rounded MT Bold" size="27.0" />
+                            </font>
+                            <effect>
+                                <DropShadow>
+                                    <color>
+                                        <Color red="0.01315789483487606" green="0.011634990572929382" blue="0.011634990572929382" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </Label>
+                        <AnchorPane maxHeight="300.0" maxWidth="500.0" prefHeight="262.0" prefWidth="379.0" style="-fx-background-color: White; -fx-background-radius: 20px; -fx-border-radius: 20px;" VBox.vgrow="NEVER">
+                            <children>
+                                <AnchorPane layoutX="36.0" layoutY="44.0" prefHeight="35.0" prefWidth="295.0" AnchorPane.leftAnchor="32.5" AnchorPane.rightAnchor="32.5" AnchorPane.topAnchor="44.0">
+                                    <children>
+                                        <TextField layoutX="37.0" layoutY="1.0" prefHeight="34.0" prefWidth="277.0" promptText="Phone Number" style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-color: white; -fx-background-radius: 10px;" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                                            <effect>
+                                                <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
+                                            </effect>
+                                        </TextField>
+                                        <ImageView fitHeight="30.0" fitWidth="29.0" layoutX="1.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../Images/icons8-user-90.png" />
+                                            </image>
+                                        </ImageView>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="32.0" layoutY="99.0" prefHeight="34.0" prefWidth="277.0" AnchorPane.leftAnchor="32.5" AnchorPane.rightAnchor="32.5" AnchorPane.topAnchor="110.0">
+                                    <children>
+                                        <ImageView fitHeight="30.0" fitWidth="24.0" layoutX="4.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../Images/icons8-lock-24.png" />
+                                            </image>
+                                        </ImageView>
+                                        <PasswordField layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css">
+                                            <effect>
+                                                <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
+                                            </effect>
+
+                                        </PasswordField>
+                                    </children>
+                                </AnchorPane>
+                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                    <effect>
+                                        <DropShadow height="10.0" offsetX="4.0" offsetY="4.0" radius="4.5" width="10.0" />
+                                    </effect>
+                                </Button>
+                                <JFXCheckBox checkedColor="#2847e4" layoutX="72.0" layoutY="160.0" text="Remember Password" unCheckedColor="BLACK">
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor></JFXCheckBox>
+                                <Label layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
+                                    <font>
+                                        <Font size="10.0" />
+                                    </font>
+                                    <cursor>
+                                        <Cursor fx:constant="HAND" />
+                                    </cursor>
+                                </Label>
+                            </children>
+                            <VBox.margin>
+                                <Insets top="20.0" />
+                            </VBox.margin>
+                            <effect>
+                                <DropShadow height="0.0" radius="4.75" spread="0.07">
+                                    <color>
+                                        <Color red="0.9868420958518982" green="0.9548611044883728" blue="0.9548611044883728" />
+                                    </color>
+                                </DropShadow>
+                            </effect>
+                        </AnchorPane>
+                    </children>
+                </VBox>
+            </children></AnchorPane>
+    </center>
+    <top>
+        <AnchorPane prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+            <children>
+                <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+                    <graphic>
+                        <ImageView id="logout" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../Images/icons8-logout-64.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <ImageView fitHeight="50.0" fitWidth="151.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.25" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="1.5">
+                    <image>
+                        <Image url="@../../Images/LogoWhiteColor.png" />
+                    </image>
+                    <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                    </cursor>
+                    <effect>
+                        <DropShadow spread="0.46" />
+                    </effect>
+                </ImageView>
+            </children>
+            <stylesheets>
+                <URL value="@startpage.css" />
+                <URL value="@SignupPage.css" />
+            </stylesheets>
+        </AnchorPane>
+    </top>
+</BorderPane>

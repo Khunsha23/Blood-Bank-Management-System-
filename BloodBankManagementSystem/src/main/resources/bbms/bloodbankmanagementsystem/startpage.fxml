@@ -1,63 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="root1" prefHeight="400.0" prefWidth="600.0" styleClass="bodysub" stylesheets="@startpage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.startcontrol">
+<AnchorPane styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.startController">
    <children>
-      <HBox alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="43.0" prefWidth="610.0" spacing="30.0" style="-fx-background-color: #FF1616;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
-         <children>
-            <ImageView fitHeight="32.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" styleClass="bodysub" HBox.hgrow="ALWAYS">
-               <image>
-                  <Image url="@../../Images/BLOOD (1).png" />
-               </image>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </ImageView>
-            <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToAdmin" prefHeight="34.0" prefWidth="78.0" style="-fx-background-color: RED;" stylesheets="@startpage.css" text="ADMIN" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-               <HBox.margin>
-                  <Insets />
-               </HBox.margin>
-            </Button>
-            <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: RED;" styleClass="menubutton" stylesheets="@startpage.css" text="DONOR" textFill="WHITE" HBox.hgrow="ALWAYS">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#switchToSignInDonor" text="SIGN IN" />
-                <MenuItem mnemonicParsing="false" onAction="#switchToSignUpDonor" text="SIGN UP" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToInventoryDonor" text="INVENTORY" />
-              </items>
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </MenuButton>
-            <MenuButton maxWidth="1.7976931348623157E308" mnemonicParsing="false" style="-fx-background-color: RED;" styleClass="menubutton" stylesheets="@startpage.css" text="RECEIVER" textFill="WHITE" HBox.hgrow="ALWAYS">
-              <items>
-                <MenuItem mnemonicParsing="false" onAction="#switchToSignInReceiver" text="SIGN IN" />
-                <MenuItem mnemonicParsing="false" onAction="#switchToSignUpReceiver" text="SIGN UP" />
-                  <MenuItem mnemonicParsing="false" onAction="#switchToInventoryReciever" text="INVENTORY" />
-              </items>
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </MenuButton>
-            <Button layoutX="481.0" layoutY="17.0" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#switchToContactUs" style="-fx-background-color: RED;" stylesheets="@startpage.css" text="CONTACT US" textFill="WHITE" HBox.hgrow="ALWAYS">
-               <font>
-                  <Font name="System Bold" size="10.0" />
-               </font>
-            </Button>
-         </children>
-      </HBox>
-      <Pane layoutY="42.0" prefHeight="359.0" prefWidth="610.0" style="-fx-border-color: red;" styleClass="bodysub" stylesheets="@../../Stylesheets/startpage.css" />
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <top>
+            <AnchorPane prefHeight="31.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css">
+               <children>
+                  <ImageView fitHeight="41.0" fitWidth="189.0" layoutX="229.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../Images/LogoWhiteColor.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </top>
+         <center>
+            <AnchorPane prefHeight="413.0" prefWidth="600.0" BorderPane.alignment="BOTTOM_CENTER">
+               <children>
+                  <FlowPane fx:id="rootPane" alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutY="27.0" prefHeight="315.0" prefWidth="577.0" stylesheets="@startpage.css" vgap="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <AnchorPane fx:id="DonateButn" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToAdminLogin" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Admin" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="107.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/icons8-admin-settings-male-100.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="DonateButn1" layoutX="243.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToSignInDonor" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Donate" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="107.0" fitWidth="126.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@BloodDrop2.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="DonateButn11" layoutX="315.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToSignInReceiver" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Get Blood" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                                 <graphic>
+                                    <ImageView fitHeight="94.0" fitWidth="97.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/output-onlinegiftools.gif" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="DonateButn111" layoutX="388.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToContactUs" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Contact Us" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="98.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/icons8-contact-us-80.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane fx:id="DonateButn1111" layoutX="460.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                           <children>
+                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#exitStage" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Exit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                                 <font>
+                                    <Font size="16.0" />
+                                 </font>
+                                 <graphic>
+                                    <ImageView fitHeight="56.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../Images/icons8-close-window-96.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                                 <cursor>
+                                    <Cursor fx:constant="HAND" />
+                                 </cursor>
+                              </Button>
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </FlowPane>
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
    </children>
 </AnchorPane>
