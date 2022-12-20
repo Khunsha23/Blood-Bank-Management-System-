@@ -14,7 +14,7 @@
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.signupreceivercontrol">
     <top>
-        <AnchorPane prefHeight="41.0" prefWidth="600.0" styleClass="toppane" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
+        <AnchorPane prefHeight="41.0" prefWidth="600.0" styleClass="t" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
             <children>
                 <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
                     <graphic>

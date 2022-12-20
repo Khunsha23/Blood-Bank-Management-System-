@@ -23,7 +23,14 @@ public class logindonorcontrol {
             stage.setScene(scene);
             stage.show();
         }
-    public void switchToDonorInfo(ActionEvent event) throws IOException {
+    public void switchToDonorSignup(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("signUpPage.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToDonorInfo(ActionEvent event) throws IOException{
         root = FXMLLoader.load(getClass().getResource("Donorinfo.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
