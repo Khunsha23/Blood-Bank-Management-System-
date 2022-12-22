@@ -10,17 +10,18 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.RequestTableControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.TotalDonationsControl">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
                 <TableView prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
                     <columns>
-                        <TableColumn prefWidth="75.0" text="ReceiverID" />
-                        <TableColumn prefWidth="75.0" text="FullName" />
-                        <TableColumn prefWidth="102.0" text="Contact No." />
-                        <TableColumn prefWidth="75.0" text="City" />
-                        <TableColumn prefWidth="90.0" text="Blood Group" />
+                        <TableColumn prefWidth="75.0" text="Donor Id" />
+                        <TableColumn prefWidth="75.0" text="Donor Name" />
+                        <TableColumn prefWidth="102.0" text="Blood Group" />
+                        <TableColumn prefWidth="75.0" text="Receiver Id" />
+                        <TableColumn prefWidth="90.0" text="Receiver Name" />
+                        <TableColumn prefWidth="75.0" text="Amount" />
                     </columns>
                     <columnResizePolicy>
                         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -38,7 +39,7 @@
                                     </image>
                                 </ImageView>
                                 <Pane prefHeight="28.0" prefWidth="399.0" HBox.hgrow="ALWAYS" />
-                                <Button mnemonicParsing="false" onAction="#switchToDashBoard" prefHeight="27.0" prefWidth="0.0" style="-fx-background-color: TRANSPARENT;">
+                                <Button mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="27.0" prefWidth="0.0" style="-fx-background-color: TRANSPARENT;">
                                     <graphic>
                                         <ImageView fitHeight="31.0" fitWidth="135.0" pickOnBounds="true" preserveRatio="true">
                                             <image>

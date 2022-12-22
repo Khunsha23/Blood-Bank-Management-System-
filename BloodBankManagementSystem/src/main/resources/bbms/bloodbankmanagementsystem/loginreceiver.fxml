@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.loginreceivercontrol">
    <center>
       <AnchorPane prefHeight="353.0" prefWidth="596.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
          <children>
             <VBox alignment="CENTER" layoutX="128.0" layoutY="23.0" prefHeight="331.0" prefWidth="379.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="128.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="23.0">
                <children>
-                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: black; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Welcome" textFill="WHITE">
+                  <Label alignment="CENTER" prefHeight="39.0" prefWidth="138.0" style="-fx-background-color: White; -fx-background-radius: 10px; -fx-border-radius: 10px;" text="Welcome">
                      <font>
                         <Font name="Arial Rounded MT Bold" size="27.0" />
                      </font>
@@ -52,7 +57,7 @@
                                     <Image url="@../../Images/icons8-lock-24.png" />
                                  </image>
                               </ImageView>
-                              <PasswordField layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css">
+                              <PasswordField layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" promptText="Password" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                                  <effect>
                                     <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                  </effect>
@@ -60,7 +65,7 @@
                               </PasswordField>
                            </children>
                         </AnchorPane>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#switchToReceiverInfo" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -71,10 +76,6 @@
                               <DropShadow height="10.0" offsetX="4.0" offsetY="4.0" radius="4.5" width="10.0" />
                            </effect>
                         </Button>
-                        <JFXCheckBox checkedColor="#2847e4" layoutX="72.0" layoutY="160.0" text="Remember Password" unCheckedColor="BLACK">
-                           <cursor>
-                              <Cursor fx:constant="HAND" />
-                           </cursor></JFXCheckBox>
                         <Label layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
                            <font>
                               <Font size="10.0" />
@@ -83,16 +84,21 @@
                               <Cursor fx:constant="HAND" />
                            </cursor>
                         </Label>
+                        <Label layoutX="68.0" layoutY="161.0" onMouseClicked="#switchToReceiverSignup" prefHeight="15.0" prefWidth="85.0" text="Create an Account" textFill="#173dfc">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
+                        <Button layoutX="70.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchToReceiverSignup" opacity="0.0" prefHeight="25.0" prefWidth="83.0" text="Button" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="226.0" />
                      </children>
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
                      <effect>
-                        <DropShadow height="0.0" radius="4.75" spread="0.07">
-                           <color>
-                              <Color red="0.9868420958518982" green="0.9548611044883728" blue="0.9548611044883728" />
-                           </color>
-                        </DropShadow>
+                        <DropShadow height="0.0" radius="4.75" spread="0.07" />
                      </effect>
                   </AnchorPane>
                </children>
@@ -102,7 +108,7 @@
    <top>
       <AnchorPane prefHeight="41.0" prefWidth="600.0" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+            <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToStartPage" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
                <graphic>
                   <ImageView id="logout" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>

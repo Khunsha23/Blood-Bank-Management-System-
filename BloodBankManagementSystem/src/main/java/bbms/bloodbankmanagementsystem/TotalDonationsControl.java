@@ -9,18 +9,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminLoginControl {
-    private Parent text;
+public class TotalDonationsControl {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public void switchToStartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
     public void switchToDashboard(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -28,5 +20,4 @@ public class AdminLoginControl {
         stage.setScene(scene);
         stage.show();
     }
-
 }

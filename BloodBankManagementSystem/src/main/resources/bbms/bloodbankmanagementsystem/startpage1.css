@@ -1,0 +1,59 @@
+.bodysub{
+ -fx-background-image: url(IMG_5126.jpg);
+ -fx-background-size: contain;
+ -fx-background-repeat: no-repeat;
+  -fx-background-position: center;
+  -fx-background-size: 100% 100%;
+}
+.button1:hover {
+
+    -fx-text-fill: White;
+    -fx-background-color: #87342e;
+    -fx-border-color:white;
+    -fx-background-radius: 10px;
+    -fx-font-weight: bold;
+}
+.button1 {
+    -fx-background-color:linear-gradient(from 13.2701% 89.0995% to 100.0% 100.0%, #a81e1e 0.0%, #401b1b 52.8974%, #10108f 100.0%);
+    -fx-text-fill:white;
+}
+.menubutton:hover {
+-fx-text-fill: BLACK;
+}
+
+.top{
+-fx-background-color: linear-gradient(from 25% 25% to 100% 100%,#CB4154 , #8B0000);
+}
+.background {
+-fx-background-image: url(IMG_5125.jpg);
+-fx-background-size: contain;
+-fx-background-repeat: no-repeat;
+-fx-background-position: center;
+-fx-background-size: 100% 100%;
+}
+.nav: focused{
+-fx-border-color: Red;
+-fx-border-width: 2px;
+}
+.nav {
+-fx-border-color: black;
+}
+.nextbtn{
+-fx-background-color:linear-gradient(from 13.2701% 89.0995% to 100.0% 100.0%, #a81e1e 0.0%, #401b1b 52.8974%, #10108f 100.0%);
+-fx-text-fill:white;
+
+}
+.nextbtn:hover {
+-fx-text-fill: white;
+-fx-background-color: #87342e;
+-fx-border-color:white;
+-fx-background-radius: 50px;
+-fx-font-weight: bold;
+}
+.paneDesign{
+-fx-background-color: White;
+-fx-background-radius: 10px;
+-fx-border-color: BLACK;
+-fx-border-width: 1px;
+-fx-border-radius:10px;
+}

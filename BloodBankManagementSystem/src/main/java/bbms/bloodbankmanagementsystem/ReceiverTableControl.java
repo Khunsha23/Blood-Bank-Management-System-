@@ -11,13 +11,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AdminInventoryControl {
+public class ReceiverTableControl {
     private Stage stage;
     private Scene scene;
     @FXML
     private AnchorPane root1;
     private Parent root;
     AnchorPane reportAnchorPane;
+
     public void switchToHome(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -25,6 +26,4 @@ public class AdminInventoryControl {
         stage.setScene(scene);
         stage.show();
     }
-
-
 }
