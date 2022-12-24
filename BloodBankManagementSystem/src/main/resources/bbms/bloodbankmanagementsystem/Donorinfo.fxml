@@ -3,50 +3,56 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Glow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.Donorinfocontrol">
-   <children>
-      <BorderPane layoutX="-6.0" layoutY="-2.0" prefHeight="400.0" prefWidth="608.0">
-         <top>
-            <AnchorPane prefHeight="35.0" prefWidth="608.0" style="-fx-background-color: #fa3d3b;" BorderPane.alignment="CENTER">
+<BorderPane prefHeight="400.0" prefWidth="608.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.Donorinfocontrol">
+   <top>
+      <AnchorPane prefHeight="35.0" prefWidth="608.0" style="-fx-background-color: #fa3d3b;" BorderPane.alignment="CENTER">
+         <children>
+            <HBox prefHeight="34.0" prefWidth="608.0" styleClass="top" stylesheets="@SignupPage.css" AnchorPane.bottomAnchor="0.8000000000000043" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <children>
-                  <HBox layoutX="-11.0" layoutY="2.0" prefHeight="31.0" prefWidth="127.0">
-                     <children>
-                        <ImageView fitHeight="30.0" fitWidth="172.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../Images/startpagefinal.jpg" />
-                           </image>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin>
-                        </ImageView>
-                     </children>
-                  </HBox>
-                  <ImageView fitHeight="26.0" fitWidth="41.0" layoutX="567.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="35.0" fitWidth="173.0" pickOnBounds="true" preserveRatio="true" HBox.hgrow="ALWAYS">
                      <image>
-                        <Image url="@../../Images/icons8-logout-rounded-50.png" />
+                        <Image url="@../../Images/Untitled.png" />
                      </image>
                   </ImageView>
-                  <Button layoutX="524.0" layoutY="6.0" mnemonicParsing="false" onAction="#switchToStartPage" prefHeight="30.0" prefWidth="82.0" style="-fx-background-color: transparent;" />
+                  <Pane prefHeight="35.0" prefWidth="403.0" styleClass="top" stylesheets="@SignupPage.css" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#switchToStartPage" prefHeight="23.0" prefWidth="38.0" style="-fx-background-color: non;">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-logout-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
-            </AnchorPane>
-         </top>
-         <center>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            </HBox>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <HBox layoutX="31.0" layoutY="10.0" prefHeight="347.0" prefWidth="554.0" style="-fx-border-color: black; -fx-border-width: 2.5; -fx-border-radius: 3;" AnchorPane.bottomAnchor="6.800000000000011" AnchorPane.leftAnchor="31.0" AnchorPane.rightAnchor="22.600000000000023" AnchorPane.topAnchor="10.0">
                <children>
-                  <HBox layoutX="31.0" layoutY="10.0" prefHeight="347.0" prefWidth="554.0" style="-fx-border-color: #fa3d3b; -fx-border-width: 2.5; -fx-border-radius: 3;">
+                  <Pane prefHeight="343.0" prefWidth="171.0" HBox.hgrow="ALWAYS" />
+                  <VBox prefHeight="341.0" prefWidth="385.0" HBox.hgrow="ALWAYS">
                      <children>
-                        <AnchorPane prefHeight="346.0" prefWidth="552.0">
+                        <Pane prefHeight="4.0" prefWidth="378.0" VBox.vgrow="ALWAYS" />
+                        <Pane prefHeight="343.0" prefWidth="363.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Label layoutX="15.0" layoutY="42.0" text="Name" />
-                              <Label alignment="CENTER" layoutX="206.0" layoutY="3.0" prefHeight="22.0" prefWidth="140.0" text="Donor Information">
+                              <Label layoutX="1.0" layoutY="48.0" text="Name" />
+                              <Label alignment="CENTER" layoutX="31.0" prefHeight="22.0" prefWidth="150.0" text="Donor Information">
                                  <font>
                                     <Font name="Calisto MT Bold" size="15.0" />
                                  </font>
@@ -54,64 +60,65 @@
                                     <Glow level="0.37" />
                                  </effect>
                               </Label>
-                              <Label layoutX="15.0" layoutY="71.0" text="Email" />
-                              <Label layoutX="12.0" layoutY="165.0" text="Contact no" />
-                              <Label layoutX="14.0" layoutY="232.0" text="Blood Group" />
-                              <Label layoutX="12.0" layoutY="197.0" text="Date of Birth" />
-                              <Label layoutX="14.0" layoutY="102.0" text="Donor ID" />
-                              <Label layoutX="14.0" layoutY="134.0" text="Eligibility" />
-                              <Label layoutX="14.0" layoutY="264.0" text="Last visited" />
-                              <Label layoutX="41.0" layoutY="307.0" prefHeight="18.0" prefWidth="470.0" text="Thankyou for enrolling to donate blood. We look forward to seeing you soon." />
-                              <Label layoutX="101.0" layoutY="37.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="1.0" layoutY="74.0" text="Email" />
+                              <Label layoutX="1.0" layoutY="162.0" text="Contact no" />
+                              <Label layoutX="1.0" layoutY="229.0" text="Blood Group" />
+                              <Label layoutX="1.0" layoutY="194.0" text="Date of Birth" />
+                              <Label layoutY="101.0" text="Receiver ID" />
+                              <Label layoutX="1.0" layoutY="131.0" text="Eligibility" />
+                              <Label layoutX="1.0" layoutY="261.0" text="Last visited" />
+                              <Label layoutX="75.0" layoutY="41.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="67.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="77.0" layoutY="69.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="97.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="78.0" layoutY="97.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="130.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="78.0" layoutY="127.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="162.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="77.0" layoutY="158.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="194.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="77.0" layoutY="190.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="227.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="77.0" layoutY="223.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
-                              <Label layoutX="101.0" layoutY="258.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
+                              <Label layoutX="76.0" layoutY="255.0" prefHeight="19.0" prefWidth="104.0" style="-fx-border-color: black; -fx-border-width: 0px 0px 1px 0px;">
                                  <opaqueInsets>
                                     <Insets right="10.0" />
                                  </opaqueInsets>
                               </Label>
+                              <TextField layoutX="81.0" layoutY="301.0" prefHeight="26.0" prefWidth="230.0" style="-fx-background-color: transparent;" />
+                              <Label layoutX="-94.0" layoutY="301.0" prefHeight="17.0" prefWidth="428.0" text="Thankyou for enrolling to donate blood. We look forward to seeing you soon." />
                            </children>
-                           <opaqueInsets>
-                              <Insets right="10.0" />
-                           </opaqueInsets>
-                        </AnchorPane>
+                        </Pane>
                      </children>
-                  </HBox>
+                  </VBox>
                </children>
-            </AnchorPane>
-         </center>
-      </BorderPane>
-   </children>
-</AnchorPane>
+               <effect>
+                  <Glow />
+               </effect>
+            </HBox>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

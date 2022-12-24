@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
@@ -48,7 +49,7 @@ public class startController
      */
     public void switchToSignInDonor(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("logindonor.fxml"));
-        stage = (Stage) root1.getScene().getWindow();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
@@ -64,17 +65,20 @@ public class startController
      */
     public void switchToSignInReceiver(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("loginreceiver.fxml"));
-        stage = (Stage) root1.getScene().getWindow();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
 
 
     }
-    public void exitStage(ActionEvent event) throws IOException{
+
+    @FXML
+    private Button closeButton;
+    @FXML
+    public void handleCloseButtonAction(ActionEvent event) {
+        Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
-        stage = null;
-        scene = null;
     }
     /*public void switchToInventoryReciever(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("receiverInventory.fxml"));

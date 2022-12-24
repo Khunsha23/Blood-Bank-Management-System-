@@ -14,8 +14,8 @@ public class RequestTableControl {
     private Scene scene;
     private Parent root;
 
-    public void switchToStartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
+    public void switchToDashBoard(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

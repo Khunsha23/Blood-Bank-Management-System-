@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.collections.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.signupreceivercontrol">
     <top>
@@ -162,12 +173,16 @@
                               <Pane prefHeight="200.0" prefWidth="200.0" />
                            </children>
                         </VBox>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="15.0" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: BLack; -fx-font-size: 15px;" text="Share life. Donate blood." textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="23.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="15.0" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-font-size: 15px;" text="Share life. Donate blood." textAlignment="CENTER" textFill="#070606" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="23.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                            <effect>
-                              <DropShadow />
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5786802172660828" />
+                                 </color>
+                              </DropShadow>
                            </effect>
                         </Label>
                         <Label layoutX="16.0" layoutY="44.0" prefHeight="20.0" prefWidth="187.0" text="Fill the form">
@@ -269,12 +284,15 @@
                               </JFXButton>
                            </children>
                         </VBox>
-                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="13.0" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: BLack; -fx-font-size: 15px;" text="Share life. Donate blood." textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="23.0">
+                        <Label alignment="CENTER" contentDisplay="CENTER" layoutX="34.0" layoutY="13.0" prefHeight="19.0" prefWidth="172.0" style="-fx-background-color: white; -fx-font-size: 15px;" text="Share life. Donate blood." textAlignment="CENTER" textFill="#121111" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="23.0">
                            <font>
                               <Font size="16.0" />
                            </font>
                            <effect>
-                              <DropShadow />
+                              <DropShadow>
+                                 <color>
+                                    <Color opacity="0.5799999833106995" />
+                                 </color></DropShadow>
                            </effect>
                         </Label>
                      </children>
@@ -282,7 +300,14 @@
                         <DropShadow height="5.0" offsetX="4.0" offsetY="4.0" radius="2.0" width="5.0" />
                      </effect>
                   </AnchorPane>
-                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="295.0" prefWidth="62.0" />
+                  <Pane layoutX="10.0" layoutY="10.0" prefHeight="295.0" prefWidth="62.0">
+                     <effect>
+                        <DropShadow>
+                           <color>
+                              <Color red="0.45614033937454224" green="0.43220704793930054" blue="0.43220704793930054" opacity="0.5099999904632568" />
+                           </color>
+                        </DropShadow>
+                     </effect></Pane>
                </children>
             </HBox>
          </children></AnchorPane>
