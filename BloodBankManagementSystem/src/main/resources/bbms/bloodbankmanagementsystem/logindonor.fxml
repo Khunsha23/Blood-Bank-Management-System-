@@ -93,7 +93,10 @@
                            </cursor>
                         </Label>
                         <Button layoutX="73.0" layoutY="158.0" mnemonicParsing="false" onAction="#switchToDonorSignup" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: transparent;" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="223.0" />
-                        <Label fx:id="loginmsg" layoutX="59.0" layoutY="148.0" prefHeight="18.0" prefWidth="180.0" />
+                        <Label fx:id="loginmsg" layoutX="32.0" layoutY="148.0" textFill="#fa1919">
+                           <font>
+                              <Font size="10.0" />
+                           </font></Label>
                      </children>
                      <VBox.margin>
                         <Insets top="20.0" />

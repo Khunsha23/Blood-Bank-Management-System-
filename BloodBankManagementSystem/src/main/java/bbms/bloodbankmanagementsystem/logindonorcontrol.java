@@ -44,7 +44,7 @@ public class logindonorcontrol implements Validation {
     @FXML
     private TextField MobileNumberTextField;
     @FXML
-    private Label loginMsg;
+    private Label loginmsg;
 
     @FXML
     private PasswordField passwordField;
@@ -56,23 +56,23 @@ public class logindonorcontrol implements Validation {
     public void loginValidation(ActionEvent event) throws IOException {
 
         if(MobileNumberTextField.getText().isEmpty()&& passwordField.getText().isEmpty()){
-            loginMsg.setText("Please Enter Username and Password");
+            loginmsg.setText("Please Enter Username and Password");
         }
         else if(MobileNumberTextField.getText().isEmpty()){
-            loginMsg.setText("Enter mobile number");
+            loginmsg.setText("Enter mobile number");
         }else if (passwordField.getText().isEmpty()){
-            loginMsg.setText("Enter Password");
+            loginmsg.setText("Enter Password");
         } else if (MobileNumberTextField.getText().equals(mobileNumber)&& passwordField.getText().equals(password)) {
 
-            loginMsg.setStyle("-fx-background-color:green;");
-            loginMsg.setText("Logged in Successfully");
+            loginmsg.setStyle("-fx-background-color:green;");
+            loginmsg.setText("Logged in Successfully");
             root = FXMLLoader.load(getClass().getResource("Donorinfo.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
         }else{
-            loginMsg.setText("Invalid Credentials");
+            loginmsg.setText("Invalid Credentials");
         }
     }
 
