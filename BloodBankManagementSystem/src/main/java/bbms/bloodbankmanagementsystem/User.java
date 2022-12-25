@@ -1,5 +1,8 @@
 package bbms.bloodbankmanagementsystem;
 
+import javafx.event.ActionEvent;
+
+import java.io.IOException;
 import java.util.Date;
 
 public class User {
@@ -48,4 +51,8 @@ class receivers extends User{
     public receivers(String id, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate, Date lastDateofDonation) {
         super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
     }
+}
+interface Validation{
+    public  void loginValidation(ActionEvent event) throws IOException;
+    public void SignupValidation(ActionEvent event);
 }

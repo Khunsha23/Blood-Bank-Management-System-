@@ -10,7 +10,7 @@ public class main1 extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(main1.class.getResource("startPage.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("startpage.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("OneBlood");
         stage.setScene(scene);
@@ -19,7 +19,6 @@ public class main1 extends Application {
     }
 
     public static void main(String[] args) {
-        MySqlConnection.ConnectDB();
         launch();
 
     }

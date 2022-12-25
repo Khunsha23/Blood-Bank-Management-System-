@@ -1,20 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminLoginControl">
     <center>
@@ -38,7 +32,7 @@
                             <children>
                                 <AnchorPane layoutX="36.0" layoutY="44.0" prefHeight="35.0" prefWidth="295.0" AnchorPane.leftAnchor="32.5" AnchorPane.rightAnchor="32.5" AnchorPane.topAnchor="44.0">
                                     <children>
-                                        <TextField layoutX="37.0" layoutY="1.0" prefHeight="34.0" prefWidth="277.0" promptText="Phone Number" style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-color: white; -fx-background-radius: 10px;" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                                        <TextField fx:id="MobileNumberTextField" focusTraversable="false" layoutX="37.0" layoutY="1.0" prefHeight="34.0" prefWidth="277.0" promptText="Phone Number" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                                             <effect>
                                                 <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                             </effect>
@@ -57,7 +51,7 @@
                                                 <Image url="@../../Images/icons8-lock-24.png" />
                                             </image>
                                         </ImageView>
-                                        <PasswordField layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css">
+                                        <PasswordField fx:id="passwordField" focusTraversable="false" layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" promptText="Password" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                             <effect>
                                                 <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                             </effect>
@@ -65,7 +59,7 @@
                                         </PasswordField>
                                     </children>
                                 </AnchorPane>
-                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#switchToDashboard" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
+                                <Button fx:id="LoginBtn" alignment="CENTER" contentDisplay="CENTER" focusTraversable="false" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#loginValidation" prefHeight="40.0" prefWidth="83.0" styleClass="button1" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -76,7 +70,7 @@
                                         <DropShadow height="10.0" offsetX="4.0" offsetY="4.0" radius="4.5" width="10.0" />
                                     </effect>
                                 </Button>
-                                <Label layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
+                                <Label focusTraversable="false" layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
                                     <font>
                                         <Font size="10.0" />
                                     </font>
@@ -84,6 +78,14 @@
                                         <Cursor fx:constant="HAND" />
                                     </cursor>
                                 </Label>
+                        <Label fx:id="loginMsg" focusTraversable="false" layoutX="33.0" layoutY="161.0" textFill="#fa1919">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Label>
                             </children>
                             <VBox.margin>
                                 <Insets top="20.0" />
