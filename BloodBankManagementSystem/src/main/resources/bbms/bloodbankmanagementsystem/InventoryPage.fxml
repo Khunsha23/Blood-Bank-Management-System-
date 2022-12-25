@@ -1,374 +1,207 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
+<?import com.jfoenix.controls.JFXButton?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
    <children>
-      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <top>
-            <Pane maxHeight="37.0" minHeight="37.0" prefHeight="37.0" prefWidth="679.0" style="-fx-background-color: #cf2f25;" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="48.0" prefWidth="600.0" styleClass="top" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
                <children>
-                  <ImageView fitHeight="37.0" fitWidth="177.0" layoutX="6.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="37.0" fitWidth="177.0" layoutX="13.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="6.0" AnchorPane.leftAnchor="13.0" AnchorPane.topAnchor="5.0">
                      <image>
                         <Image url="@../../Images/LogoWhiteColor.png" />
                      </image>
                   </ImageView>
-                  <ImageView fitHeight="22.0" fitWidth="24.0" layoutX="557.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../Images/icons8-logout-rounded-50.png" />
-                     </image>
-                  </ImageView>
-                  <Button layoutX="545.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToStartPage" opacity="0.0" prefHeight="30.0" prefWidth="47.0" text="Button" />
-               </children>
-            </Pane>
-         </top>
-         <left>
-            <AnchorPane prefHeight="363.0" prefWidth="164.0" style="-fx-background-color: #cf2f25;" BorderPane.alignment="CENTER">
-               <children>
-                  <VBox alignment="TOP_CENTER" layoutX="25.0" prefHeight="363.0" prefWidth="164.0" style="-fx-background-color: #cf2f25;" styleClass="-" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <children>
-                        <HBox alignment="CENTER">
-                           <children>
-                              <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToHome" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px; -fx-background-color: #cf2f25; -fx-text-fill: White;" stylesheets="@../../Stylesheets/AdminMenuButtonStyle.css" text="Home">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/HomeIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0">
-                           <children>
-                              <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToDonor" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/AdminMenuButtonStyle.css" text="Donors">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/communityIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="47.0" />
-                        <HBox alignment="CENTER_LEFT" layoutX="10.0" layoutY="84.0">
-                           <children>
-                              <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToRequests" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/AdminMenuButtonStyle.css" text="Requests">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-menu-240.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="121.0" />
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="158.0">
-                           <children>
-                              <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#switchToUser" prefHeight="37.0" prefWidth="166.0" style="-fx-border-color: transparent; -fx-border-radius: 0px; -fx-background-radius: 0px;" stylesheets="@../../Stylesheets/AdminMenuButtonStyle.css" text="Users">
-                                 <font>
-                                    <Font name="System Bold" size="13.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="23.0" fitWidth="23.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-users-30.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
-                           </children>
-                        </HBox>
-                     </children>
-                  </VBox>
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="533.0" layoutY="5.0" onAction="#switchToHome" prefHeight="37.0" prefWidth="42.0" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " AnchorPane.bottomAnchor="6.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="5.0">
+                     <graphic>
+                        <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-next-page-90.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </JFXButton>
                </children>
             </AnchorPane>
-         </left>
+         </top>
          <center>
-            <ScrollPane prefHeight="366.0" prefWidth="447.0" BorderPane.alignment="CENTER">
-               <content>
-                  <VBox alignment="CENTER" prefHeight="595.0" prefWidth="421.0">
+            <AnchorPane prefHeight="365.0" prefWidth="604.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
+               <children>
+                  <FlowPane alignment="CENTER" hgap="20.0" layoutX="73.0" layoutY="-13.0" prefHeight="363.0" prefWidth="481.0" vgap="10.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="-13.0">
                      <children>
-                        <AnchorPane prefHeight="20.0" prefWidth="472.0">
+                        <AnchorPane prefHeight="101.0" prefWidth="99.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" contentDisplay="CENTER" layoutY="-5.0" prefHeight="30.0" prefWidth="401.0" text="WELCOME BACK ADMINISTRATOR!" textAlignment="CENTER" />
+                              <Label alignment="CENTER" layoutX="-1.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="A+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <Label alignment="TOP_LEFT" prefHeight="27.0" prefWidth="263.0" text="Avialable Blood Groups per Litre">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Label>
-                        <HBox alignment="CENTER" prefHeight="91.0" prefWidth="552.0">
+                        <AnchorPane prefHeight="105.0" prefWidth="92.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="A+">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="A-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="19.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="A-">
-                                       <font>
-                                          <Font size="19.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="158.0" prefHeight="98.0" prefWidth="540.0">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="114.0" prefWidth="96.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <Label contentDisplay="CENTER" layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="B+">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="B-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="19.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="B-">
-                                       <font>
-                                          <Font size="19.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="77.0" prefHeight="98.0" prefWidth="540.0" VBox.vgrow="ALWAYS">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="112.0" prefWidth="70.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="AB+">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="AB+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="19.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="AB-">
-                                       <font>
-                                          <Font size="19.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="178.0" prefHeight="98.0" prefWidth="540.0" VBox.vgrow="ALWAYS">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="113.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="O-">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="AB-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="19.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <Label layoutX="14.0" layoutY="49.0" text="0" />
-                                    <ImageView fitHeight="60.0" fitWidth="77.0" layoutX="83.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/BloodDrop.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="102.0" layoutY="61.0" text="O+">
-                                       <font>
-                                          <Font size="19.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" prefHeight="98.0" prefWidth="540.0" VBox.vgrow="ALWAYS">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="110.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane prefHeight="98.0" prefWidth="126.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <ImageView fitHeight="42.0" fitWidth="35.0" layoutX="42.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/communityIcon.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label contentDisplay="CENTER" layoutX="18.0" layoutY="56.0" prefHeight="27.0" prefWidth="85.0" text="Total Donors" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="56.0">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="B+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="248.0" layoutY="10.0" prefHeight="98.0" prefWidth="126.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <ImageView fitHeight="37.0" fitWidth="39.0" layoutX="39.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-injection-53.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="19.0" layoutY="46.0" prefHeight="28.0" prefWidth="83.0" text="Total Donated">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </Label>
-                                    <Label layoutX="44.0" layoutY="71.0" text="Today">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
-                        <HBox alignment="CENTER" layoutX="10.0" layoutY="481.0" prefHeight="98.0" prefWidth="540.0" VBox.vgrow="ALWAYS">
+                        </AnchorPane>
+                        <AnchorPane prefHeight="109.0" prefWidth="78.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <AnchorPane layoutX="316.0" layoutY="10.0" prefHeight="98.0" prefWidth="126.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
                                  <children>
-                                    <ImageView fitHeight="36.0" fitWidth="39.0" layoutX="42.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-menu-240.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="33.0" layoutY="51.0" text="Requests">
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="O-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                        <font>
-                                          <Font size="13.0" />
+                                          <Font size="30.0" />
                                        </font>
                                     </Label>
                                  </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
-                              </AnchorPane>
-                              <AnchorPane layoutX="384.0" layoutY="10.0" prefHeight="98.0" prefWidth="126.0" style="-fx-background-color: #ededed; -fx-background-radius: 10px; -fx-border-color: black; -fx-border-radius: 10px;">
-                                 <children>
-                                    <ImageView fitHeight="31.0" fitWidth="30.0" layoutX="47.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-checkmark-128.png" />
-                                       </image>
-                                    </ImageView>
-                                    <Label layoutX="34.0" layoutY="58.0" text="Approvals">
-                                       <font>
-                                          <Font size="13.0" />
-                                       </font>
-                                    </Label>
-                                 </children>
-                                 <HBox.margin>
-                                    <Insets bottom="10.0" left="5.0" right="5.0" top="10.0" />
-                                 </HBox.margin>
                               </AnchorPane>
                            </children>
-                        </HBox>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="105.0" prefWidth="97.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                           <children>
+                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                                 <font>
+                                    <Font size="25.0" />
+                                 </font>
+                              </Label>
+                              <AnchorPane prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                 <children>
+                                    <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="50.0" prefWidth="104.0" style="-fx-background-radius: 5px;" text="O+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <font>
+                                          <Font size="30.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
                      </children>
-                  </VBox>
-               </content>
-            </ScrollPane>
+                  </FlowPane>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="231.0" layoutY="5.0" maxHeight="30.0" maxWidth="167.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: White; -fx-background-radius: 5px;" stylesheets="@SignupPage.css" text=" Welcome Admin! " AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="202.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="11.0" radius="5.0" spread="0.08" width="11.0" />
+                     </effect>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="118.0" layoutY="299.0" prefHeight="30.0" style="-fx-background-color: White; -fx-background-radius: 5px;" stylesheets="@SignupPage.css" text=" Total Blood Available in Litres in inventory " AnchorPane.leftAnchor="118.0" AnchorPane.rightAnchor="101.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="11.0" radius="5.0" spread="0.08" width="11.0" />
+                     </effect>
+                  </Label>
+               </children>
+            </AnchorPane>
          </center>
       </BorderPane>
    </children>

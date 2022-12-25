@@ -1,14 +1,270 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="bbms.bloodbankmanagementsystem.main1"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminDashBoardControl">
+    <children>
+        <AnchorPane layoutX="171.0" layoutY="53.0" prefHeight="49.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+            <HBox prefHeight="48.0" prefWidth="600.0" AnchorPane.bottomAnchor="1.3333333333333357" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                      <ImageView fitHeight="41.0" fitWidth="239.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+                          <image>
+                              <Image url="@../../Images/LogoWhiteColor.png" />
+                          </image>
+                      </ImageView>
+                  <Pane prefHeight="48.0" prefWidth="385.0" HBox.hgrow="ALWAYS" />
+                  <Button mnemonicParsing="false" onAction="#switchToStartPage" style="-fx-background-color: transparent;">
+                     <graphic>
+                        <ImageView fitHeight="32.0" fitWidth="55.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../Images/icons8-logout-64.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </HBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="179.0" layoutY="48.0" prefHeight="352.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.0">
+            <effect>
+                <DropShadow height="7.5" offsetX="2.0" offsetY="2.0" radius="3.875" width="10.0" />
+            </effect>
+            <children>
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="30.0" layoutX="96.0" prefHeight="194.0" prefWidth="472.0" vgap="20.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <AnchorPane prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: #dce9ff;" styleClass="paneDesign" stylesheets="@startpage.css">
+                            <effect>
+                                <DropShadow height="7.5" offsetX="2.0" offsetY="2.0" radius="3.875" width="10.0" />
+                            </effect>
+                            <children>
+                                <Label layoutX="6.0" layoutY="4.0" text="Requested" textFill="#305f9e">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="6.0" layoutY="35.0" text="Total" textFill="#305f9e">
+                                    <font>
+                                        <Font name="Segoe UI Semibold" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="11.0" layoutY="53.0" prefHeight="16.0" prefWidth="20.0" text="20" textFill="#305f9e">
+                                    <font>
+                                        <Font name="SansSerif Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <AnchorPane layoutX="93.0" layoutY="20.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="15" textFill="#13679a" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" text="O-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children></AnchorPane>
+                                <AnchorPane layoutX="128.0" layoutY="20.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="2" textFill="#13679a" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" text="B+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="161.0" layoutY="20.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="3" textFill="#13679a" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" text="AB+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <ImageView fitHeight="17.0" fitWidth="20.0" layoutX="196.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../Images/icons8-next-page-90.png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToRequestTable" prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: transparent;" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: #ffccd4;" styleClass="paneDesign" stylesheets="@startpage.css">
+                            <effect>
+                                <DropShadow height="7.5" offsetX="2.0" offsetY="2.0" radius="3.875" width="10.0" />
+                            </effect>
+                            <children>
+                                <Label layoutX="5.0" layoutY="3.0" text="Received" textFill="#c91451">
+                                    <font>
+                                        <Font name="Segoe UI Symbol" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="7.0" layoutY="36.0" text="Total" textFill="#c91451">
+                                    <font>
+                                        <Font name="Segoe UI Symbol" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="7.0" layoutY="53.0" prefHeight="16.0" prefWidth="20.0" text="19" textFill="#c91451">
+                                    <font>
+                                        <Font name="SansSerif Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <AnchorPane layoutX="93.0" layoutY="24.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="15" textFill="#ee5fbc" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #f98cb1; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="O-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="127.0" layoutY="24.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="2" textFill="#ee5fbc" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #f98cb1; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="B+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="159.0" layoutY="24.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="3" textFill="#ee5fbc" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #f98cb1; -fx-border-radius: 5px; -fx-background-radius: 5px;" text="AB+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="191.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../Images/icons8-next-page-90.png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </ImageView>
+                        <Button mnemonicParsing="false" onAction="#switchToReceiversTable" prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: transparent;" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: #a2f8bb;" styleClass="paneDesign" stylesheets="@startpage.css">
+                            <effect>
+                                <DropShadow height="7.5" offsetX="2.0" offsetY="2.0" radius="3.875" width="10.0" />
+                            </effect>
+                            <children>
+                        <Button mnemonicParsing="false" onAction="#switchToTotalStock" prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: transparent;" />
+                                <Label layoutX="6.0" layoutY="2.0" text="In Stock" textFill="#169333">
+                                    <font>
+                                        <Font name="Segoe UI Symbol" size="15.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="8.0" layoutY="32.0" text="Total" textFill="#169333">
+                                    <font>
+                                        <Font name="Segoe UI Symbol" size="12.0" />
+                                    </font>
+                                </Label>
+                                <Label layoutX="9.0" layoutY="51.0" prefHeight="16.0" prefWidth="20.0" text="12" textFill="#169333">
+                                    <font>
+                                        <Font name="SansSerif Bold" size="17.0" />
+                                    </font>
+                                </Label>
+                                <AnchorPane layoutX="86.0" layoutY="19.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="15" textFill="#6ce476" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #6cd986; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="O-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="124.0" layoutY="19.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="2" textFill="#6ce476" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #6cd986; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="B+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <AnchorPane layoutX="159.0" layoutY="19.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
+                                    <children>
+                                        <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="3" textFill="#6ce476" />
+                                        <AnchorPane prefHeight="21.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: #9dc4dd;">
+                                            <children>
+                                                <Label alignment="CENTER" contentDisplay="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" style="-fx-background-color: #6cd986; -fx-background-radius: 5px; -fx-border-radius: 5px;" text="AB+" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                            </children>
+                                        </AnchorPane>
+                                    </children>
+                                </AnchorPane>
+                                <ImageView fitHeight="17.0" fitWidth="17.0" layoutX="191.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../Images/icons8-next-page-90.png" />
+                                    </image>
+                                    <effect>
+                                        <DropShadow />
+                                    </effect>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </children>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </FlowPane>
+                <TextField focusTraversable="false" layoutX="181.0" layoutY="232.0" prefHeight="27.0" prefWidth="214.0" promptText="Search for donors nearby" styleClass="paneDesign" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="232.0" />
+                <ScrollPane hbarPolicy="NEVER" layoutX="137.0" layoutY="268.0" prefHeight="73.0" prefWidth="357.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="268.0">
+                    <content>
+                        <ListView focusTraversable="false" prefHeight="73.0" prefWidth="342.0" />
+                    </content>
+                </ScrollPane>
+                <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="403.0" layoutY="231.0" prefHeight="29.0" prefWidth="28.0" ripplerFill="BLACK" style="-fx-background-color: White; -fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " textAlignment="CENTER" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="231.0">
+                    <graphic>
+                        <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../Images/icons8-search-30.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </JFXButton>
+                <HBox alignment="CENTER" layoutX="-6.0" layoutY="11.0" AnchorPane.bottomAnchor="126.0" AnchorPane.leftAnchor="-7.0" AnchorPane.topAnchor="11.0">
+                    <children>
+                        <Pane prefHeight="200.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
+                        <VBox alignment="CENTER" prefHeight="215.0" prefWidth="117.0" spacing="20.0" HBox.hgrow="ALWAYS">
+                            <children>
+                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToDonorsTable" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Donors" VBox.vgrow="ALWAYS" />
+                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToReceiversTable" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Receivers" VBox.vgrow="ALWAYS" />
+                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToTotalReport" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Report" VBox.vgrow="ALWAYS" />
+                                <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" maxHeight="27.0" maxWidth="94.0" onAction="#switchToLocation" prefHeight="27.0" prefWidth="94.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Blood Camps" VBox.vgrow="ALWAYS" />
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
 </AnchorPane>
