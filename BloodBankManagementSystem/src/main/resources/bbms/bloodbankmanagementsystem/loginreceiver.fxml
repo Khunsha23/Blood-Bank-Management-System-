@@ -38,7 +38,7 @@
                      <children>
                         <AnchorPane layoutX="36.0" layoutY="44.0" prefHeight="35.0" prefWidth="295.0" AnchorPane.leftAnchor="32.5" AnchorPane.rightAnchor="32.5" AnchorPane.topAnchor="44.0">
                            <children>
-                              <TextField layoutX="37.0" layoutY="1.0" prefHeight="34.0" prefWidth="277.0" promptText="Phone Number" style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-color: white; -fx-background-radius: 10px;" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                              <TextField fx:id="MobileNumberTextField" layoutX="37.0" layoutY="1.0" prefHeight="34.0" prefWidth="277.0" promptText="Phone Number" style="-fx-border-width: 1px; -fx-border-radius: 10px; -fx-background-color: white; -fx-background-radius: 10px;" styleClass="nav" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                                  <effect>
                                     <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                  </effect>
@@ -57,7 +57,7 @@
                                     <Image url="@../../Images/icons8-lock-24.png" />
                                  </image>
                               </ImageView>
-                              <PasswordField layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" promptText="Password" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                              <PasswordField fx:id="passwordField" layoutX="47.0" layoutY="5.0" prefHeight="34.0" prefWidth="277.0" promptText="Password" style="-fx-border-width: 1px; -fx-background-radius: 10px; -fx-border-radius: 10px; -fx-background-color: White;" stylesheets="@startpage.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
                                  <effect>
                                     <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                  </effect>
@@ -65,7 +65,7 @@
                               </PasswordField>
                            </children>
                         </AnchorPane>
-                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#switchToReceiverInfo" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
+                        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="148.0" layoutY="185.0" maxHeight="50.0" maxWidth="100.0" mnemonicParsing="false" onAction="#loginValidation" prefHeight="40.0" prefWidth="83.0" text="Login" AnchorPane.leftAnchor="148.0" AnchorPane.rightAnchor="148.0">
                            <font>
                               <Font size="15.0" />
                            </font>
@@ -93,6 +93,11 @@
                            </cursor>
                         </Label>
                         <Button layoutX="70.0" layoutY="156.0" mnemonicParsing="false" onAction="#switchToReceiverSignup" opacity="0.0" prefHeight="25.0" prefWidth="83.0" text="Button" AnchorPane.leftAnchor="70.0" AnchorPane.rightAnchor="226.0" />
+                        <Label fx:id="loginmsg" layoutX="19.0" layoutY="148.0" textFill="#fa1919">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
                      </children>
                      <VBox.margin>
                         <Insets top="20.0" />
