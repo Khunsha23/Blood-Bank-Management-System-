@@ -18,6 +18,7 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.concurrent.TimeUnit;
 
 public class AdminLoginControl implements Validation{
 
@@ -67,8 +68,7 @@ public class AdminLoginControl implements Validation{
             loginMsg.setText("Enter Password");
         } else if (MobileNumberTextField.getText().equals(mobileNumber)&& passwordField.getText().equals(password)) {
 
-            loginMsg.setStyle("-fx-background-color:green;");
-            loginMsg.setText("Logged in Successfully");
+
             root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

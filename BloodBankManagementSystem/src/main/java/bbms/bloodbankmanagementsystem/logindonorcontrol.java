@@ -12,6 +12,9 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class logindonorcontrol implements Validation {
 
@@ -49,11 +52,28 @@ public class logindonorcontrol implements Validation {
     @FXML
     private PasswordField passwordField;
 
-    final String mobileNumber = "03436299271";
-    final String password = "dsaqw_1620";
 
+    String mobileNumber;
+
+    String password;
     @Override
     public void loginValidation(ActionEvent event) throws IOException {
+
+        Connection conn = MySqlConnection.ConnectDB();
+
+        try{
+            PreparedStatement preparedstatement = conn.prepareStatement("SELECT * FROM donors Where ContactNumber ="+MobileNumberTextField.getText());
+            ResultSet resultset = preparedstatement.executeQuery();
+            while (resultset.next()){
+
+                mobileNumber = resultset.getString("ContactNumber");
+                password = resultset.getString("Password");
+
+
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         if(MobileNumberTextField.getText().isEmpty()&& passwordField.getText().isEmpty()){
             loginmsg.setText("Please Enter Username and Password");

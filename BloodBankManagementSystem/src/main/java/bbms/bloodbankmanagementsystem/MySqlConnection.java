@@ -14,8 +14,6 @@ public class MySqlConnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bloodbank", "root", "");
-            JOptionPane.showMessageDialog(null, "Connection Established");
-
             return connection;
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
