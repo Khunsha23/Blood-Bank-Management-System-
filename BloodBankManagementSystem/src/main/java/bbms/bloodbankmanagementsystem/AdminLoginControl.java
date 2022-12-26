@@ -6,19 +6,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-
-import javafx.scene.control.PasswordField;
 import javafx.stage.Stage;
 
-import java.awt.*;
 import java.io.IOException;
-import java.util.concurrent.TimeUnit;
 
 public class AdminLoginControl implements Validation{
 
@@ -55,6 +49,7 @@ public class AdminLoginControl implements Validation{
 
     final String mobileNumber = "03436299271";
     final String password = "dsaqw_1620";
+
 
     @Override
     public void loginValidation(ActionEvent event) throws IOException {

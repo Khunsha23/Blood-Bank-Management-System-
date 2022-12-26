@@ -3,6 +3,8 @@ package bbms.bloodbankmanagementsystem;
 import javafx.event.ActionEvent;
 
 import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
@@ -42,6 +44,21 @@ public class User {
 }
 class donors extends User{
 
+    public static boolean NameValidation(String TextField) {
+        String Alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        ArrayList<Character> c = new ArrayList<>();
+        for (int i = 0; i < Alphabets.length(); i++) {
+            c.add(Alphabets.charAt(i));
+        }
+        boolean flag = true;
+        for (int i = 0; i < c.size(); i++) {
+            if (c.get(i).equals(TextField.charAt(i))) {
+                   flag = false;
+            }
+        }
+        return flag;
+    }
+
     public donors(String id, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate, Date lastDateofDonation) {
         super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
     }
@@ -53,6 +70,6 @@ class receivers extends User{
     }
 }
 interface Validation{
-    public  void loginValidation(ActionEvent event) throws IOException;
+    public  void loginValidation(ActionEvent event) throws IOException, SQLException;
     public void SignupValidation(ActionEvent event);
 }

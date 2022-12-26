@@ -67,7 +67,7 @@ public class loginreceivercontrol implements Validation {
 
             }
         }catch (Exception e){
-            System.out.println(e);
+
         }
 
         if(MobileNumberTextField.getText().isEmpty()&& passwordField.getText().isEmpty()){
