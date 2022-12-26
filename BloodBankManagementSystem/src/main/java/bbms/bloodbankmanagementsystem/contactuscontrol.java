@@ -15,48 +15,7 @@ public class contactuscontrol {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    @FXML
-    private RadioButton rad2;
 
-    @FXML
-    private RadioButton rad3;
-
-    @FXML
-    private RadioButton rad4;
-    @FXML
-    private RadioButton rad1;
-
-
-
-    public void rad1(){
-        if(rad1.isSelected()){
-            rad2.setSelected(false);
-            rad3.setSelected(false);
-            rad4.setSelected(false);
-        }
-
-    }
-    public void rad2(){
-        if(rad2.isSelected()){
-            rad1.setSelected(false);
-            rad3.setSelected(false);
-            rad4.setSelected(false);
-        }
-    }
-    public void rad3(){
-        if(rad3.isSelected()){
-            rad1.setSelected(false);
-            rad2.setSelected(false);
-            rad4.setSelected(false);
-        }
-    }
-    public void rad4(){
-        if(rad4.isSelected()){
-            rad1.setSelected(false);
-            rad2.setSelected(false);
-            rad3.setSelected(false);
-        }
-    }
 
     public void switchToStartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startpage.fxml"));

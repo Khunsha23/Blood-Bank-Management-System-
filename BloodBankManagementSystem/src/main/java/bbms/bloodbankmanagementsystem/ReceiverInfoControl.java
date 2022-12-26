@@ -13,9 +13,8 @@ import java.io.IOException;
 
 public class ReceiverInfoControl {
     @FXML
-    private Button requestbutton;
-    @FXML
-    private TextField requested;
+    private Label request;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -28,7 +27,7 @@ public class ReceiverInfoControl {
         stage.show();
     }
     public void requestbutton(ActionEvent event){
-        requested.setText("Your request has been received!");
+        request.setText("Your request has been received!");
 
     }
 }

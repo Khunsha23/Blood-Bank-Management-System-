@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.startController">
    <children>
@@ -22,7 +26,7 @@
          <center>
             <AnchorPane prefHeight="413.0" prefWidth="600.0" BorderPane.alignment="BOTTOM_CENTER">
                <children>
-                  <FlowPane fx:id="rootPane" alignment="CENTER" columnHalignment="CENTER" hgap="10.0" layoutY="27.0" prefHeight="315.0" prefWidth="577.0" vgap="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                  <HBox layoutX="13.399999618530273" layoutY="37.599998474121094">
                      <children>
                         <AnchorPane fx:id="DonateButn" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
                            <children>
@@ -43,7 +47,7 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="DonateButn1" layoutX="243.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                        <AnchorPane fx:id="DonateButn1" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
                            <children>
                               <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToSignInDonor" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Donate" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                  <font>
@@ -62,7 +66,7 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="DonateButn11" layoutX="315.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                        <AnchorPane fx:id="DonateButn11" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
                            <children>
                               <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToSignInReceiver" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Get Blood" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
                                  <font>
@@ -81,46 +85,47 @@
                               </Button>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="DonateButn111" layoutX="388.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
-                           <children>
-                              <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToContactUs" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Contact Us" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="98.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-contact-us-80.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                           </children>
-                        </AnchorPane>
-                        <AnchorPane fx:id="DonateButn1111" layoutX="460.0" layoutY="97.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
-                           <children>
-                              <Button fx:id="closeButton" alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Exit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
-                                 <font>
-                                    <Font size="16.0" />
-                                 </font>
-                                 <graphic>
-                                    <ImageView fitHeight="56.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../../Images/icons8-close-window-96.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                                 <cursor>
-                                    <Cursor fx:constant="HAND" />
-                                 </cursor>
-                              </Button>
-                           </children>
-                        </AnchorPane>
+                        <Pane prefHeight="200.0" prefWidth="74.0" />
                      </children>
-                  </FlowPane>
+                  </HBox>
+                  <AnchorPane fx:id="DonateButn111" layoutX="92.0" layoutY="194.0" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#switchToContactUs" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Contact Us" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="98.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/icons8-contact-us-80.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="DonateButn1111" layoutX="232.8000030517578" layoutY="200.60000610351562" prefHeight="128.0" prefWidth="135.0" styleClass="DisplayItem" stylesheets="@SignupPage.css">
+                     <children>
+                        <Button fx:id="closeButton" alignment="CENTER" contentDisplay="TOP" layoutX="2.0" layoutY="9.0" mnemonicParsing="false" onAction="#handleCloseButtonAction" prefHeight="251.0" prefWidth="164.0" styleClass="PG1Btn1" text="Exit" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="0.0">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                           <graphic>
+                              <ImageView fitHeight="56.0" fitWidth="69.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../Images/icons8-close-window-96.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
          </center>

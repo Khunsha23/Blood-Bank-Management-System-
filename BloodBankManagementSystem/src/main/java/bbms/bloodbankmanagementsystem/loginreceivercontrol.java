@@ -79,7 +79,7 @@ public class loginreceivercontrol implements Validation {
             loginmsg.setText("Enter Password");
         } else if (MobileNumberTextField.getText().equals(mobileNumber)&& passwordField.getText().equals(password)) {
 
-            loginmsg.setStyle("-fx-background-color:green;");
+            loginmsg.setStyle("-fx-text-color:green;");
             loginmsg.setText("Logged in Successfully");
             root = FXMLLoader.load(getClass().getResource("Receiverinfo.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
