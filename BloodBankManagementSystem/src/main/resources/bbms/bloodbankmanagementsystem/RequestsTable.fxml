@@ -132,13 +132,13 @@
                                             </font>
                                         </Button>
                                         <Pane layoutX="133.0" layoutY="10.0" prefHeight="43.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                                        <Button fx:id="UpdateBtn" alignment="CENTER" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="UPDATE">
+                                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="UPDATE">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>
                                         </Button>
                                         <Pane layoutX="22.0" layoutY="10.0" prefHeight="43.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                                        <Button fx:id="Deletebtn" alignment="CENTER" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="DELETE">
+                                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="DELETE">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>

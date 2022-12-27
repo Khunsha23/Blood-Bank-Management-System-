@@ -80,8 +80,6 @@ public class RequestTableControl implements Initializable {
                 number.setText(ListM.get(0).contactNumber);
                 City.setText(ListM.get(0).City);
                 bGroup.setText(ListM.get(0).BloodGroup);
-
-
             }
         }
     }

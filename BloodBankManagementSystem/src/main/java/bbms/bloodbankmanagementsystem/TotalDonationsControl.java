@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -88,6 +89,74 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
         refreshTable();
         stage.show();
     }
+    @FXML
+    public void ShowSelected(MouseEvent event){
+        ListM = donations.getSelectionModel().getSelectedItems();
+
+        if(ListM.size() == 0){
+
+        }else {
+            for(int i = 0; i < ListM.size(); i++){
+                dId.setText(String.valueOf(ListM.get(0).DonorId));
+                dName.setText(ListM.get(0).donorname);
+                bGroup.setText(ListM.get(0).bloodgroup);
+                rId.setText(ListM.get(0).receiverid);
+                rName.setText(ListM.get(0).receivername);
+                amount.setText(ListM.get(0).amount);
+            }
+        }
+    }
+    @FXML
+    private void delete(ActionEvent event) throws IOException{
+
+        Connection conn= ConnectDB();
+        try{
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String sql= "delete from donations where DonorId=?";
+            PreparedStatement preparedstatement = conn.prepareStatement(sql);
+            if(!rId.getText().equals("")){
+                preparedstatement.setString(1, dId.getText());
+                preparedstatement.executeUpdate();
+                loadData();
+                refreshTable();
+                loadData();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    @FXML
+    private void Update(ActionEvent event) throws IOException {
+        Connection conn = ConnectDB();
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            String sql = "UPDATE donations SET DonorId=?,DonorName=?,BloodGroup=?,ReceiverId=?,ReceiverName=?,Amount=? WHERE donations.DonorId=?";
+            PreparedStatement preparedstatement = conn.prepareStatement(sql);
+            if(!rId.getText().equals("")){
+                preparedstatement.setString(1, dId.getText());
+                preparedstatement.setString(2, dName.getText());
+                preparedstatement.setString(3, bGroup.getText());
+                preparedstatement.setString(4, rId.getText());
+                preparedstatement.setString(5, rName.getText());
+                preparedstatement.setString(6, amount.getText());
+                preparedstatement.setString(7, dId.getText());
+                preparedstatement.executeUpdate();
+                loadData();
+                refreshTable();
+                loadData();
+            }
+
+        } catch (ClassNotFoundException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+    }
+
     public void insert(ActionEvent event) throws IOException {
         Connection conn = MySqlConnection.ConnectDB();
         try {
@@ -95,7 +164,6 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             String sql = "INSERT INTO donations(donorId,donorName,bloodGroup,ReceiverId,ReceiverName,Amount)VALUES(?,?,?,?,?,?)";
             PreparedStatement preparedstatement = conn.prepareStatement(sql);
             preparedstatement.setString(1, dId.getText());
-
             preparedstatement.setString(2, dName.getText());
             preparedstatement.setString(3, bGroup.getText());
             preparedstatement.setString(4, rId.getText());
@@ -105,14 +173,11 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             loadData();
             refreshTable();
             loadData();
-
             System.out.println();
-
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println(e);
             throw new RuntimeException(e);
         }
-
     }
     public void loadData(){
         donorId.setCellValueFactory(new PropertyValueFactory<>("DonorId"));
@@ -130,11 +195,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
     }
     @Override
     public void initialize(URL url, ResourceBundle resources) {
-
-
        loadData();
-
-
     }
 
 

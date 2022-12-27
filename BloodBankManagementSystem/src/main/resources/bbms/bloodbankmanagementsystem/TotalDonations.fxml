@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.TotalDonationsControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.TotalDonationsControl">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
-                <TableView fx:id="donations" prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
+                <TableView fx:id="donations" onMouseClicked="#ShowSelected" prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
                     <columns>
                         <TableColumn fx:id="donorId" prefWidth="75.0" text="Donor Id" />
                         <TableColumn fx:id="donorName" prefWidth="75.0" text="Donor Name" />
@@ -147,13 +147,13 @@
                                  </font>
                               </Button>
                               <Pane layoutX="133.0" layoutY="10.0" prefHeight="43.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                              <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="UPDATE">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#Update" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="UPDATE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
                               </Button>
                               <Pane layoutX="22.0" layoutY="10.0" prefHeight="43.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                              <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="DELETE">
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="DELETE">
                                  <font>
                                     <Font name="System Bold" size="12.0" />
                                  </font>
