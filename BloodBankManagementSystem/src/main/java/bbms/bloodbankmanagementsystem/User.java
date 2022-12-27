@@ -8,6 +8,38 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class User {
+    public User(int iD, String name, String email, String password, String contactNumber, String bloodGroup, String city) {
+
+           this.ID = iD;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.contactNumber = contactNumber;
+        this.BloodGroup = bloodGroup;
+        this.City = city;
+
+    }
+
+    public User(int id, String fullName, String contactNumber, String bloodGroup, String city) {
+        this.ID = id;
+        this.name = fullName;
+        this.contactNumber = contactNumber;
+        this.BloodGroup = bloodGroup;
+        this.City = city;
+    }
+
+    public User(int iD, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate) {
+        this.ID = iD;
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.contactNumber = contactNumber;
+        this.BloodGroup = bloodGroup;
+        this.City = city;
+        this.Gender = gender;
+        this.birthDate = birthDate;
+    }
+
     public int getId() {
         return ID;
     }
@@ -106,7 +138,7 @@ public class User {
     String Gender;
      Date birthDate;
       Date LastDateofDonation;
-      public User(){};
+
 
 
     public User(int id,
@@ -132,7 +164,9 @@ public class User {
     }
 
 
+public User(){
 
+}
 
 }
  class donors extends User{
@@ -152,32 +186,39 @@ public class User {
         return flag;
     }
 
-    public donors(int id, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate, Date lastDateofDonation) {
+    public donors(int id,
+                  String name,
+                  String email,
+                  String password,
+                  String contactNumber,
+                  String bloodGroup,
+                  String city,
+                  String gender,
+                  Date birthDate,
+                  Date lastDateofDonation) {
         super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
     }
 }
  class receivers extends User{
 
-    public receivers(int ID, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate) {
+    public receivers(int iD,
+                     String name,
+                     String email,
+                     String password,
+                     String contactNumber,
+                     String bloodGroup,
+                     String city,
+                     String gender,
+                     Date birthDate) {
+        super(iD, name, email, password, contactNumber, bloodGroup, city , gender , birthDate);
 
-        this.ID= ID;
-        this.name= name;
-        this.email= email;
-        this.password= password;
-        this.contactNumber= contactNumber;
-        this.BloodGroup= bloodGroup;
-        this.City= city;
-        this.Gender= gender;
-        this.birthDate= birthDate;
     }
     public receivers(int ID,String fullName, String contactNumber, String city, String bloodGroup){
-        this.ID= ID;
-        this.name= fullName;
-        this.contactNumber= contactNumber;
-        this.BloodGroup= bloodGroup;
-        this.City= city;
+        super(ID, fullName,  contactNumber, bloodGroup, city);
     }
-}
+
+
+ }
 interface Validation{
     public  void loginValidation(ActionEvent event) throws IOException, SQLException;
     public void SignupValidation(ActionEvent event);

@@ -75,6 +75,7 @@ public class MySqlConnection {
                     String Amount = output.getString("Amount");
                     List2.add(new donations(donorID,donorNAME,ReceiverID,ReceiverNAME,BloodGroup,Amount));
                     }
+                connect.close();
                 return List2;
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -132,7 +133,7 @@ public class MySqlConnection {
                 List3.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
 
             }
-            return List4;
+            return List3;
 
         } catch (SQLException e) {
             System.out.println(e);

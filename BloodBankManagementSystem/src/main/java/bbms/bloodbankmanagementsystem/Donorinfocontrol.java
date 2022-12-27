@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
@@ -49,7 +48,6 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
         Connection conn = MySqlConnection.ConnectDB();
 
         try {
-
             conn.createStatement().execute("SELECT * FROM donors WHERE ContactNumber ="+super.mobileNumber);
             ReceiverID.setText("I don't know yet!");
             ContactNum.setText(super.mobileNumber);
@@ -59,15 +57,13 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
             BloodGroup.setText(super.bg);
             NameDonor1.setText(super.nameDonor);
             StatusEligibility.setText("You can visit anytime");
-
-
         }catch (Exception e){
             System.out.println(e);
         }
-
-
-
+               conn.close();
     }
+
+
     public void switchToStartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();

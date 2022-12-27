@@ -11,11 +11,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -51,7 +50,8 @@ public class ReceiverTableControl implements Initializable {
 
 
 
-    public void switchToHome(ActionEvent event) throws IOException {
+    public void switchToHome(ActionEvent event) throws IOException, SQLException {
+
         Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -59,9 +59,9 @@ public class ReceiverTableControl implements Initializable {
         stage.show();
     }
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    private void ShowData() throws SQLException {
         try {
+            System.out.println("Hello");
             recId.setCellValueFactory(new PropertyValueFactory<>("name"));
             recName.setCellValueFactory(new PropertyValueFactory<>("ID"));
             bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
@@ -75,6 +75,19 @@ public class ReceiverTableControl implements Initializable {
             receivers.setItems(ListM);
         }catch (Exception e){
             System.out.println(e);
+        }
+
+    }
+
+
+    @FXML
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        try {
+            ShowData();
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
         }
     }
 }

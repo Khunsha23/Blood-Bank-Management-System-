@@ -12,9 +12,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class loginreceivercontrol implements Validation {
     private Stage stage;
@@ -46,6 +44,13 @@ public class loginreceivercontrol implements Validation {
     private TextField MobileNumberTextField;
     @FXML
     private Label loginmsg;
+    static String contact;
+    static Date dob;
+    static String email;
+    static Date lastVisited;
+    static String nameDonor;
+    static String bg;
+
 
     @FXML
     private PasswordField passwordField;
@@ -60,14 +65,10 @@ public class loginreceivercontrol implements Validation {
         try{
             PreparedStatement preparedstatement = conn.prepareStatement("SELECT * FROM receivers Where ContactNumber ="+MobileNumberTextField.getText());
             ResultSet resultset = preparedstatement.executeQuery();
-            while (resultset.next()){
 
-                mobileNumber = resultset.getString("ContactNumber");
-                password = resultset.getString("Password");
-
-            }
         }catch (Exception e){
 
+            System.out.println(e);
         }
 
         if(MobileNumberTextField.getText().isEmpty()&& passwordField.getText().isEmpty()){
@@ -93,6 +94,7 @@ public class loginreceivercontrol implements Validation {
 
     @Override
     public void SignupValidation(ActionEvent event) {
+
 
     }
 

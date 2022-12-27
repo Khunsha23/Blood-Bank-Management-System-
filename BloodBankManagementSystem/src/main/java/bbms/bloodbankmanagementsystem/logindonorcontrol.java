@@ -101,7 +101,7 @@ public class logindonorcontrol implements Validation {
                 this.mobileNumber = resultset.getString("ContactNumber");
                 this.password = resultset.getString("Password");
                 this.bg = resultset.getString("BloodGroup");
-                this.contact = resultset.getString("ContactNumber");
+               // this.contact = resultset.getString("ContactNumber");
                 this.dob = resultset.getDate("birthday");
                 this.email = resultset.getString("EmailAddress");
                 this.lastVisited = resultset.getDate("LastDateofDonation");
@@ -110,7 +110,7 @@ public class logindonorcontrol implements Validation {
 
             }
         }catch (Exception e){
-            System.out.println(e+"hi");
+            System.out.println(e);
         }
 
         if(MobileNumberTextField.getText().isEmpty()&& passwordField.getText().isEmpty()){
