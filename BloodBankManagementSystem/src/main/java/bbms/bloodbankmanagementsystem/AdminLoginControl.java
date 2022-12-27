@@ -47,8 +47,8 @@ public class AdminLoginControl implements Validation{
     @FXML
     private PasswordField passwordField;
 
-    final String mobileNumber = "03436299271";
-    final String password = "dsaqw_1620";
+    final String mobileNumber = "98";
+    final String password = "abc";
 
 
     @Override

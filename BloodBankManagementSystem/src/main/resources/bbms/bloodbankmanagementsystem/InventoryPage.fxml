@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
    <children>
-      <BorderPane prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <BorderPane prefHeight="403.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <top>
             <AnchorPane prefHeight="48.0" prefWidth="600.0" styleClass="top" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
                <children>
@@ -34,7 +31,7 @@
             </AnchorPane>
          </top>
          <center>
-            <AnchorPane prefHeight="365.0" prefWidth="604.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="352.0" prefWidth="680.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
                <children>
                   <FlowPane alignment="CENTER" hgap="20.0" layoutX="73.0" layoutY="-13.0" prefHeight="363.0" prefWidth="481.0" vgap="10.0" AnchorPane.leftAnchor="73.0" AnchorPane.rightAnchor="46.0" AnchorPane.topAnchor="-13.0">
                      <children>
@@ -203,6 +200,121 @@
                </children>
             </AnchorPane>
          </center>
+         <left>
+            <AnchorPane prefHeight="352.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox layoutY="3.0" prefHeight="347.0" prefWidth="185.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="3.0">
+                     <children>
+                        <Pane prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="25.0" prefWidth="152.0" VBox.vgrow="ALWAYS">
+                           <children>
+                              <Pane prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="32.0" text="A+" />
+                              <Pane layoutX="145.0" layoutY="10.0" prefHeight="25.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="325.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="28.0" text="A-" />
+                              <Pane layoutX="144.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="107.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="267.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="28.0" text="B+" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="127.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="26.0" text="B-" />
+                              <Pane layoutX="143.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="101.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="178.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="32.0" text="O+" />
+                              <Pane layoutX="149.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="105.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="127.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="30.0" text="O-" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="104.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="229.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="25.0" prefWidth="179.0">
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="39.0" text="AB+" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="109.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane prefHeight="15.0" prefWidth="175.0" VBox.vgrow="ALWAYS" />
+                        <HBox layoutX="10.0" layoutY="315.0" prefHeight="25.0" prefWidth="179.0">
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                              <Label prefHeight="17.0" prefWidth="34.0" text="AB-" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="299.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
+                        <HBox>
+                           <children>
+                              <Pane prefHeight="0.0" prefWidth="30.0" />
+                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="INSERT">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Button>
+                              <Pane layoutX="83.0" layoutY="10.0" prefHeight="0.0" prefWidth="30.0" />
+                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="ADD">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Button>
+                              <Pane prefHeight="0.0" prefWidth="30.0" />
+                              <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="DELETE">
+                                 <font>
+                                    <Font name="System Bold" size="10.0" />
+                                 </font>
+                              </Button>
+                              <Pane layoutX="90.0" layoutY="10.0" prefHeight="0.0" prefWidth="30.0" />
+                           </children>
+                        </HBox>
+                        <Pane layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="200.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </left>
       </BorderPane>
    </children>
 </AnchorPane>

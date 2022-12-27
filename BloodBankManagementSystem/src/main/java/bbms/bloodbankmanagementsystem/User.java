@@ -19,6 +19,20 @@ public class User {
     private Date birthDate;
     private  Date LastDateofDonation;
 
+    private int amount;
+
+    public User(int amount){
+        this.amount=amount;
+    }
+    public User(String bloodGroup){
+        this.BloodGroup= bloodGroup;
+    }
+    public User(String id, String name){
+        this.id= id;
+        this.name= name;
+
+    }
+
     public User(String id,
                 String name,
                 String email,
@@ -42,7 +56,7 @@ public class User {
     }
 
 }
-class donors extends User{
+ class donors extends User{
 
     public static boolean NameValidation(String TextField) {
         String Alphabets = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -63,7 +77,7 @@ class donors extends User{
         super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
     }
 }
-class receivers extends User{
+ class receivers extends User{
 
     public receivers(String id, String name, String email, String password, String contactNumber, String bloodGroup, String city, String gender, Date birthDate, Date lastDateofDonation) {
         super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
