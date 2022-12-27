@@ -8,13 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -49,7 +47,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
     private Button Delete_button_Receiver;
 
     @FXML
-    private TableView<donations> donations;
+    public TableView<donations> donations;
 
     @FXML
     private Button Update_Button_Receiver;
@@ -87,15 +85,16 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        refreshTable();
         stage.show();
     }
-    public void insert(ActionEvent event) throws IOException{
+    public void insert(ActionEvent event) throws IOException {
         Connection conn = MySqlConnection.ConnectDB();
-        try{
+        try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String sql= "INSERT INTO donations(donorId,donorName,bloodGroup,ReceiverId,ReceiverName,Amount)VALUES(?,?,?,?,?,?)";
+            String sql = "INSERT INTO donations(donorId,donorName,bloodGroup,ReceiverId,ReceiverName,Amount)VALUES(?,?,?,?,?,?)";
             PreparedStatement preparedstatement = conn.prepareStatement(sql);
-           preparedstatement.setString(1, dId.getText());
+            preparedstatement.setString(1, dId.getText());
 
             preparedstatement.setString(2, dName.getText());
             preparedstatement.setString(3, bGroup.getText());
@@ -103,6 +102,9 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             preparedstatement.setString(5, rName.getText());
             preparedstatement.setString(6, amount.getText());
             preparedstatement.executeUpdate();
+            loadData();
+            refreshTable();
+            loadData();
 
             System.out.println();
 
@@ -112,10 +114,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
         }
 
     }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resources) {
-
+    public void loadData(){
         donorId.setCellValueFactory(new PropertyValueFactory<>("DonorId"));
         donorName.setCellValueFactory(new PropertyValueFactory<>("donorname"));
         bloodGroup.setCellValueFactory(new PropertyValueFactory<>("bloodgroup"));
@@ -124,8 +123,20 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
         Amount.setCellValueFactory(new PropertyValueFactory<>("amount"));
         ListM = MySqlConnection.loadDatabase();
         donations.setItems(ListM);
+    }
+
+    public void refreshTable(){
+      ListM.clear();
+    }
+    @Override
+    public void initialize(URL url, ResourceBundle resources) {
+
+
+       loadData();
+
 
     }
+
 
 
 

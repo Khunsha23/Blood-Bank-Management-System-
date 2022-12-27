@@ -5,11 +5,11 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.RequestTableControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.RequestTableControl">
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
-                <TableView fx:id="requests" editable="true" prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
+                <TableView fx:id="requests" prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
                     <columns>
                         <TableColumn fx:id="id" prefWidth="75.0" text="ReceiverId" />
                         <TableColumn fx:id="name" prefWidth="75.0" text="FullName" />
@@ -62,7 +62,7 @@
                                             </font>
                                         </Label>
                                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="27.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="dId" prefHeight="25.0" prefWidth="127.0" />
+                                        <TextField fx:id="rId" prefHeight="25.0" prefWidth="127.0" />
                                         <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                                     </children>
                                 </HBox>
@@ -76,7 +76,7 @@
                                             </font>
                                         </Label>
                                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="26.0" prefWidth="35.0" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="dName" prefHeight="25.0" prefWidth="130.0" />
+                                        <TextField fx:id="rName" prefHeight="25.0" prefWidth="130.0" />
                                         <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                                     </children>
                                 </HBox>
@@ -90,7 +90,7 @@
                                             </font>
                                         </Label>
                                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="34.0" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="bGroup" prefHeight="25.0" prefWidth="130.0" />
+                                        <TextField fx:id="CNo" prefHeight="25.0" prefWidth="130.0" />
                                         <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                                     </children>
                                 </HBox>
@@ -104,7 +104,7 @@
                                             </font>
                                         </Label>
                                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="50.0" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="rId" prefHeight="25.0" prefWidth="130.0" />
+                                        <TextField fx:id="city" prefHeight="25.0" prefWidth="130.0" />
                                         <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                                     </children>
                                 </HBox>
@@ -118,7 +118,7 @@
                                             </font>
                                         </Label>
                                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="33.0" HBox.hgrow="ALWAYS" />
-                                        <TextField fx:id="rName" prefHeight="25.0" prefWidth="130.0" />
+                                        <TextField fx:id="bGroup" prefHeight="25.0" prefWidth="130.0" />
                                         <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                                     </children>
                                 </HBox>
@@ -126,7 +126,7 @@
                                 <HBox alignment="CENTER" prefHeight="43.0" prefWidth="210.0" VBox.vgrow="ALWAYS">
                                     <children>
                                         <Pane prefHeight="43.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                                        <Button alignment="CENTER" mnemonicParsing="false" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="INSERT">
+                                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#insert" style="-fx-background-color: WHITE; -fx-background-radius: 5;" text="INSERT">
                                             <font>
                                                 <Font name="System Bold" size="12.0" />
                                             </font>

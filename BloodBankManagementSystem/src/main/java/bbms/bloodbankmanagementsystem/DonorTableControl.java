@@ -25,44 +25,9 @@ import java.util.ResourceBundle;
 public class DonorTableControl implements Initializable{
     private Stage stage;
     private Scene scene;
-    @FXML
-    private TextField id;
-    @FXML
-    private TextField Name;
-    @FXML
-    private TextField bGroup;
-    @FXML
-    private TextField ContactNo;
-    @FXML
-    private TextField city;
-    @FXML
-    private TextField gender;
-    @FXML
-    private TextField BirthDate;
-    @FXML
-    private TextField lastdod;
-    @FXML
-    private TextField email;
-    @FXML
-    private TextField password;
-
-    @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button Add_Button_Receiver;
-
-    @FXML
-    private Button Delete_button_Receiver;
 
     @FXML
     private TableView<donors> donors;
-
-    @FXML
-    private Button Update_Button_Receiver;
 
     @FXML
     private TableColumn<donors, String> donorName;
