@@ -25,7 +25,7 @@ public class MySqlConnection {
 
     public static ObservableList<donors> getList() {
         Connection connect= ConnectDB();
-        String query = null;
+        String query;
         query = "SELECT * FROM donors ";
         try{
             PreparedStatement stm = connect.prepareStatement(query);
@@ -36,28 +36,29 @@ public class MySqlConnection {
                 String ID = output.getString("IdNumber");
                 String NAME = output.getString("FullName");
                 String Contact = output.getString("ContactNumber");
-                String email = output.getString("Email");
+                String email = output.getString("EmailAddress");
                 String bloodGroup = output.getString("BloodGroup");
                 String password = output.getString("Password");
                 String city = output.getString("City");
                 String gender = output.getString("Gender");
-                Date birthDate = output.getDate("BirthDate");
-                Date ldod = output.getDate("LastDateOfDonation");
-
-                List.add(new donors(ID,NAME,email,password,Contact,bloodGroup,city,gender,birthDate,ldod));
+                Date birthDate = output.getDate("birthday");
+                Date ldod = output.getDate("LastDateofDonation");
+                List.add(new donors(Integer.parseInt(ID),NAME,email,password,Contact,bloodGroup,city,gender,birthDate,ldod));
 
             }
+            return List;
 
     } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException(e);
         }
-      return List;
+
     }
     static String donorID;
     static ObservableList<donations> List2 = FXCollections.observableArrayList();
 
        public static ObservableList<donations> loadDatabase(){
-        Connection connect= ConnectDB();
+        Connection connect= MySqlConnection.ConnectDB();
         String query ;
         query = "SELECT * FROM donations ";
             try{
@@ -78,6 +79,66 @@ public class MySqlConnection {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+    }
+    static ObservableList<receivers> List3 = FXCollections.observableArrayList();
+
+    public static ObservableList<receivers> getReceiver() {
+        Connection connect= ConnectDB();
+        String query;
+        query = "SELECT * FROM receivers ";
+        try{
+            PreparedStatement stm = connect.prepareStatement(query);
+            ResultSet output = stm.executeQuery(query);
+
+            while (output.next()){
+
+                String ID = output.getString("IdNumber");
+                String NAME = output.getString("FullName");
+                String Contact = output.getString("ContactNumber");
+                String email = output.getString("EmailAddress");
+                String bloodGroup = output.getString("BloodGroup");
+                String password = output.getString("Password");
+                String city = output.getString("City");
+                String gender = output.getString("Gender");
+                Date birthDate = output.getDate("birthday");
+                List3.add(new receivers(Integer.parseInt(ID),NAME,email,password,Contact,bloodGroup,city,gender,birthDate));
+
+            }
+            return List3;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+
+    }
+    static ObservableList<receivers> List4 = FXCollections.observableArrayList();
+
+    public static ObservableList<receivers> getRequest() {
+        Connection connect= ConnectDB();
+        String query;
+        query = "SELECT * FROM requests";
+        try{
+            PreparedStatement stm = connect.prepareStatement(query);
+            ResultSet output = stm.executeQuery(query);
+
+            while (output.next()){
+
+                String ID = output.getString("ReceiverID");
+                String NAME = output.getString("FullName");
+                String Contact = output.getString("ContactNumber");
+                String city = output.getString("City");
+                String bloodGroup = output.getString("BloodGroup");
+                List3.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
+
+            }
+            return List4;
+
+        } catch (SQLException e) {
+            System.out.println(e);
+            throw new RuntimeException(e);
+        }
+
     }
 
 

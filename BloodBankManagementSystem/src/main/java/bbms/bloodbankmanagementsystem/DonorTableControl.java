@@ -1,10 +1,10 @@
 package bbms.bloodbankmanagementsystem;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,7 +15,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
@@ -23,7 +22,7 @@ import java.sql.ResultSet;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class DonorTableControl {
+public class DonorTableControl implements Initializable{
     private Stage stage;
     private Scene scene;
     @FXML
@@ -39,7 +38,7 @@ public class DonorTableControl {
     @FXML
     private TextField gender;
     @FXML
-    private TextField Birhdate;
+    private TextField BirthDate;
     @FXML
     private TextField lastdod;
     @FXML
@@ -85,7 +84,7 @@ public class DonorTableControl {
     @FXML
     private TableColumn<donors, String> Email;
     @FXML
-    private TableColumn<donors, Integer> Contact;
+    private TableColumn<donors, String> Contact;
     @FXML
     private TableColumn<donors, Date> Birthdate;
 
@@ -94,7 +93,7 @@ public class DonorTableControl {
 
 
 
-    ObservableList<User> ListM;
+    ObservableList<donors> ListM;
 
     @FXML
     ResultSet rs = null;
@@ -110,18 +109,28 @@ public class DonorTableControl {
         stage.setScene(scene);
         stage.show();
     }
-    /*public void initialize(URL url,ResourceBundle resources){
-        .setCellValueFactory(new PropertyValueFactory<>("donorID"));
-        donorName.setCellValueFactory(new PropertyValueFactory<>("donorName"));
-        bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
-        ReceiverId.setCellValueFactory(new PropertyValueFactory<>("receiverID"));
-        ReceiverName.setCellValueFactory(new PropertyValueFactory<>("receiverName"));
-        Amount_t.setCellValueFactory(new PropertyValueFactory<>("Amount"));
-        ListM = MySqlConnection.List;
-        System.out.println(ListM.get(1).);
-        donations.setItems(ListM);
+    @Override
+    public void initialize(URL url,ResourceBundle resources){
+        try {
+            donorName.setCellValueFactory(new PropertyValueFactory<>("name"));
+            donorId.setCellValueFactory(new PropertyValueFactory<>("ID"));
+            bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
+            gender_t.setCellValueFactory(new PropertyValueFactory<>("Gender"));
+            city_t.setCellValueFactory(new PropertyValueFactory<>("City"));
+            Password.setCellValueFactory(new PropertyValueFactory<>("password"));
+            Email.setCellValueFactory(new PropertyValueFactory<>("email"));
+            Contact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
+            Birthdate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
+            Ldod.setCellValueFactory(new PropertyValueFactory<>("lastDateofDonation"));
+            ListM = MySqlConnection.getList();
+            donors.setItems(ListM);
+        }catch (Exception e){
+            System.out.println(e);
+        }
     }
 
-     */
+
+
+
 
 }
