@@ -15,6 +15,7 @@ public class inventorycontrol {
     private Stage stage;
     private Scene scene;
     private Parent root;
+
     public void switchToStartPage(ActionEvent event) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("startpage.fxml"));

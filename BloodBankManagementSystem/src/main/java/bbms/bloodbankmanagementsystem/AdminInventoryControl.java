@@ -3,34 +3,44 @@ package bbms.bloodbankmanagementsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ResourceBundle;
 
-public class AdminInventoryControl {
+public class AdminInventoryControl implements Initializable {
+
     private Stage stage;
     private Scene scene;
     @FXML
-    private TextField Apos;
+    private Label Apos;
     @FXML
-    private TextField Aneg;
+    private Label Aneg;
     @FXML
-    private TextField Bpos;
+    private Label Bpos;
     @FXML
-    private TextField Bneg;
+    private Label Bneg;
     @FXML
-    private TextField ABpos;
+    private Label ABpos;
     @FXML
-    private TextField ABneg;
+    private Label ABneg;
     @FXML
-    private TextField Opos;
+    private Label Opos;
     @FXML
-    private TextField Oneg;
+    private Label Oneg;
+
 
     public void switchToHome(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
@@ -39,6 +49,27 @@ public class AdminInventoryControl {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        Connection conn= MySqlConnection.ConnectDB();
+        try{
 
-
+            String sql= "SELECT * FROM inventory";
+            PreparedStatement preparedStatement= conn.prepareStatement(sql);
+            ResultSet output = preparedStatement.executeQuery(sql);
+            while(output.next()){
+                Apos.setText(output.getString(1));
+                Aneg.setText(output.getString(2));
+                Bpos.setText(output.getString(3));
+                Bneg.setText(output.getString(4));
+                Opos.setText(output.getString(5));
+                Oneg.setText(output.getString(6));
+                ABpos.setText(output.getString(7));
+                ABneg.setText(output.getString(8));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

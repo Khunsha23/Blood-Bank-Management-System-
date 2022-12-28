@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.FlowPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
    <children>
@@ -45,7 +37,7 @@
                      <children>
                         <AnchorPane prefHeight="101.0" prefWidth="99.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="-1.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Apos" alignment="CENTER" layoutX="-1.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -63,7 +55,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="105.0" prefWidth="92.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Aneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -81,7 +73,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="114.0" prefWidth="96.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Bneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -99,7 +91,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="112.0" prefWidth="70.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="ABpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -117,7 +109,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="113.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="ABneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -135,7 +127,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="110.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Bpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -153,7 +145,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="109.0" prefWidth="78.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Oneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -171,7 +163,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="105.0" prefWidth="97.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Opos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -219,7 +211,7 @@
                               <Pane prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="32.0" text="A+" />
                               <Pane layoutX="145.0" layoutY="10.0" prefHeight="25.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Apos" prefHeight="25.0" prefWidth="108.0" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -229,7 +221,7 @@
                               <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="28.0" text="A-" />
                               <Pane layoutX="144.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Aneg" prefHeight="25.0" prefWidth="107.0" />
+                              <TextField prefHeight="25.0" prefWidth="107.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -239,7 +231,7 @@
                               <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="28.0" text="B+" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Bpos" prefHeight="25.0" prefWidth="108.0" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -249,7 +241,7 @@
                               <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="26.0" text="B-" />
                               <Pane layoutX="143.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Bneg" prefHeight="25.0" prefWidth="101.0" />
+                              <TextField prefHeight="25.0" prefWidth="101.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -259,7 +251,7 @@
                               <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="32.0" text="O+" />
                               <Pane layoutX="149.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Opos" prefHeight="25.0" prefWidth="105.0" />
+                              <TextField prefHeight="25.0" prefWidth="105.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -269,7 +261,7 @@
                               <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="30.0" text="O-" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="Oneg" prefHeight="25.0" prefWidth="104.0" />
+                              <TextField prefHeight="25.0" prefWidth="104.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -279,7 +271,7 @@
                               <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="39.0" text="AB+" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="ABpos" prefHeight="25.0" prefWidth="109.0" />
+                              <TextField prefHeight="25.0" prefWidth="109.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
@@ -289,7 +281,7 @@
                               <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
                               <Label prefHeight="17.0" prefWidth="34.0" text="AB-" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <TextField fx:id="ABneg" prefHeight="25.0" prefWidth="108.0" />
+                              <TextField prefHeight="25.0" prefWidth="108.0" />
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
