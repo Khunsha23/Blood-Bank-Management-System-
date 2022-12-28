@@ -1,16 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import java.lang.*?>
-<?import javafx.collections.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.logindonorcontrol">
    <top>
@@ -110,14 +121,12 @@
                                           <Image url="@../../Images/icons8-place-marker-96.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="City" styleClass="TextField1" stylesheets="@SignupPage.css">
-                                       <effect>
-                                          <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
-                                       </effect>
-                                       <HBox.margin>
-                                          <Insets right="5.0" />
-                                       </HBox.margin>
-                                    </TextField>
+                                    <ComboBox fx:id="citybox" prefHeight="26.0" prefWidth="191.0" promptText="City" styleClass="TextField1">
+                                    <effect>
+                                       <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
+                                    </effect>
+                                    </ComboBox>
+
                                  </children>
                               </HBox>
                               <HBox alignment="CENTER" layoutX="10.0" layoutY="190.0" spacing="5.0" VBox.vgrow="ALWAYS">
@@ -216,7 +225,7 @@
                                     </ImageView>
                                     <Label prefHeight="17.0" prefWidth="57.0" text="Gender" />
                                     <Pane prefHeight="0.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                                    <JFXRadioButton fx:id="MaleCheck" prefHeight="17.0" prefWidth="70.0" text="Male" HBox.hgrow="ALWAYS">
+                                    <JFXRadioButton fx:id="MaleCheck" onAction="#male" prefHeight="17.0" prefWidth="70.0" text="Male" HBox.hgrow="ALWAYS">
                                        <selectedColor>
                                           <Color red="0.0906432718038559" green="0.5982456207275391" blue="0.8157894611358643" />
                                        </selectedColor>
@@ -224,7 +233,7 @@
                                           <Insets right="20.0" />
                                        </HBox.margin>
                                     </JFXRadioButton>
-                                    <JFXRadioButton fx:id="FemaleCheck" layoutX="83.0" layoutY="11.0" prefHeight="17.0" prefWidth="88.0" text="Female" HBox.hgrow="ALWAYS">
+                                    <JFXRadioButton fx:id="FemaleCheck" layoutX="83.0" layoutY="11.0" onAction="#fem" prefHeight="17.0" prefWidth="88.0" text="Female" HBox.hgrow="ALWAYS">
                                        <selectedColor>
                                           <Color red="0.8421052694320679" green="0.07407407462596893" blue="0.6500974893569946" />
                                        </selectedColor>
