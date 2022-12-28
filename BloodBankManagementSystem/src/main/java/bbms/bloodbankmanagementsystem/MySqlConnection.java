@@ -130,10 +130,10 @@ public class MySqlConnection {
                 String Contact = output.getString("ContactNumber");
                 String city = output.getString("City");
                 String bloodGroup = output.getString("BloodGroup");
-                List3.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
+                List4.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
 
             }
-            return List3;
+            return List4;
 
         } catch (SQLException e) {
             System.out.println(e);

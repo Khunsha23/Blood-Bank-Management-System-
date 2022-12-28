@@ -64,18 +64,7 @@ public class DonorTableControl implements Initializable{
     ResultSet rs = null;
     @FXML
     PreparedStatement pst = null;
-
-
-
-    public void switchToDashboard(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-    @Override
-    public void initialize(URL url,ResourceBundle resources){
+    private void loadData(){
         try {
             donorName.setCellValueFactory(new PropertyValueFactory<>("name"));
             donorId.setCellValueFactory(new PropertyValueFactory<>("ID"));
@@ -92,6 +81,24 @@ public class DonorTableControl implements Initializable{
         }catch (Exception e){
             System.out.println(e);
         }
+    }
+    public void refresh(){
+        ListM.clear();
+    }
+
+
+
+    public void switchToDashboard(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        refresh();
+        stage.show();
+    }
+    @Override
+    public void initialize(URL url,ResourceBundle resources){
+        loadData();
     }
 
 

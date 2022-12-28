@@ -56,7 +56,11 @@ public class ReceiverTableControl implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        refresh();
         stage.show();
+    }
+    public void refresh(){
+        ListM.clear();
     }
 
     private void ShowData() throws SQLException {

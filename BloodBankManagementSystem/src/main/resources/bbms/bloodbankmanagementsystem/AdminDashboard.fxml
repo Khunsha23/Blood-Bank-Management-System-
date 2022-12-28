@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminDashBoardControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminDashBoardControl">
     <children>
         <AnchorPane layoutX="171.0" layoutY="53.0" prefHeight="49.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -38,7 +47,7 @@
                 <DropShadow height="7.5" offsetX="2.0" offsetY="2.0" radius="3.875" width="10.0" />
             </effect>
             <children>
-                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="30.0" layoutX="96.0" prefHeight="194.0" prefWidth="472.0" vgap="20.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="0.0">
+                <FlowPane alignment="CENTER" columnHalignment="CENTER" hgap="30.0" layoutX="96.0" layoutY="11.0" prefHeight="194.0" prefWidth="472.0" vgap="20.0" AnchorPane.leftAnchor="96.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="11.0">
                     <children>
                         <AnchorPane prefHeight="81.0" prefWidth="213.0" style="-fx-background-color: #dce9ff;" styleClass="paneDesign" stylesheets="@startpage.css">
                             <effect>
@@ -68,7 +77,8 @@
                                                 <Label alignment="CENTER" layoutX="8.0" layoutY="1.0" prefHeight="21.0" prefWidth="28.0" text="O-" textFill="WHITE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                                             </children>
                                         </AnchorPane>
-                                    </children></AnchorPane>
+                                    </children>
+                        </AnchorPane>
                                 <AnchorPane layoutX="128.0" layoutY="20.0" prefHeight="41.0" prefWidth="28.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                                     <children>
                                         <Label alignment="CENTER" layoutX="6.0" layoutY="22.0" prefHeight="14.0" prefWidth="15.0" text="2" textFill="#13679a" />
@@ -227,34 +237,71 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </FlowPane>
-                <TextField focusTraversable="false" layoutX="181.0" layoutY="232.0" prefHeight="27.0" prefWidth="214.0" promptText="Search for donors nearby" styleClass="paneDesign" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="205.0" AnchorPane.topAnchor="232.0" />
-                <ScrollPane hbarPolicy="NEVER" layoutX="137.0" layoutY="268.0" prefHeight="73.0" prefWidth="357.0" vbarPolicy="ALWAYS" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="268.0">
-                    <content>
-                        <ListView focusTraversable="false" prefHeight="73.0" prefWidth="342.0" />
-                    </content>
-                </ScrollPane>
-                <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="403.0" layoutY="231.0" prefHeight="29.0" prefWidth="28.0" ripplerFill="BLACK" style="-fx-background-color: White; -fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " textAlignment="CENTER" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="231.0">
-                    <graphic>
-                        <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@../../Images/icons8-search-30.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </JFXButton>
-                <HBox alignment="CENTER" layoutX="-6.0" layoutY="11.0" AnchorPane.bottomAnchor="126.0" AnchorPane.leftAnchor="-7.0" AnchorPane.topAnchor="11.0">
+            <VBox layoutX="137.0" layoutY="266.6000061035156" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="137.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="267.4">
+               <children>
+                  <Pane prefHeight="18.0" prefWidth="358.0" VBox.vgrow="ALWAYS" />
+                  <HBox>
+                     <children>
+                        <Pane prefHeight="69.0" prefWidth="63.0" HBox.hgrow="ALWAYS" />
+                            <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="73.0" prefWidth="357.0" vbarPolicy="ALWAYS">
+                                <content>
+                                    <ListView focusTraversable="false" prefHeight="73.0" prefWidth="342.0" />
+                                </content>
+                            </ScrollPane>
+                        <Pane prefHeight="69.0" prefWidth="63.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="20.0" prefWidth="358.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+                <HBox alignment="CENTER" layoutX="-6.0" layoutY="118.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="-6.0" AnchorPane.rightAnchor="174.0" AnchorPane.topAnchor="118.0">
                     <children>
                         <Pane prefHeight="200.0" prefWidth="0.0" HBox.hgrow="ALWAYS" />
-                        <VBox alignment="CENTER" prefHeight="215.0" prefWidth="117.0" spacing="20.0" HBox.hgrow="ALWAYS">
-                            <children>
-                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToDonorsTable" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Donors" VBox.vgrow="ALWAYS" />
-                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToReceiversTable" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Receivers" VBox.vgrow="ALWAYS" />
-                                <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToTotalReport" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Report" VBox.vgrow="ALWAYS" />
-                                <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" maxHeight="27.0" maxWidth="94.0" onAction="#switchToLocation" prefHeight="27.0" prefWidth="94.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Blood Camps" VBox.vgrow="ALWAYS" />
-                            </children>
-                        </VBox>
+                  <HBox prefHeight="215.0" prefWidth="177.0" HBox.hgrow="ALWAYS">
+                     <children>
+                              <VBox alignment="CENTER" prefHeight="200.0" prefWidth="117.0">
+                                  <children>
+                              <Pane prefHeight="0.0" prefWidth="103.0" VBox.vgrow="ALWAYS" />
+                                      <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToDonorsTable" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Donors" />
+                              <Pane prefHeight="10.0" prefWidth="103.0" />
+                                      <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="30.0" maxWidth="94.0" onAction="#switchToReceiversTable" prefHeight="30.0" prefWidth="94.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Receivers" />
+                              <Pane prefHeight="10.0" prefWidth="103.0" />
+                                      <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="25.0" maxWidth="94.0" onAction="#switchToTotalReport" prefHeight="25.0" prefWidth="79.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Report" />
+                              <Pane prefHeight="10.0" prefWidth="103.0" />
+                                      <JFXButton alignment="CENTER" buttonType="RAISED" focusTraversable="false" maxHeight="27.0" maxWidth="94.0" onAction="#switchToLocation" prefHeight="27.0" prefWidth="94.0" ripplerFill="#5d2add" style="-fx-background-color: White; -fx-background-radius: 6px; -fx-border-radius: 6px; -fx-border-color: #dee5ee;" text="Blood Camps" />
+                              <Pane prefHeight="0.0" prefWidth="117.0" VBox.vgrow="ALWAYS" />
+                                  </children>
+                              </VBox>
+                        <Pane prefHeight="215.0" prefWidth="98.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="215.0" prefWidth="227.0" HBox.hgrow="ALWAYS" />
                     </children>
                 </HBox>
+            <VBox layoutX="139.0" layoutY="215.0" AnchorPane.bottomAnchor="95.4" AnchorPane.leftAnchor="139.0" AnchorPane.rightAnchor="114.60000000000002" AnchorPane.topAnchor="215.0">
+               <children>
+                  <Pane prefHeight="5.0" prefWidth="346.0" VBox.vgrow="ALWAYS" />
+                  <HBox prefHeight="30.0" prefWidth="346.0">
+                     <children>
+                        <Pane prefHeight="0.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
+                            <TextField focusTraversable="false" prefHeight="27.0" prefWidth="214.0" promptText="Search for donors nearby" styleClass="paneDesign" />
+                        <Pane prefHeight="2.0" prefWidth="10.0" />
+                            <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" prefHeight="29.0" prefWidth="28.0" ripplerFill="BLACK" style="-fx-background-color: White; -fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " textAlignment="CENTER">
+                                <graphic>
+                                    <ImageView fitHeight="21.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                                        <image>
+                                            <Image url="@../../Images/icons8-search-30.png" />
+                                        </image>
+                                    </ImageView>
+                                </graphic>
+                            </JFXButton>
+                        <Pane prefHeight="9.0" prefWidth="25.0" HBox.hgrow="ALWAYS" />
+                     </children>
+                  </HBox>
+                  <Pane prefHeight="0.0" prefWidth="346.0" VBox.vgrow="ALWAYS" />
+                  <Pane prefHeight="5.0" prefWidth="346.0" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
             </children>
         </AnchorPane>
     </children>
