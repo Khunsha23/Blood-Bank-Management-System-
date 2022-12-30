@@ -62,8 +62,6 @@ public class AdminLoginControl implements Validation{
         }else if (passwordField.getText().isEmpty()){
             loginMsg.setText("Enter Password");
         } else if (MobileNumberTextField.getText().equals(mobileNumber)&& passwordField.getText().equals(password)) {
-
-
             root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

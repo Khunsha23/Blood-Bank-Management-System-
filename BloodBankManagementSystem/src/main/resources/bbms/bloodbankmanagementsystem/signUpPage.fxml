@@ -1,33 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXRadioButton?>
-<?import java.lang.String?>
-<?import javafx.collections.FXCollections?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.InnerShadow?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.text.Font?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.logindonorcontrol">
    <top>
       <AnchorPane prefHeight="41.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" BorderPane.alignment="CENTER">
          <children>
-            <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToHome" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+            <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchToStartPage" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
                <graphic>
                   <ImageView id="logout" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -70,7 +59,7 @@
                                           <Image url="@../../Images/icons8-name-96.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField maxHeight="30.0" maxWidth="260.0" prefHeight="27.0" prefWidth="231.0" promptText="Full Name" styleClass="TextField1" stylesheets="@SignupPage.css">
+                                    <TextField fx:id="FullName" maxHeight="30.0" maxWidth="260.0" prefHeight="27.0" prefWidth="231.0" promptText="Full Name" styleClass="TextField1" stylesheets="@SignupPage.css">
                                        <effect>
                                           <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                        </effect>
@@ -87,7 +76,7 @@
                                           <Image url="@../../Images/icons8-mail-96.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField fx:id="em" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Email address" styleClass="TextField1" stylesheets="@SignupPage.css">
+                                    <TextField fx:id="EmailAddress" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Email address" styleClass="TextField1" stylesheets="@SignupPage.css">
                                        <effect>
                                           <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                        </effect>
@@ -104,7 +93,7 @@
                                           <Image url="@../../Images/icons8-phone-96.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Mobile Number" styleClass="TextField1" stylesheets="@SignupPage.css">
+                                    <TextField fx:id="MobileNum" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Mobile Number" styleClass="TextField1" stylesheets="@SignupPage.css">
                                        <effect>
                                           <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                        </effect>
@@ -121,7 +110,7 @@
                                           <Image url="@../../Images/icons8-place-marker-96.png" />
                                        </image>
                                     </ImageView>
-                                    <ComboBox fx:id="citybox" prefHeight="26.0" prefWidth="191.0" promptText="City" styleClass="TextField1">
+                                    <ComboBox fx:id="citybox" onMouseClicked="#ShowCities" prefHeight="26.0" prefWidth="191.0" promptText="City" styleClass="TextField1">
                                     <effect>
                                        <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                     </effect>
@@ -184,22 +173,27 @@
                               <InnerShadow />
                            </effect>
                         </Label>
-                        <Label layoutX="182.0" layoutY="53.0" text="Label" textFill="#fc0000">
+                        <Label fx:id="errormsgNm" layoutX="203.0" layoutY="52.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label layoutX="184.0" layoutY="98.0" text="Label" textFill="#fc0000">
+                        <Label fx:id="EmailErr" layoutX="202.0" layoutY="96.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label layoutX="184.0" layoutY="140.0" text="Label" textFill="#fc0000">
+                        <Label fx:id="numErr" layoutX="184.0" layoutY="140.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label layoutX="185.0" layoutY="182.0" text="Label" textFill="#fc0000">
+                        <Label fx:id="cityErr" layoutX="185.0" layoutY="182.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="BloodErr" layoutX="185.0" layoutY="224.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -248,7 +242,7 @@
                                           <Image url="@../../Images/icons8-calendar-7-96.png" />
                                        </image>
                                     </ImageView>
-                                    <DatePicker maxHeight="30.0" maxWidth="260.0" prefHeight="27.0" prefWidth="231.0" promptText="Date of Birth" styleClass="TextField1">
+                                    <DatePicker fx:id="dateOfBirth" maxHeight="30.0" maxWidth="260.0" prefHeight="27.0" prefWidth="231.0" promptText="Date of Birth" styleClass="TextField1">
                                        <HBox.margin>
                                           <Insets right="5.0" />
                                        </HBox.margin>
@@ -265,7 +259,7 @@
                                           <Image url="@../../Images/icons8-lock-24.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Create Password" styleClass="TextField1" stylesheets="@SignupPage.css">
+                                    <TextField fx:id="CreatePassword" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Create Password" styleClass="TextField1" stylesheets="@SignupPage.css">
                                        <effect>
                                           <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                        </effect>
@@ -282,7 +276,7 @@
                                           <Image url="@../../Images/icons8-checkmark-128.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Re-Enter Password" styleClass="TextField1" stylesheets="@SignupPage.css">
+                                    <TextField fx:id="ReEnterPassword" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Re-Enter Password" styleClass="TextField1" stylesheets="@SignupPage.css">
                                        <effect>
                                           <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                        </effect>
@@ -292,7 +286,7 @@
                                     </TextField>
                                  </children>
                               </HBox>
-                              <JFXButton fx:id="CreateAccountBtn" buttonType="RAISED" maxHeight="52.0" maxWidth="146.0" minHeight="49.0" minWidth="48.0" onAction="#switchToDonorinfo" prefHeight="45.0" prefWidth="146.0" ripplerFill="WHITE" style="-fx-background-radius: 50px;" styleClass="nextbtn" stylesheets="@startpage.css" text="Create Account">
+                              <JFXButton fx:id="CreateAccountBtn" buttonType="RAISED" focusTraversable="false" maxHeight="52.0" maxWidth="146.0" minHeight="49.0" minWidth="48.0" onAction="#SignupValidation" prefHeight="45.0" prefWidth="146.0" ripplerFill="WHITE" styleClass="nextbtn" stylesheets="@startpage.css" text="Create Account">
                                  <effect>
                                     <DropShadow height="8.75" offsetX="2.0" offsetY="2.0" radius="4.1875" spread="0.1" width="10.0" />
                                  </effect>
@@ -307,7 +301,22 @@
                               <DropShadow />
                            </effect>
                         </Label>
-                        <Label layoutX="193.0" layoutY="172.0" text="Label" textFill="#fc0000">
+                        <Label fx:id="RePassErr" layoutX="193.0" layoutY="172.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="BirthdayErr" layoutX="193.0" layoutY="88.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="CrePassErr" layoutX="194.0" layoutY="130.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="GenderErr" layoutX="195.0" layoutY="53.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>

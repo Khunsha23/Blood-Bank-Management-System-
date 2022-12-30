@@ -42,6 +42,7 @@
 -fx-border-radius: 10px;
 }
 .nextbtn{
+-fx-background-radius: 50px;
 -fx-background-color:linear-gradient(from 13.2701% 89.0995% to 100.0% 100.0%, #a81e1e 0.0%, #401b1b 52.8974%, #10108f 100.0%);
     -fx-text-fill:white;
 

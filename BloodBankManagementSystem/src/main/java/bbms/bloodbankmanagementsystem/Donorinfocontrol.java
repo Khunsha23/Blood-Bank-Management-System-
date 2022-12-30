@@ -30,33 +30,28 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
     private Label DateOfBirth;
 
     @FXML
-    private Label Email;
-
-    @FXML
-    private Label LastVisited;
+    private Label Emailaddress;
 
     @FXML
     private Label NameDonor1;
 
-    @FXML
-    private Label ReceiverID;
 
     @FXML
-    private Label StatusEligibility;
+    private Label DonorID;
 
     private void ShowData() throws SQLException {
         Connection conn = MySqlConnection.ConnectDB();
 
         try {
-            conn.createStatement().execute("SELECT * FROM donors WHERE ContactNumber ="+super.mobileNumber);
-            ReceiverID.setText("I don't know yet!");
-            ContactNum.setText(super.mobileNumber);
-            DateOfBirth.setText(String.valueOf(super.dob));
-            LastVisited.setText(String.valueOf(super.lastVisited));
-            Email.setText(super.email);
-            BloodGroup.setText(super.bg);
-            NameDonor1.setText(super.nameDonor);
-            StatusEligibility.setText("You can visit anytime");
+            conn.createStatement().execute("SELECT * FROM donors WHERE ContactNumber ="+ mobileNumber);
+            System.out.println(donorid);
+            DonorID.setText(donorid);
+            ContactNum.setText(mobileNumber);
+            DateOfBirth.setText(String.valueOf(dob));
+            Emailaddress.setText(email);
+            BloodGroup.setText(bg);
+            NameDonor1.setText(nameDonor);
+
         }catch (Exception e){
             System.out.println(e);
         }

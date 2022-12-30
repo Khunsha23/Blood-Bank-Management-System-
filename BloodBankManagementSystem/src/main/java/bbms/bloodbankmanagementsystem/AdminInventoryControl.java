@@ -53,22 +53,19 @@ public class AdminInventoryControl implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Connection conn= MySqlConnection.ConnectDB();
+        Label[] array = new Label[]{Apos,Aneg,ABpos,ABneg,Bpos,Bneg,Opos,Oneg};
         try{
 
-            String sql= "SELECT * FROM inventory";
+            String sql= "SELECT Amount From inventory";
             PreparedStatement preparedStatement= conn.prepareStatement(sql);
             ResultSet output = preparedStatement.executeQuery(sql);
-            while(output.next()){
-                Apos.setText(output.getString(1));
-                Aneg.setText(output.getString(2));
-                Bpos.setText(output.getString(3));
-                Bneg.setText(output.getString(4));
-                Opos.setText(output.getString(5));
-                Oneg.setText(output.getString(6));
-                ABpos.setText(output.getString(7));
-                ABneg.setText(output.getString(8));
+            for (int i = 0; i < 8 ; i++) {
+                output.next();
+                array[i].setText(output.getString(1));
             }
+
         } catch (SQLException e) {
+            System.out.println(e);
             throw new RuntimeException(e);
         }
     }

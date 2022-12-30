@@ -194,9 +194,8 @@ public User(){
                   String bloodGroup,
                   String city,
                   String gender,
-                  Date birthDate,
-                  Date lastDateofDonation) {
-        super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate, lastDateofDonation);
+                  Date birthDate) {
+        super(id, name, email, password, contactNumber, bloodGroup, city, gender, birthDate);
     }
 }
  class receivers extends User{
@@ -221,5 +220,5 @@ public User(){
  }
 interface Validation{
     public  void loginValidation(ActionEvent event) throws IOException, SQLException;
-    public void SignupValidation(ActionEvent event);
+    public void SignupValidation(ActionEvent event) throws IOException;
 }

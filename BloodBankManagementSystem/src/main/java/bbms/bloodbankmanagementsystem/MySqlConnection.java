@@ -42,8 +42,9 @@ public class MySqlConnection {
                 String city = output.getString("City");
                 String gender = output.getString("Gender");
                 Date birthDate = output.getDate("birthday");
-                Date ldod = output.getDate("LastDateofDonation");
-                List.add(new donors(Integer.parseInt(ID),NAME,email,password,Contact,bloodGroup,city,gender,birthDate,ldod));
+
+
+                List.add(new donors(Integer.parseInt(ID),NAME,email,password,Contact,bloodGroup,city,gender,birthDate));
 
             }
             return List;
@@ -81,9 +82,9 @@ public class MySqlConnection {
                 throw new RuntimeException(e);
             }
     }
-    static ObservableList<receivers> List3 = FXCollections.observableArrayList();
+    static ObservableList<User> List3 = FXCollections.observableArrayList();
 
-    public static ObservableList<receivers> getReceiver() {
+    public static ObservableList<User> getReceiver() {
         Connection connect= ConnectDB();
         String query;
         query = "SELECT * FROM receivers ";
@@ -113,9 +114,45 @@ public class MySqlConnection {
         }
 
     }
-    static ObservableList<receivers> List4 = FXCollections.observableArrayList();
+    static ObservableList<User> List4 = FXCollections.observableArrayList();
+    public static ObservableList<User> GenericList() {
+        Connection connect = ConnectDB();
+        String query=null;
+        for(int i=0; i<2;i++){
+            if(i==0)
+                query = "SELECT * FROM receivers";
+            if(i==1)
+                query = "SELECT * FROM donors";
+            try {
+                PreparedStatement stm = connect.prepareStatement(query);
+                ResultSet output = stm.executeQuery(query);
 
-    public static ObservableList<receivers> getRequest() {
+                while (output.next()) {
+
+                    String ID = output.getString("IdNumber");
+                    String NAME = output.getString("FullName");
+                    String Contact = output.getString("ContactNumber");
+                    String email = output.getString("EmailAddress");
+                    String bloodGroup = output.getString("BloodGroup");
+                    String password = output.getString("Password");
+                    String city = output.getString("City");
+                    String gender = output.getString("Gender");
+                    Date birthDate = output.getDate("birthday");
+                    switch (query) {
+                        case "SELECT * FROM receivers" -> List4.add(new receivers(Integer.parseInt(ID), NAME, email, password, Contact, bloodGroup, city, gender, birthDate));
+                        case "SELECT * FROM donors" -> List4.add(new donors(Integer.parseInt(ID), NAME, email, password, Contact, bloodGroup, city, gender, birthDate));
+                    }
+                }
+            }catch(SQLException e){
+                throw new RuntimeException(e);
+            }
+        }
+        return List4;
+    }
+
+
+
+    public static ObservableList<User> getRequest() {
         Connection connect= ConnectDB();
         String query;
         query = "SELECT * FROM requests";
@@ -124,17 +161,14 @@ public class MySqlConnection {
             ResultSet output = stm.executeQuery(query);
 
             while (output.next()){
-
                 String ID = output.getString("ReceiverID");
                 String NAME = output.getString("FullName");
                 String Contact = output.getString("ContactNumber");
                 String city = output.getString("City");
                 String bloodGroup = output.getString("BloodGroup");
                 List4.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
-
             }
             return List4;
-
         } catch (SQLException e) {
             System.out.println(e);
             throw new RuntimeException(e);

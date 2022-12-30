@@ -156,7 +156,6 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             throw new RuntimeException(e);
         }
     }
-
     @FXML
     public void insert(ActionEvent event) throws IOException {
         Connection conn = MySqlConnection.ConnectDB();

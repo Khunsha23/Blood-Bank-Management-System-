@@ -28,7 +28,7 @@ public class RequestTableControl implements Initializable {
     private Scene scene;
     private Parent root;
     @FXML
-    private TableView<receivers> requests;
+    private TableView<User> requests;
     @FXML
     private TableColumn<receivers, String> name;
 
@@ -46,16 +46,13 @@ public class RequestTableControl implements Initializable {
     public void switchToDashBoard(ActionEvent event) throws IOException {
 
         root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         refresh();
         stage.show();
     }
-
-    ObservableList<receivers> ListM;
-
-
+    ObservableList<User> ListM;
     @FXML
     private TextField City;
     @FXML
@@ -70,13 +67,13 @@ public class RequestTableControl implements Initializable {
 
 
     @FXML
-    public void ShowSelected(MouseEvent event) {
+    public void ShowSelected(MouseEvent event){
         ListM = requests.getSelectionModel().getSelectedItems();
 
-        if (ListM.size() == 0) {
+        if(ListM.size() == 0){
 
-        } else {
-            for (int i = 0; i < ListM.size(); i++) {
+        }else {
+            for(int i = 0; i < ListM.size(); i++){
                 rId.setText(String.valueOf(ListM.get(0).ID));
                 dName.setText(ListM.get(0).name);
                 number.setText(ListM.get(0).contactNumber);
@@ -85,16 +82,15 @@ public class RequestTableControl implements Initializable {
             }
         }
     }
-
     @FXML
-    private void delete(ActionEvent event) throws IOException {
+    private void delete(ActionEvent event) throws IOException{
 
-        Connection conn = ConnectDB();
-        try {
+        Connection conn= ConnectDB();
+        try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            String sql = "delete from requests where ReceiverID=?";
+            String sql= "delete from requests where ReceiverID=?";
             PreparedStatement preparedstatement = conn.prepareStatement(sql);
-            if (!rId.getText().equals("")) {
+            if(!rId.getText().equals("")){
                 preparedstatement.setString(1, rId.getText());
                 preparedstatement.executeUpdate();
                 loadData();
@@ -107,7 +103,6 @@ public class RequestTableControl implements Initializable {
             throw new RuntimeException(e);
         }
     }
-
     @FXML
     private void Update(ActionEvent event) throws IOException {
         Connection conn = ConnectDB();
@@ -115,7 +110,7 @@ public class RequestTableControl implements Initializable {
             Class.forName("com.mysql.cj.jdbc.Driver");
             String sql = "UPDATE requests SET ReceiverID=?,FullName=?,ContactNumber=?,City=?,BloodGroup=? WHERE requests.ReceiverID=?";
             PreparedStatement preparedstatement = conn.prepareStatement(sql);
-            if (!rId.getText().equals("")) {
+            if(!rId.getText().equals("")){
                 preparedstatement.setString(1, rId.getText());
                 preparedstatement.setString(2, dName.getText());
                 preparedstatement.setString(3, number.getText());
@@ -136,11 +131,7 @@ public class RequestTableControl implements Initializable {
             throw new RuntimeException(e);
         }
     }
-    public void refresh(){
-        ListM.clear();
-    }
-
-    public void loadData() {
+    public void loadData(){
         try {
 
             id.setCellValueFactory(new PropertyValueFactory<>("ID"));
@@ -154,13 +145,14 @@ public class RequestTableControl implements Initializable {
             System.out.println(e);
             throw new RuntimeException(e);
         }
-
     }
-
-
-    @Override
+    public void refresh(){
+        ListM.clear();
+    }
+        @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-    loadData();
-
+        loadData();
     }
+
+
 }

@@ -1,5 +1,6 @@
 package bbms.bloodbankmanagementsystem;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +16,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -22,31 +24,31 @@ public class ReceiverTableControl implements Initializable {
     private Stage stage;
     private Scene scene;
     @FXML
-    private TableView<receivers> receivers;
+    private TableView<User> receivers;
     @FXML
-    private TableColumn<donors, String> recName;
+    private TableColumn<User, String> recName;
 
     @FXML
-    private TableColumn<donors, Integer> recId;
+    private TableColumn<User, Integer> recId;
 
     @FXML
-    private TableColumn<donors, String> bloodGroup;
+    private TableColumn<User, String> bloodGroup;
 
     @FXML
-    private TableColumn<donors, String> gender_t;
+    private TableColumn<User, String> gender_t;
     @FXML
-    private TableColumn<donors, String> city_t;
+    private TableColumn<User, String> city_t;
 
     @FXML
-    private TableColumn<donors, String> Password;
+    private TableColumn<User, String> Password;
 
     @FXML
-    private TableColumn<donors, String> Email;
+    private TableColumn<User, String> Email;
     @FXML
-    private TableColumn<donors, String> Contact;
+    private TableColumn<User, String> Contact;
     @FXML
-    private TableColumn<donors, Date> Birthdate;
-    ObservableList<receivers> ListM;
+    private TableColumn<receivers, Date> Birthdate;
+    ObservableList<User> ListM;
 
 
 
@@ -65,8 +67,7 @@ public class ReceiverTableControl implements Initializable {
 
     private void ShowData() throws SQLException {
         try {
-            System.out.println("Hello");
-            recId.setCellValueFactory(new PropertyValueFactory<>("name"));
+             recId.setCellValueFactory(new PropertyValueFactory<>("name"));
             recName.setCellValueFactory(new PropertyValueFactory<>("ID"));
             bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
             gender_t.setCellValueFactory(new PropertyValueFactory<>("Gender"));
@@ -75,11 +76,21 @@ public class ReceiverTableControl implements Initializable {
             Email.setCellValueFactory(new PropertyValueFactory<>("email"));
             Contact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
             Birthdate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
-            ListM = MySqlConnection.getReceiver();
-            receivers.setItems(ListM);
-        }catch (Exception e){
+            ListM = MySqlConnection.GenericList();
+        } catch (Exception e) {
             System.out.println(e);
         }
+        ObservableList<User> users = FXCollections.observableArrayList();
+        for (User Data : ListM) {
+            if (Data instanceof receivers) {
+                users.add(Data);
+            }
+            if (Data instanceof donors) {
+                users.add(Data);
+            }
+
+        }
+        receivers.setItems(users);
 
     }
 
