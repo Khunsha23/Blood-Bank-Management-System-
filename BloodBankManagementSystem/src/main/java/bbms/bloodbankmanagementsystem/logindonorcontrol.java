@@ -224,6 +224,7 @@ public class logindonorcontrol extends signupValidations implements Validation{
     static String bg;
     ResultSet resultset;
     public static String mobileNumber;
+
     static String query = "SELECT * FROM donors Where ContactNumber =";
     public String password;
     public static String donorid;
