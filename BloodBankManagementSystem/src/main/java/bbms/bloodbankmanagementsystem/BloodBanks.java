@@ -21,7 +21,7 @@ public class BloodBanks {
     }
 
     public BloodBanks(String city, String area) {
-        City = city;
+        this.City = city;
         Area = area;
     }
 
