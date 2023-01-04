@@ -27,7 +27,7 @@ public class signupValidations {
         return b;
     }
     public static boolean passwordValidation(String contact){
-        String regexPattern = "^(?=.*[A-Za-z])(?=.*\\d).{8,}$";
+        String regexPattern = "^\\S{8,}$";
 
         boolean b = false;
         if (contact == null || contact.isEmpty()) {
