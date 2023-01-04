@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="report" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="0" uuid="e9bb1a27-f975-4aa4-98f9-75524c5daafa">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="bloodbank1"/>
+	<style name="Title" fontName="Arial" fontSize="26" isBold="true"/>
+	<style name="SubTitle" forecolor="#666666" fontName="Arial" fontSize="18"/>
+	<style name="Column header" forecolor="#FFFFFF" fontName="Arial" fontSize="12" isBold="true"/>
+	<style name="Detail" fontName="Arial" fontSize="12"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM bloodbank.donations]]>
+	</queryString>
+	<field name="DonorId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DonorId"/>
+		<property name="com.jaspersoft.studio.field.label" value="DonorId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<field name="DonorName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="DonorName"/>
+		<property name="com.jaspersoft.studio.field.label" value="DonorName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<field name="BloodGroup" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="BloodGroup"/>
+		<property name="com.jaspersoft.studio.field.label" value="BloodGroup"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<field name="ReceiverId" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ReceiverId"/>
+		<property name="com.jaspersoft.studio.field.label" value="ReceiverId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<field name="ReceiverName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="ReceiverName"/>
+		<property name="com.jaspersoft.studio.field.label" value="ReceiverName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<field name="Amount" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="Amount"/>
+		<property name="com.jaspersoft.studio.field.label" value="Amount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="donations"/>
+	</field>
+	<background>
+		<band height="822" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-20" y="722" width="105" height="100" forecolor="#666666" backcolor="#666666" uuid="58048a65-569d-454e-b6dd-f3bb46c94ee3"/>
+				<box>
+					<pen lineWidth="0.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textField isBlankWhenNull="true">
+					<reportElement style="Column header" x="0" y="0" width="104" height="73" forecolor="#000000" uuid="0f40ce36-78f2-49e5-adf5-8855d6516e74"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="58" isBold="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="0" y="77" width="104" height="20" forecolor="#000000" uuid="e06a687c-0f3f-4451-a45e-f88c505ba589"/>
+					<box leftPadding="4" rightPadding="4"/>
+					<textElement textAlignment="Center">
+						<font size="16" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<line>
+					<reportElement mode="Transparent" x="42" y="73" width="20" height="1" uuid="ab96a4b0-8a0d-4ae2-8695-16868926ec2b"/>
+				</line>
+			</frame>
+		</band>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="97" y="5" width="458" height="20" backcolor="#666666" uuid="eb0fefed-b830-492b-a0c9-ec23411537a7"/>
+				<staticText>
+					<reportElement style="Column header" x="0" y="0" width="76" height="15" uuid="a3554441-c6b5-4486-8767-e0cdb4059981">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20df7209-2ab6-46a2-b6fa-dd165bcb82b5"/>
+					</reportElement>
+					<text><![CDATA[DonorId]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="76" y="0" width="76" height="15" uuid="754d0a65-b02e-4e89-bf20-2db160841310">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ec30ba6-268d-4cb3-b193-39215888808f"/>
+					</reportElement>
+					<text><![CDATA[DonorName]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="152" y="0" width="76" height="15" uuid="6800728c-00b6-451c-8ced-b6c09f895388">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55affd86-fea5-4c26-a394-cc580ad49001"/>
+					</reportElement>
+					<text><![CDATA[BloodGroup]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="228" y="0" width="76" height="15" uuid="0046caf8-ebc2-4772-8637-6ccfc93a2ad8">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="697b412e-cc20-4058-827a-3039926a2f35"/>
+					</reportElement>
+					<text><![CDATA[ReceiverId]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="304" y="0" width="76" height="15" uuid="9b8c8b1d-5ce3-4eb3-82da-f274ac5e04ac">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33eebc77-d23f-402f-86ee-ec04661f6615"/>
+					</reportElement>
+					<text><![CDATA[ReceiverName]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="Column header" x="380" y="0" width="76" height="15" uuid="2cd9194c-5332-4c0b-9154-3427c8c907a6">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="927f4061-9db1-45ef-aa6a-8fb8a112f2de"/>
+					</reportElement>
+					<text><![CDATA[Amount]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="17" splitType="Stretch">
+			<frame>
+				<reportElement x="97" y="1" width="458" height="15" uuid="5d75be3e-ea39-4b96-baf8-b49497315044"/>
+				<textField>
+					<reportElement style="Detail" x="0" y="0" width="76" height="15" uuid="b10a4e6f-141b-4bfe-b4b2-c706f7713bea">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="20df7209-2ab6-46a2-b6fa-dd165bcb82b5"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{DonorId}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="76" y="0" width="76" height="15" uuid="2e7b331a-c637-44bd-b5b0-5e351f228fcb">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0ec30ba6-268d-4cb3-b193-39215888808f"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{DonorName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="152" y="0" width="76" height="15" uuid="2ec4b74e-3399-40f5-a8e2-df116ddc18a3">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="55affd86-fea5-4c26-a394-cc580ad49001"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{BloodGroup}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="228" y="0" width="76" height="15" uuid="d739eb5d-6855-4ab7-bfc4-a3e7d7efb365">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="697b412e-cc20-4058-827a-3039926a2f35"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{ReceiverId}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="304" y="0" width="76" height="15" uuid="505093fd-8fa9-4d33-b961-f754e2409df4">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="33eebc77-d23f-402f-86ee-ec04661f6615"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{ReceiverName}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="380" y="0" width="76" height="15" uuid="ada5a5ae-2472-400f-b493-7bb6c742bd5b">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="927f4061-9db1-45ef-aa6a-8fb8a112f2de"/>
+					</reportElement>
+					<textFieldExpression><![CDATA[$F{Amount}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="97" y="16" width="458" height="1" uuid="2b97af27-2a1e-491f-a0f4-b2549a3510ee"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="100" splitType="Stretch">
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement style="Column header" x="424" y="0" width="131" height="20" forecolor="#000000" uuid="f8570c2f-4404-4725-885a-4eb3c26abb4a"/>
+				<textElement textAlignment="Right">
+					<font size="12" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement style="Column header" x="96" y="0" width="267" height="20" forecolor="#000000" uuid="fce324aa-31f5-453a-a957-28bc6f740c75"/>
+				<textElement>
+					<font size="12" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Waves Title Report]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
