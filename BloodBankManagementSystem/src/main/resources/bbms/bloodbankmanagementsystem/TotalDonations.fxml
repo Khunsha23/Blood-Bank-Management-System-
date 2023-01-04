@@ -9,7 +9,7 @@
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <center>
-                <TableView fx:id="donations" onMouseClicked="#ShowSelected" prefHeight="363.0" prefWidth="600.0" styleClass="background" BorderPane.alignment="CENTER">
+                <TableView fx:id="donations" onMouseClicked="#ShowSelected" prefHeight="363.0" prefWidth="600.0" stylesheets="@TablesStyle.css" BorderPane.alignment="CENTER">
                     <columns>
                         <TableColumn fx:id="donorId" prefWidth="75.0" text="Donor Id" />
                         <TableColumn fx:id="donorName" prefWidth="75.0" text="Donor Name" />
@@ -49,7 +49,7 @@
                 </AnchorPane>
             </top>
          <left>
-            <AnchorPane prefHeight="361.0" prefWidth="266.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="361.0" prefWidth="261.0" BorderPane.alignment="CENTER">
                <children>
                   <VBox layoutX="13.0" layoutY="23.0" prefHeight="337.0" prefWidth="179.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="23.0">
                      <children>

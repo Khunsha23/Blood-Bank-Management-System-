@@ -36,22 +36,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
     @FXML
     private TextField amount;
     @FXML
-    private ResourceBundle resources;
-
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button Add_Button_Receiver;
-
-    @FXML
-    private Button Delete_button_Receiver;
-
-    @FXML
     public TableView<donations> donations;
-
-    @FXML
-    private Button Update_Button_Receiver;
 
     @FXML
     private TableColumn<donations, String> donorName;
@@ -72,11 +57,6 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
 
     @FXML
     ObservableList<donations> ListM;
-
-    @FXML
-    ResultSet rs = null;
-    @FXML
-    PreparedStatement pst = null;
 
     private Stage stage;
     private Scene scene;
@@ -158,6 +138,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
     }
     @FXML
     public void insert(ActionEvent event) throws IOException {
+
         Connection conn = MySqlConnection.ConnectDB();
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
@@ -173,11 +154,12 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             loadData();
             refreshTable();
             loadData();
-            System.out.println();
         } catch (SQLException | ClassNotFoundException e) {
             System.out.println(e);
             throw new RuntimeException(e);
+
         }
+        minusStock(bGroup.getText(),amount.getText());
     }
     public void loadData(){
         donorId.setCellValueFactory(new PropertyValueFactory<>("DonorId"));

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.forgotpass">
+   <top>
+      <AnchorPane prefHeight="41.0" prefWidth="600.0" styleClass="top" stylesheets="@SignupPage.css" BorderPane.alignment="CENTER">
+         <children>
+             <Button id="buttonLogout" layoutX="553.0" layoutY="2.0" mnemonicParsing="false" onAction="#switchtohome" style="-fx-background-color: non;" AnchorPane.bottomAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="2.0">
+                 <graphic>
+                     <ImageView id="logout" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
+                         <image>
+                             <Image url="@../../Images/icons8-logout-64.png" />
+                         </image>
+                     </ImageView>
+                 </graphic>
+             </Button>
+             <ImageView fitHeight="50.0" fitWidth="151.0" layoutX="4.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="1.25" AnchorPane.leftAnchor="4.0" AnchorPane.topAnchor="1.5">
+               <image>
+                  <Image url="@../../Images/LogoWhiteColor.png" />
+               </image>
+               <effect>
+                       <DropShadow spread="0.46" />
+               </effect>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@SignupPage.css" BorderPane.alignment="CENTER">
+         <children>
+            <HBox alignment="CENTER" layoutX="132.0" layoutY="74.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="132.0" AnchorPane.rightAnchor="132.0" AnchorPane.topAnchor="74.0">
+               <children>
+                  <Pane prefHeight="254.0" prefWidth="38.0" />
+                  <AnchorPane maxHeight="450.0" maxWidth="550.0" prefHeight="254.0" prefWidth="280.0" style="-fx-background-color: White; -fx-background-radius: 10px;" HBox.hgrow="ALWAYS">
+                     <children>
+                        <VBox maxHeight="450.0" maxWidth="550.0" prefHeight="254.0" prefWidth="280.0" style="-fx-background-color: White; -fx-background-radius: 10px;" AnchorPane.bottomAnchor="22.22" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="16.2" AnchorPane.topAnchor="37.0">
+                           <children>
+                              <Pane VBox.vgrow="ALWAYS" />
+                              <HBox alignment="BOTTOM_RIGHT" prefHeight="7.0" prefWidth="242.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="numErr" alignment="BOTTOM_RIGHT" prefHeight="17.0" prefWidth="206.0" textFill="RED" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox fillHeight="false" prefHeight="37.0" prefWidth="200.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Pane prefHeight="38.0" prefWidth="7.0" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="contact1" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Phone number" styleClass="TextField1" stylesheets="@SignupPage.css" />
+                                    <Pane prefHeight="38.0" prefWidth="5.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="BOTTOM_RIGHT" prefHeight="5.0" prefWidth="242.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Pane HBox.hgrow="ALWAYS" />
+                                    <Label fx:id="Passserr" alignment="BOTTOM_RIGHT" prefHeight="17.0" prefWidth="206.0" textFill="#ee0000" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font size="10.0" />
+                                       </font>
+                                    </Label>
+                                    <Pane minWidth="15.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="49.0" prefWidth="242.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Pane prefHeight="38.0" prefWidth="12.0" HBox.hgrow="ALWAYS" />
+                                    <TextField fx:id="fp1" maxHeight="30.0" maxWidth="260.0" prefHeight="26.0" prefWidth="227.0" promptText="Enter Password" styleClass="TextField1" stylesheets="@SignupPage.css" />
+                                    <Pane prefHeight="38.0" prefWidth="12.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="25.0" prefWidth="242.0" VBox.vgrow="ALWAYS">
+                                 <children>
+                                    <Pane prefHeight="28.0" prefWidth="63.0" HBox.hgrow="ALWAYS" />
+                                    <Button mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="89.0" style="-fx-background-color: BLACK; -fx-font-size: 15px;" text="CHANGE" textFill="WHITE" HBox.hgrow="ALWAYS">
+                                       <font>
+                                          <Font name="System Bold" size="12.0" />
+                                       </font>
+                                    </Button>
+                                    <Pane prefHeight="33.0" prefWidth="76.0" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <Pane prefHeight="19.0" prefWidth="242.0" VBox.vgrow="ALWAYS" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                  <Pane prefHeight="254.0" prefWidth="38.0" />
+               </children>
+            </HBox>
+            <HBox layoutX="175.99999999999997" layoutY="33.0" prefHeight="31.0" prefWidth="242.0" AnchorPane.leftAnchor="175.99999999999997" AnchorPane.rightAnchor="181.60000000000002">
+               <children>
+                  <Pane prefHeight="31.0" prefWidth="45.0" HBox.hgrow="ALWAYS" />
+                   <Label alignment="CENTER" contentDisplay="CENTER" layoutX="32.0" layoutY="15.0" maxHeight="100.0" maxWidth="250.0" prefHeight="31.0" prefWidth="218.0" style="-fx-background-color: BLack; -fx-font-size: 15px;" text="Forgot Your Login password?" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="34.0" AnchorPane.rightAnchor="23.0" HBox.hgrow="ALWAYS">
+                       <effect>
+                           <DropShadow />
+                       </effect>
+                   </Label>
+                  <Pane prefHeight="254.0" prefWidth="38.0" HBox.hgrow="ALWAYS" />
+               </children>
+            </HBox>
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="31.0" prefWidth="45.0" />
+            <Pane layoutX="10.0" layoutY="10.0" prefHeight="254.0" prefWidth="38.0" />
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

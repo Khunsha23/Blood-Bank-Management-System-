@@ -57,6 +57,14 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
         }
                conn.close();
     }
+    @FXML
+    void switchToLocations(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("LocationsForUsers.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
 
     public void switchToStartPage(ActionEvent event) throws IOException {

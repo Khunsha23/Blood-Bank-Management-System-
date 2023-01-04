@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.*?>
 <?import java.lang.*?>
+<?import java.net.*?>
 <?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.*?>
@@ -43,7 +44,7 @@
       <AnchorPane style="-fx-background-color: #2A3158;" BorderPane.alignment="CENTER" />
    </right>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" stylesheets="@SignupPage.css" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
          <children>
             <HBox alignment="CENTER" layoutX="9.0" layoutY="26.0" spacing="20.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
                <children>
@@ -110,10 +111,13 @@
                                           <Image url="@../../Images/icons8-place-marker-96.png" />
                                        </image>
                                     </ImageView>
-                                    <ComboBox fx:id="citybox" onMouseClicked="#ShowCities" prefHeight="26.0" prefWidth="191.0" promptText="City" styleClass="TextField1">
+                                    <ComboBox fx:id="citybox" maxHeight="30.0" maxWidth="260.0" onMouseClicked="#ShowCities" prefHeight="26.0" prefWidth="227.0" promptText="City" styleClass="TextField1">
                                     <effect>
                                        <DropShadow height="5.0" offsetX="2.0" offsetY="2.0" radius="3.25" width="10.0" />
                                     </effect>
+                                       <HBox.margin>
+                                          <Insets right="5.0" />
+                                       </HBox.margin>
                                     </ComboBox>
 
                                  </children>
@@ -173,27 +177,27 @@
                               <InnerShadow />
                            </effect>
                         </Label>
-                        <Label fx:id="errormsgNm" layoutX="203.0" layoutY="52.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="errormsgNm" alignment="CENTER" layoutX="203.0" layoutY="52.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="EmailErr" layoutX="202.0" layoutY="96.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="EmailErr" layoutX="202.0" layoutY="96.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="numErr" layoutX="184.0" layoutY="140.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="numErr" layoutX="184.0" layoutY="140.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="cityErr" layoutX="185.0" layoutY="182.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="cityErr" layoutX="185.0" layoutY="182.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="BloodErr" layoutX="185.0" layoutY="224.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="BloodErr" layoutX="185.0" layoutY="224.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -301,22 +305,22 @@
                               <DropShadow />
                            </effect>
                         </Label>
-                        <Label fx:id="RePassErr" layoutX="193.0" layoutY="172.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="RePassErr" layoutX="193.0" layoutY="172.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="BirthdayErr" layoutX="193.0" layoutY="88.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="BirthdayErr" layoutX="193.0" layoutY="88.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="CrePassErr" layoutX="194.0" layoutY="130.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="CrePassErr" layoutX="194.0" layoutY="130.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="GenderErr" layoutX="195.0" layoutY="53.0" textFill="#fc0000" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="GenderErr" layoutX="195.0" layoutY="53.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -329,6 +333,10 @@
                   <Pane layoutX="10.0" layoutY="10.0" prefHeight="295.0" prefWidth="62.0" />
                </children>
             </HBox>
-         </children></AnchorPane>
+         </children>
+         <stylesheets>
+            <URL value="@SignupPage.css" />
+            <URL value="@startpage.css" />
+         </stylesheets></AnchorPane>
    </center>
 </BorderPane>

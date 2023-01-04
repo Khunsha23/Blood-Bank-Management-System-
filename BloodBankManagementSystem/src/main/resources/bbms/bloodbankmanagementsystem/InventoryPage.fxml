@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.AdminInventoryControl">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@SignupPage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.inventorycontrol">
    <children>
       <BorderPane prefHeight="403.0" prefWidth="784.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
          <top>
@@ -37,7 +40,7 @@
                      <children>
                         <AnchorPane prefHeight="101.0" prefWidth="99.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Apos" alignment="CENTER" layoutX="-1.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Apos" alignment="CENTER" layoutX="-1.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="-1.0" AnchorPane.rightAnchor="1.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -55,7 +58,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="105.0" prefWidth="92.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Aneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Aneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -73,7 +76,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="114.0" prefWidth="96.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Bneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Bneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -91,7 +94,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="112.0" prefWidth="70.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="ABpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="ABpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -109,7 +112,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="113.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="ABneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="ABneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -127,7 +130,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="110.0" prefWidth="73.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Bpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Bpos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -145,7 +148,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="109.0" prefWidth="78.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Oneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Oneg" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -163,7 +166,7 @@
                         </AnchorPane>
                         <AnchorPane prefHeight="105.0" prefWidth="97.0" style="-fx-background-radius: 5px; -fx-border-radius: 5px; -fx-background-color: White;">
                            <children>
-                              <Label fx:id="Opos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                              <Label fx:id="Opos" alignment="CENTER" layoutX="44.0" layoutY="49.0" prefHeight="52.0" prefWidth="104.0" text="0" textFill="#13679a" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                  <font>
                                     <Font size="25.0" />
                                  </font>
@@ -201,112 +204,49 @@
             </AnchorPane>
          </center>
          <left>
-            <AnchorPane prefHeight="352.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="352.0" prefWidth="203.0" BorderPane.alignment="CENTER">
                <children>
-                  <VBox layoutY="3.0" prefHeight="347.0" prefWidth="185.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="3.0">
+                  <VBox layoutY="3.0" prefHeight="347.0" prefWidth="186.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="3.0">
                      <children>
-                        <Pane prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox prefHeight="25.0" prefWidth="152.0" VBox.vgrow="ALWAYS">
+                        <Pane prefHeight="0.0" prefWidth="205.0" VBox.vgrow="ALWAYS" />
+                        <HBox prefHeight="0.0" prefWidth="185.0" VBox.vgrow="ALWAYS">
                            <children>
-                              <Pane prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="32.0" text="A+" />
-                              <Pane layoutX="145.0" layoutY="10.0" prefHeight="25.0" prefWidth="15.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="108.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
+                              <Pane prefHeight="103.0" prefWidth="29.0" HBox.hgrow="ALWAYS" />
+                              <ComboBox fx:id="BloodGroups1" prefHeight="25.0" prefWidth="142.0" promptText="BLOOD GROUP" style="-fx-background-color: WHITE; -fx-background-radius: 5;">
+                                 <items>
+                                 <FXCollections fx:factory="observableArrayList">
+                                    <String fx:value="A+" />
+                                    <String fx:value="A-" />
+                                    <String fx:value="B+" />
+                                    <String fx:value="B-" />
+                                    <String fx:value="AB+" />
+                                    <String fx:value="AB-" />
+                                    <String fx:value="O+" />
+                                    <String fx:value="O-" />
+                                 </FXCollections>
+                                 </items>
+                              </ComboBox>
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="103.0" prefWidth="30.0" />
+                              <TextField fx:id="amount" prefHeight="25.0" prefWidth="51.0" style="-fx-background-color: WHITE; -fx-background-radius: 5;" />
+                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="103.0" prefWidth="30.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
-                        <Pane layoutX="10.0" layoutY="325.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
+                        <Pane layoutX="10.0" layoutY="341.0" prefHeight="16.0" prefWidth="200.0" />
+                        <HBox prefHeight="117.0" prefWidth="185.0">
                            <children>
-                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="28.0" text="A-" />
-                              <Pane layoutX="144.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="107.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="267.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="28.0" text="B+" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="108.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="127.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="26.0" text="B-" />
-                              <Pane layoutX="143.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="101.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="178.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="32.0" text="O+" />
-                              <Pane layoutX="149.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="105.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="127.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="30.0" text="O-" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="104.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="19.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="229.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox prefHeight="25.0" prefWidth="179.0">
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="39.0" text="AB+" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="109.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane prefHeight="15.0" prefWidth="175.0" VBox.vgrow="ALWAYS" />
-                        <HBox layoutX="10.0" layoutY="315.0" prefHeight="25.0" prefWidth="179.0">
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <Label prefHeight="17.0" prefWidth="34.0" text="AB-" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                              <TextField prefHeight="25.0" prefWidth="108.0" />
-                              <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="22.0" HBox.hgrow="ALWAYS" />
-                           </children>
-                        </HBox>
-                        <Pane layoutX="10.0" layoutY="299.0" prefHeight="16.0" prefWidth="200.0" VBox.vgrow="ALWAYS" />
-                        <HBox>
-                           <children>
-                              <Pane prefHeight="0.0" prefWidth="30.0" />
-                              <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="75.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="INSERT">
+                              <Pane layoutX="83.0" layoutY="10.0" prefHeight="117.0" HBox.hgrow="ALWAYS" />
+                              <JFXButton buttonType="RAISED" focusTraversable="false" maxHeight="52.0" maxWidth="146.0" minHeight="49.0" minWidth="48.0" onAction="#addstock" prefHeight="52.0" prefWidth="96.0" ripplerFill="WHITE" style="-fx-background-radius: 50px;" styleClass="button1" stylesheets="@startpage.css" text="Add">
+                                 <effect>
+                                    <DropShadow height="8.75" offsetX="2.0" offsetY="2.0" radius="4.1875" spread="0.1" width="10.0" />
+                                 </effect>
                                  <font>
-                                    <Font name="System Bold" size="10.0" />
+                                    <Font name="System Bold" size="15.0" />
                                  </font>
-                              </Button>
-                              <Pane layoutX="83.0" layoutY="10.0" prefHeight="0.0" prefWidth="30.0" />
-                              <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="63.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="ADD">
-                                 <font>
-                                    <Font name="System Bold" size="10.0" />
-                                 </font>
-                              </Button>
-                              <Pane prefHeight="0.0" prefWidth="30.0" />
-                              <Button layoutX="62.0" layoutY="10.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="77.0" style="-fx-background-color: white; -fx-background-radius: 5;" text="DELETE">
-                                 <font>
-                                    <Font name="System Bold" size="10.0" />
-                                 </font>
-                              </Button>
-                              <Pane layoutX="90.0" layoutY="10.0" prefHeight="0.0" prefWidth="30.0" />
+                                 <HBox.margin>
+                                    <Insets left="5.0" right="5.0" />
+                                 </HBox.margin>
+                              </JFXButton>
+                              <Pane layoutX="90.0" layoutY="10.0" prefHeight="117.0" prefWidth="10.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
                         <Pane layoutX="10.0" layoutY="10.0" prefHeight="16.0" prefWidth="200.0" />

@@ -56,7 +56,7 @@ public class logindonorcontrol extends signupValidations implements Validation{
     static String nameDonor;
     @FXML
     private PasswordField passwordField;
-   public ObservableList<String> list3 = FXCollections.observableArrayList("Lahore","Karachi","Islamabad");
+    public ObservableList<String> list3 = FXCollections.observableArrayList("Lahore","Karachi","Islamabad");
     @FXML
     private ComboBox<String> citybox;
     @FXML
@@ -205,6 +205,13 @@ public class logindonorcontrol extends signupValidations implements Validation{
 
     public void switchToStartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToForgetPassword(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("forgotpass.fxml"));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

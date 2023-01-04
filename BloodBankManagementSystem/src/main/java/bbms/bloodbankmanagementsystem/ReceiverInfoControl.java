@@ -7,15 +7,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class ReceiverInfoControl extends loginreceivercontrol implements Initializable {
@@ -23,26 +22,23 @@ public class ReceiverInfoControl extends loginreceivercontrol implements Initial
     private Label request;
     @FXML
     private Label BloodGroup;
+static String BG;
+    @FXML
+    private Label ContactNum;
+static String Number;
+    @FXML
+    private Label DateOfBirth;
+static java.sql.Date Date;
+    @FXML
+    private Label Emailaddress;
+static String email;
+    @FXML
+    private Label NameReceiver;
+    static String Name;
 
     @FXML
-    private Label Contact;
-
-    @FXML
-    private Label ReceiverId;
-
-    @FXML
-    private Label dob;
-
-    @FXML
-    private Label eligibility;
-
-    @FXML
-    private Label email;
-
-    @FXML
-    private Label receiverName;
-
-
+    private Label ReceiverID;
+    static String ID;
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -55,6 +51,7 @@ public class ReceiverInfoControl extends loginreceivercontrol implements Initial
         stage.setScene(scene);
         stage.show();
     }
+
     public void requestbutton(ActionEvent event){
         request.setText("Your request has been received!");
 
@@ -102,17 +99,17 @@ public class ReceiverInfoControl extends loginreceivercontrol implements Initial
 
             }
             if(!(a.equals("0"))){
-                root = FXMLLoader.load(getClass().getResource("BankLocations.fxml"));
+                root = FXMLLoader.load(getClass().getResource("LocationsForUsers.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
                 stage.show();
 
             }
-
-
-
         } catch (SQLException ex) {
+            System.out.println(ex);
+            Alert pending = new Alert(Alert.AlertType.INFORMATION,"You already have a pending request!", ButtonType.OK);
+            pending.showAndWait();
             throw new RuntimeException(ex);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
@@ -124,25 +121,44 @@ public class ReceiverInfoControl extends loginreceivercontrol implements Initial
 
         try {
             conn.createStatement().execute("SELECT * FROM receivers WHERE ContactNumber ="+contact);
-            ReceiverId.setText(receiverID);
-            Contact.setText(contact);
-            dob.setText(String.valueOf(loginreceivercontrol.dob));
-            email.setText(loginreceivercontrol.email);
+            ReceiverID.setText(receiverID);
+            ContactNum.setText(contact);
+            DateOfBirth.setText(String.valueOf(dob));
+            Emailaddress.setText(email);
             BloodGroup.setText(bg);
-            receiverName.setText(nameDonor);
-            eligibility.setText("You can visit anytime");
+            NameReceiver.setText(nameDonor);
         }catch (Exception e){
             System.out.println(e);
         }
         conn.close();
     }
+    public static void Information(String number){
+
+        Connection conn = MySqlConnection.ConnectDB();
+        String query = "SELECT * FROM receivers Where ContactNumber =";
+        try {
+            PreparedStatement preparedstatement = conn.prepareStatement(query + number);
+            resultset = preparedstatement.executeQuery(query + number);
+            while (resultset.next()){
+                contact = resultset.getString("ContactNumber");
+                password = resultset.getString("Password");
+                bg = resultset.getString("BloodGroup");
+                dob = resultset.getDate("birthday");
+                email = resultset.getString("EmailAddress");
+                nameDonor = resultset.getString(2);
+                receiverID = resultset.getString(1);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+    }
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
         try {
             ShowData();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
+
 }

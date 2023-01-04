@@ -71,13 +71,20 @@
                               <DropShadow height="10.0" offsetX="4.0" offsetY="4.0" radius="4.5" width="10.0" />
                            </effect>
                         </Button>
-                        <Label layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
+                        <Label layoutX="249.0" layoutY="149.0" textFill="#173dfc" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="150.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#switchToForgetPassword" prefHeight="23.0" prefWidth="102.0" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Forgot Password?">
+                                 <font>
+                                    <Font size="9.0" />
+                                 </font>
+                              </Button>
+                           </graphic>
                         </Label>
                         <Label layoutX="61.0" layoutY="230.0" onMouseClicked="#switchToDonorSignup" text="Don't have an account?" textFill="#08080a">
                            <cursor>
@@ -88,7 +95,10 @@
                            <font>
                               <Font size="10.0" />
                            </font></Label>
-                        <JFXButton fx:id="SignUpBtn" buttonType="RAISED" layoutX="210.0" layoutY="226.0" onAction="#switchToDonorSignup" prefHeight="25.0" prefWidth="61.0" ripplerFill="#1e0303" styleClass="button1" text="Sign Up" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="108.0" />
+                        <JFXButton fx:id="SignUpBtn" buttonType="RAISED" layoutX="210.0" layoutY="226.0" onAction="#switchToDonorSignup" prefHeight="25.0" prefWidth="61.0" ripplerFill="#1e0303" styleClass="button1" text="Sign Up" AnchorPane.leftAnchor="210.0" AnchorPane.rightAnchor="108.0">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></JFXButton>
                      </children>
                      <VBox.margin>
                         <Insets top="20.0" />

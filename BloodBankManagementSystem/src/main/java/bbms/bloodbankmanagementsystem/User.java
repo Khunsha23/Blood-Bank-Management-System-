@@ -20,6 +20,7 @@ public class User {
 
     }
 
+
     public User(int id, String fullName, String contactNumber, String bloodGroup, String city) {
         this.ID = id;
         this.name = fullName;

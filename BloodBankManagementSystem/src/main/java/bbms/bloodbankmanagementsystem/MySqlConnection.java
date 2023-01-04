@@ -2,9 +2,11 @@ package bbms.bloodbankmanagementsystem;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.Label;
 
 import javax.swing.*;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class MySqlConnection {
@@ -22,6 +24,62 @@ public class MySqlConnection {
         }
     }
     static ObservableList<donors> List = FXCollections.observableArrayList();
+    static String queryReceivers = "SELECT * FROM receivers Where ContactNumber =";
+    public static void showReceivers(Label Name ,String NameRe,
+                                     Label Contact , String Contact1,
+                                     Label dob, Date DoB,
+                                     Label email , String Email,
+                                     Label BloodGroup  , String BG){
+        try {
+            Name.setText(NameRe);
+            Contact.setText(Contact1);
+            dob.setText(String.valueOf(DoB));
+            email.setText(Email);
+            BloodGroup.setText(BG);
+            Name.setText(NameRe);
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+    }
+    public void minusStock(String BloodGroup,String Amount){
+        Connection conn = MySqlConnection.ConnectDB();
+        int amount_donations = Integer.parseInt(Amount);
+        int amount_inventory = 0;
+        try {
+            String sql="SELECT Amount FROM inventory WHERE BloodGroup = '" +BloodGroup+"'";
+            PreparedStatement stm1 = conn.prepareStatement(sql);
+            ResultSet output2= stm1.executeQuery();
+            while (output2.next()){
+                amount_inventory= Integer.parseInt(output2.getString("Amount"));
+            }
+            String sql2="UPDATE inventory SET Amount=? WHERE BloodGroup= '"+BloodGroup+"'";
+            PreparedStatement stm2= conn.prepareStatement(sql2);
+            String UpdateAmount= String.valueOf(amount_inventory - amount_donations);
+                stm2.setString(1,UpdateAmount);
+                stm2.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }}
+    public static void InsertReceiver( String FullName, String ContactNumber ,
+                                       String  EmailAddress , String BloodGroup,
+                                       String Password ,String City , String Gender,
+                                       Date DoB) throws SQLException {
+        Connection conn = ConnectDB();
+        String sql = "INSERT INTO receivers(FullName,ContactNumber,EmailAddress,BloodGroup,City,Gender,birthday,Password)VALUES(?,?,?,?,?,?,?,?)";
+        PreparedStatement preparedstatement = conn.prepareStatement(sql);
+        preparedstatement.setString(1, FullName);
+        preparedstatement.setString(2, ContactNumber);
+        preparedstatement.setString(3, EmailAddress);
+        preparedstatement.setString(4, BloodGroup);
+        preparedstatement.setString(5, City);
+        preparedstatement.setString(6, Gender);
+        preparedstatement.setString(7, String.valueOf(DoB));
+        preparedstatement.setString(8, Password);
+        preparedstatement.executeUpdate();
+
+    }
 
     public static ObservableList<donors> getList() {
         Connection connect= ConnectDB();
@@ -32,7 +90,6 @@ public class MySqlConnection {
             ResultSet output = stm.executeQuery(query);
 
             while (output.next()){
-
                 String ID = output.getString("IdNumber");
                 String NAME = output.getString("FullName");
                 String Contact = output.getString("ContactNumber");
@@ -42,22 +99,31 @@ public class MySqlConnection {
                 String city = output.getString("City");
                 String gender = output.getString("Gender");
                 Date birthDate = output.getDate("birthday");
-
-
                 List.add(new donors(Integer.parseInt(ID),NAME,email,password,Contact,bloodGroup,city,gender,birthDate));
-
             }
             return List;
-
     } catch (SQLException e) {
             System.out.println(e);
             throw new RuntimeException(e);
         }
-
+    }
+    public static ObservableList<BloodBanks> BloodBanks(){
+        ObservableList<BloodBanks> Lt = FXCollections.observableArrayList();
+        try{
+            Connection conn = ConnectDB();
+            String sql = "SELECT * FROM bloodcamps";
+            PreparedStatement preparedstatement = conn.prepareStatement(sql);
+            ResultSet output = preparedstatement.executeQuery();
+            while (output.next()){
+                Lt.add(new BloodBanks(output.getString(1),output.getString(2)));
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    return Lt;
     }
     static String donorID;
     static ObservableList<donations> List2 = FXCollections.observableArrayList();
-
        public static ObservableList<donations> loadDatabase(){
         Connection connect= MySqlConnection.ConnectDB();
         String query ;
@@ -65,9 +131,7 @@ public class MySqlConnection {
             try{
                 PreparedStatement stm = connect.prepareStatement(query);
                 ResultSet output = stm.executeQuery(query);
-
                 while (output.next()){
-
                     donorID = output.getString(1);
                     String donorNAME = output.getString("DonorName");
                     String BloodGroup = output.getString("BloodGroup");
@@ -149,9 +213,6 @@ public class MySqlConnection {
         }
         return List4;
     }
-
-
-
     public static ObservableList<User> getRequest() {
         Connection connect= ConnectDB();
         String query;
@@ -173,10 +234,26 @@ public class MySqlConnection {
             System.out.println(e);
             throw new RuntimeException(e);
         }
+    }
+    public static ArrayList<Stock>getStock(){
 
+        ArrayList<Stock> stockList = new ArrayList<>();
+        Connection connection = ConnectDB();
+        String query = "SELECT * FROM inventory";
+        try{
+            PreparedStatement stm = connection.prepareStatement(query);
+            ResultSet output = stm.executeQuery(query);
+
+            while (output.next()){
+                String BG = output.getString("BloodGroup");
+                String Amount = output.getString("Amount");
+                stockList.add(new Stock(Integer.parseInt(Amount),BG));
+            }
+
+            return stockList;
+                } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-
-
 }
-

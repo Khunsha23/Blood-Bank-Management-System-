@@ -70,15 +70,22 @@
                               <DropShadow height="10.0" offsetX="4.0" offsetY="4.0" radius="4.5" width="10.0" />
                            </effect>
                         </Button>
-                        <Label layoutX="268.0" layoutY="161.0" text="Forgot Password?" textFill="#173dfc">
+                        <Label layoutX="252.0" layoutY="150.0" textFill="#173dfc" AnchorPane.rightAnchor="34.0" AnchorPane.topAnchor="150.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
+                           <graphic>
+                              <Button mnemonicParsing="false" onAction="#switchToForgetPassword" style="-fx-background-color: transparent; -fx-text-fill: blue;" text="Forgot Password?">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Button>
+                           </graphic>
                         </Label>
-                        <Label layoutX="61.0" layoutY="230.0" onMouseClicked="#switchToDonorSignup" text="Don't have an account?" textFill="#08080a">
+                        <Label layoutX="61.0" layoutY="230.0" text="Don't have an account?" textFill="#08080a">
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor>
