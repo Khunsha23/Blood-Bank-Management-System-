@@ -10,6 +10,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -52,81 +53,86 @@ public class BankLocationControl implements Initializable {
     private TextField City;
     @FXML
     private TextField Area;
+    @FXML
+    private Label Error;
     public void AddLocation(ActionEvent event) throws SQLException {
         String c= City.getText();
         String a= Area.getText();
         Connection conn = MySqlConnection.ConnectDB();
-        if(c.equals("Lahore")){
-            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
-        }
-        else if(c.equals("Karachi")){
-            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
+        if(c.equals("Lahore")||c.equals("Karachi")||c.equals("Islamabad")) {
+            if (c.equals("Lahore")) {
+                String query = "INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
+            } else if (c.equals("Karachi")) {
+                String query = "INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
 
-        }
-        else if(c.equals("Islamabad")){
-            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
+            } else if (c.equals("Islamabad")) {
+                String query = "INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
 
+            }
+        }
+        else if(!(c.equals("Lahore")||c.equals("Karachi")||c.equals("Islamabad"))){
+            Error.setText("Invalid City");
         }
     }
     public void DeleteLocation(ActionEvent event) throws SQLException {
         String c= City.getText();
         String a= Area.getText();
         Connection conn = MySqlConnection.ConnectDB();
-        if(c.equals("Lahore")){
-            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
-        }
-        else if(c.equals("Karachi")){
-            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
+            if (c.equals("Lahore")) {
+                String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
+            } else if (c.equals("Karachi")) {
+                String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
 
-        }
-        else if(c.equals("Islamabad")){
-            System.out.println("h");
-            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
-            PreparedStatement stm= conn.prepareStatement(query);
-            stm.setString(1,c);
-            stm.setString(2,a);
-            stm.executeUpdate();
-            loadData();
-            refresh();
-            loadData();
+            } else if (c.equals("Islamabad")) {
+                System.out.println("h");
+                String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
+                PreparedStatement stm = conn.prepareStatement(query);
+                stm.setString(1, c);
+                stm.setString(2, a);
+                stm.executeUpdate();
+                loadData();
+                refresh();
+                loadData();
 
+            }
         }
-    }
+
+
         @FXML
     void search_user() {
         CityCl.setCellValueFactory(new PropertyValueFactory<>("City"));
