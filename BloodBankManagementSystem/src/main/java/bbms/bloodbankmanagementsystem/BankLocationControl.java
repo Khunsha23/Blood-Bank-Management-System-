@@ -115,6 +115,7 @@ public class BankLocationControl implements Initializable {
 
         }
         else if(c.equals("Islamabad")){
+            System.out.println("h");
             String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
             PreparedStatement stm= conn.prepareStatement(query);
             stm.setString(1,c);
