@@ -8,9 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.ComboBoxListCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
@@ -56,7 +58,7 @@ public class RequestTableControl implements Initializable {
     @FXML
     private TextField City;
     @FXML
-    private TextField bGroup;
+    private ComboBox<String> bGroup;
     @FXML
     private TextField dName;
     @FXML
@@ -78,7 +80,7 @@ public class RequestTableControl implements Initializable {
                 dName.setText(ListM.get(0).name);
                 number.setText(ListM.get(0).contactNumber);
                 City.setText(ListM.get(0).City);
-                bGroup.setText(ListM.get(0).BloodGroup);
+                bGroup.setValue(ListM.get(0).BloodGroup);
             }
         }
     }
@@ -115,7 +117,7 @@ public class RequestTableControl implements Initializable {
                 preparedstatement.setString(2, dName.getText());
                 preparedstatement.setString(3, number.getText());
                 preparedstatement.setString(4, City.getText());
-                preparedstatement.setString(5, bGroup.getText());
+                preparedstatement.setString(5, bGroup.getValue());
                 preparedstatement.setString(6, rId.getText());
                 preparedstatement.executeUpdate();
                 loadData();

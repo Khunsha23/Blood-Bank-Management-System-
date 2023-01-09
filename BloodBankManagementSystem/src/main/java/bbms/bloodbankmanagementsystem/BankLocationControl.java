@@ -20,6 +20,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 
 public class BankLocationControl implements Initializable {
@@ -42,21 +45,86 @@ public class BankLocationControl implements Initializable {
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
+        refresh();
         stage.show();
     }
     @FXML
-    private TextField FieldForBank;
-
+    private TextField City;
     @FXML
-    public void ShowSelected(MouseEvent event) {
-        ListM = TableViewLcl.getSelectionModel().getSelectedItems();
-        if(ListM.size() == 0){
-        }else {
-            for(int i = 0; i < ListM.size(); i++){
-                FieldForBank.setText(String.valueOf(ListM.get(0).Area));
-            }
+    private TextField Area;
+    public void AddLocation(ActionEvent event) throws SQLException {
+        String c= City.getText();
+        String a= Area.getText();
+        Connection conn = MySqlConnection.ConnectDB();
+        if(c.equals("Lahore")){
+            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
         }
+        else if(c.equals("Karachi")){
+            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
 
+        }
+        else if(c.equals("Islamabad")){
+            String query="INSERT INTO bloodcamps(City,Area)VALUE(?,?)";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
+
+        }
+    }
+    public void DeleteLocation(ActionEvent event) throws SQLException {
+        String c= City.getText();
+        String a= Area.getText();
+        Connection conn = MySqlConnection.ConnectDB();
+        if(c.equals("Lahore")){
+            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
+        }
+        else if(c.equals("Karachi")){
+            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
+
+        }
+        else if(c.equals("Islamabad")){
+            String query="DELETE FROM bloodcamps WHERE City=? AND Area=?";
+            PreparedStatement stm= conn.prepareStatement(query);
+            stm.setString(1,c);
+            stm.setString(2,a);
+            stm.executeUpdate();
+            loadData();
+            refresh();
+            loadData();
+
+        }
     }
         @FXML
     void search_user() {
@@ -89,6 +157,9 @@ public class BankLocationControl implements Initializable {
         Areacl.setCellValueFactory(new PropertyValueFactory<>("Area"));
         ListM = MySqlConnection.BloodBanks();
         TableViewLcl.setItems(ListM);
+    }
+    public void refresh(){
+        ListM.clear();
     }
     @Override
     public void initialize(URL location, ResourceBundle resources) {

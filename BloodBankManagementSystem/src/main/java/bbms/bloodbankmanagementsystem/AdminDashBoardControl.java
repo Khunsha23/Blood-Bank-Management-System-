@@ -24,7 +24,7 @@ public class AdminDashBoardControl {
     }
     @FXML
     public void switchToDonorsTable(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("ReceiverTable.fxml"));
+        root = FXMLLoader.load(getClass().getResource("DonorsTableForAdminPage.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

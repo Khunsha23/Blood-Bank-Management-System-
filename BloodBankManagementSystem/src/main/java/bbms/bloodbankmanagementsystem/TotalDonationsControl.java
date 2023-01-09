@@ -28,7 +28,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
     @FXML
     private TextField dName;
     @FXML
-    private TextField bGroup;
+    private ComboBox<String> bGroup;
     @FXML
     private TextField rId;
     @FXML
@@ -79,7 +79,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             for(int i = 0; i < ListM.size(); i++){
                 dId.setText(String.valueOf(ListM.get(0).DonorId));
                 dName.setText(ListM.get(0).donorname);
-                bGroup.setText(ListM.get(0).bloodgroup);
+                bGroup.setValue(ListM.get(0).bloodgroup);
                 rId.setText(ListM.get(0).receiverid);
                 rName.setText(ListM.get(0).receivername);
                 amount.setText(ListM.get(0).amount);
@@ -117,7 +117,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             if(!rId.getText().equals("")){
                 preparedstatement.setString(1, dId.getText());
                 preparedstatement.setString(2, dName.getText());
-                preparedstatement.setString(3, bGroup.getText());
+                preparedstatement.setString(3, bGroup.getValue());
                 preparedstatement.setString(4, rId.getText());
                 preparedstatement.setString(5, rName.getText());
                 preparedstatement.setString(6, amount.getText());
@@ -146,7 +146,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             PreparedStatement preparedstatement = conn.prepareStatement(sql);
             preparedstatement.setString(1, dId.getText());
             preparedstatement.setString(2, dName.getText());
-            preparedstatement.setString(3, bGroup.getText());
+            preparedstatement.setString(3, bGroup.getValue());
             preparedstatement.setString(4, rId.getText());
             preparedstatement.setString(5, rName.getText());
             preparedstatement.setString(6, amount.getText());
@@ -159,7 +159,7 @@ public class TotalDonationsControl extends MySqlConnection implements Initializa
             throw new RuntimeException(e);
 
         }
-        minusStock(bGroup.getText(),amount.getText());
+        minusStock(bGroup.getValue(),amount.getText());
     }
     public void loadData(){
         donorId.setCellValueFactory(new PropertyValueFactory<>("DonorId"));

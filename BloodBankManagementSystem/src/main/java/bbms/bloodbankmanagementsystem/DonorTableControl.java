@@ -19,6 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Date;
 import java.util.ResourceBundle;
 
@@ -27,47 +28,52 @@ public class DonorTableControl implements Initializable{
     private Scene scene;
 
     @FXML
-    private TableView<donors> donors;
+    private TableView<User> donors;
 
     @FXML
-    private TableColumn<donors, String> donorName;
+    private TableColumn<User, String> donorName;
 
     @FXML
-    private TableColumn<donors, Integer> donorId;
+    private TableColumn<User, Integer> donorId;
 
     @FXML
-    private TableColumn<donors, String> bloodGroup;
+    private TableColumn<User, String> bloodGroup;
 
     @FXML
-    private TableColumn<donors, String> gender_t;
+    private TableColumn<User, String> gender_t;
     @FXML
-    private TableColumn<donors, String> city_t;
+    private TableColumn<User, String> city_t;
 
     @FXML
-    private TableColumn<donors, String> Password;
+    private TableColumn<User, String> Password;
 
     @FXML
-    private TableColumn<donors, String> Email;
+    private TableColumn<User, String> Email;
     @FXML
-    private TableColumn<donors, String> Contact;
+    private TableColumn<User, String> Contact;
     @FXML
-    private TableColumn<donors, Date> Birthdate;
+    private TableColumn<User, Date> Birthdate;
 
     @FXML
-    private TableColumn<donors, Date > Ldod;
+    private TableColumn<User, Date > Ldod;
 
 
 
-    ObservableList<donors> ListM;
+    ObservableList<User> ListM;
 
     @FXML
     ResultSet rs = null;
     @FXML
     PreparedStatement pst = null;
-    private void loadData(){
+
+    public void refresh(){
+        ListM.clear();
+    }
+
+    private void ShowData() throws SQLException {
         try {
-            donorName.setCellValueFactory(new PropertyValueFactory<>("name"));
-            donorId.setCellValueFactory(new PropertyValueFactory<>("ID"));
+            donorId.setCellValueFactory(new PropertyValueFactory<>("name"));
+            donorName.setCellValueFactory(new PropertyValueFactory<>("ID"));
             bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
             gender_t.setCellValueFactory(new PropertyValueFactory<>("Gender"));
             city_t.setCellValueFactory(new PropertyValueFactory<>("City"));
@@ -75,18 +81,21 @@ public class DonorTableControl implements Initializable{
             Email.setCellValueFactory(new PropertyValueFactory<>("email"));
             Contact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
             Birthdate.setCellValueFactory(new PropertyValueFactory<>("birthDate"));
-            Ldod.setCellValueFactory(new PropertyValueFactory<>("lastDateofDonation"));
-            ListM = MySqlConnection.getList();
-            donors.setItems(ListM);
-        }catch (Exception e){
+            ListM = MySqlConnection.GenericList();
+        } catch (Exception e) {
             System.out.println(e);
         }
-    }
-    public void refresh(){
-        ListM.clear();
+        ObservableList<User> users = FXCollections.observableArrayList();
+        for (User Data : ListM) {
+            if (Data instanceof donors) {
+                users.add(Data);
+            }
+
+        }
+        donors.setItems(users);
+
     }
 
-    
 
 
     public void switchToDashboard(ActionEvent event) throws IOException {
@@ -99,7 +108,11 @@ public class DonorTableControl implements Initializable{
     }
     @Override
     public void initialize(URL url,ResourceBundle resources){
-        loadData();
+        try {
+            ShowData();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
 

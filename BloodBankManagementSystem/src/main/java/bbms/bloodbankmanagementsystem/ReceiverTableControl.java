@@ -85,9 +85,6 @@ public class ReceiverTableControl implements Initializable {
             if (Data instanceof receivers) {
                 users.add(Data);
             }
-            if (Data instanceof donors) {
-                users.add(Data);
-            }
 
         }
         receivers.setItems(users);
