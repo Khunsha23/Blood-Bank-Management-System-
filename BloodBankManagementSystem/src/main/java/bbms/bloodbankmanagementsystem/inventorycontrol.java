@@ -52,11 +52,9 @@ public class inventorycontrol implements Initializable {
     public void addstock(ActionEvent event) throws IOException {
 
         Label[] Labels = {Apos,Aneg,ABpos,ABneg,Bpos,Bneg,Opos,Oneg};
-
-        for (int i = 0 ;i<Labels.length;i++) {
-            Labels[i].setText("");
+        for (Label label : Labels) {
+            label.setText("");
         }
-
         Connection conn = MySqlConnection.ConnectDB();
         String query;
         int Amount= Integer.parseInt(amount.getText());
@@ -69,7 +67,6 @@ public class inventorycontrol implements Initializable {
         try {
             PreparedStatement stm = conn.prepareStatement(query);
             ResultSet output = stm.executeQuery();
-
             while (output.next()) {
                 a = Integer.parseInt(output.getString("Amount"));
                 newAmount= Amount+a;
@@ -124,7 +121,6 @@ public class inventorycontrol implements Initializable {
         stockList = MySqlConnection.getStock();
         int i = 0;
         for (Stock stock : stockList) {
-            System.out.println();
             Labels[i].setText(String.valueOf(stock.amount));
             i++;
         }

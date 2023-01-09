@@ -9,7 +9,7 @@
     <children>
         <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <center>
-            <TableView fx:id="donors" focusTraversable="false" prefHeight="363.0" prefWidth="600.0" stylesheets="@TablesStyle.css" BorderPane.alignment="CENTER">
+            <TableView fx:id="donors" centerShape="false" focusTraversable="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="363.0" prefWidth="600.0" stylesheets="@TablesStyle.css" BorderPane.alignment="CENTER">
               <columns>
                 <TableColumn fx:id="donorId" prefWidth="75.0" text="Id No." />
                 <TableColumn fx:id="donorName" prefWidth="75.0" text="FullName" />
@@ -20,7 +20,6 @@
                   <TableColumn fx:id="city_t" prefWidth="75.0" text="City" />
                   <TableColumn fx:id="gender_t" prefWidth="75.0" text="Gender" />
                   <TableColumn fx:id="Birthdate" prefWidth="75.0" text="BirthDate" />
-                  <TableColumn fx:id="Ldod" prefWidth="122.66668701171875" text="LastDateOfDonation" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -56,6 +55,5 @@
             </AnchorPane>
          </top>
         </BorderPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
     </children>
 </AnchorPane>

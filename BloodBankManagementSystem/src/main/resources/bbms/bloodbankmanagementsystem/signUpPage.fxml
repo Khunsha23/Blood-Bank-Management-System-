@@ -21,7 +21,7 @@
                <graphic>
                   <ImageView id="logout" fitHeight="30.0" fitWidth="28.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../Images/icons8-logout-64.png" />
+                        <Image url="@../../Images/icons8-next-page-90.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -182,22 +182,22 @@
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="EmailErr" layoutX="202.0" layoutY="96.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="EmailErr" alignment="CENTER" layoutX="202.0" layoutY="96.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="numErr" layoutX="184.0" layoutY="140.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="numErr" alignment="CENTER" layoutX="184.0" layoutY="140.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="cityErr" layoutX="185.0" layoutY="182.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="cityErr" alignment="CENTER" layoutX="185.0" layoutY="182.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="BloodErr" layoutX="185.0" layoutY="224.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
+                        <Label fx:id="BloodErr" alignment="CENTER" layoutX="185.0" layoutY="224.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="26.0">
                            <font>
                               <Font size="10.0" />
                            </font>
@@ -305,22 +305,22 @@
                               <DropShadow />
                            </effect>
                         </Label>
-                        <Label fx:id="RePassErr" layoutX="193.0" layoutY="172.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="RePassErr" alignment="CENTER" layoutX="193.0" layoutY="172.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="BirthdayErr" layoutX="193.0" layoutY="88.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="BirthdayErr" alignment="CENTER" layoutX="193.0" layoutY="88.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="CrePassErr" layoutX="194.0" layoutY="130.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="CrePassErr" alignment="CENTER" layoutX="194.0" layoutY="130.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>
                         </Label>
-                        <Label fx:id="GenderErr" layoutX="195.0" layoutY="53.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
+                        <Label fx:id="GenderErr" alignment="CENTER" layoutX="195.0" layoutY="53.0" textFill="#fc0000" AnchorPane.leftAnchor="147.0" AnchorPane.rightAnchor="9.0">
                            <font>
                               <Font size="10.0" />
                            </font>

@@ -16,7 +16,6 @@ import java.io.IOException;
 
 public class AdminLoginControl implements Validation{
 
-    private Parent text;
     private Stage stage;
     private Scene scene;
     private Parent root;

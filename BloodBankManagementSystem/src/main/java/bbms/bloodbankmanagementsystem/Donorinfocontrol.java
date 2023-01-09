@@ -22,20 +22,14 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
     private Parent root;
     @FXML
     private Label BloodGroup;
-
     @FXML
     private Label ContactNum;
-
     @FXML
     private Label DateOfBirth;
-
     @FXML
     private Label Emailaddress;
-
     @FXML
     private Label NameDonor1;
-
-
     @FXML
     private Label DonorID;
 
@@ -51,6 +45,7 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
             Emailaddress.setText(email);
             BloodGroup.setText(bg);
             NameDonor1.setText(nameDonor);
+
 
         }catch (Exception e){
             System.out.println(e);

@@ -54,17 +54,8 @@ public class DonorTableControl implements Initializable{
     @FXML
     private TableColumn<User, Date> Birthdate;
 
-    @FXML
-    private TableColumn<User, Date > Ldod;
-
-
 
     ObservableList<User> ListM;
-
-    @FXML
-    ResultSet rs = null;
-    @FXML
-    PreparedStatement pst = null;
 
     public void refresh(){
         ListM.clear();
@@ -90,14 +81,9 @@ public class DonorTableControl implements Initializable{
             if (Data instanceof donors) {
                 users.add(Data);
             }
-
         }
         donors.setItems(users);
-
     }
-
-
-
     public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -114,9 +100,4 @@ public class DonorTableControl implements Initializable{
             throw new RuntimeException(e);
         }
     }
-
-
-
-
-
 }

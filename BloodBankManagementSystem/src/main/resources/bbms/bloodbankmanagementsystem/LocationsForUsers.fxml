@@ -18,7 +18,7 @@
                         <Image url="@../../Images/LogoWhiteColor.png" />
                      </image>
                   </ImageView>
-                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="549.0" layoutY="4.0" onAction="#switchToReceiverInfo" prefHeight="37.0" prefWidth="42.0" ripplerFill="WHITE" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
+                  <JFXButton alignment="CENTER" buttonType="RAISED" contentDisplay="CENTER" focusTraversable="false" layoutX="549.0" layoutY="4.0" onAction="#SwitchToStartPage" prefHeight="37.0" prefWidth="42.0" ripplerFill="WHITE" style="-fx-background-radius: 20px; -fx-border-radius: 20px;" text=" " AnchorPane.bottomAnchor="7.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="4.0">
                      <graphic>
                         <ImageView fitHeight="29.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                            <image>

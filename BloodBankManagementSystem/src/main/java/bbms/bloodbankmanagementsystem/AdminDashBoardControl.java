@@ -7,8 +7,12 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.view.JasperViewer;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AdminDashBoardControl {
     private Stage stage;
@@ -61,6 +65,18 @@ public class AdminDashBoardControl {
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+    @FXML
+    public void print(ActionEvent actionEvent) throws JRException {
+
+        String sourceFileName = "E:\\Exam\\Blood-Bank-Management-System-\\BloodBankManagementSystem\\src\\main\\resources\\Reports\\r.jrxml";
+        JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
+        Map<String, Object> params = new HashMap<>();
+        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, MySqlConnection.ConnectDB());
+        JasperViewer jasperViewer = new JasperViewer(jasperPrint);
+        jasperViewer.setTitle("Total Donations");
+        jasperViewer.setVisible(true);
+
     }
     @FXML
     public void switchToTotalReport(ActionEvent event) throws IOException {

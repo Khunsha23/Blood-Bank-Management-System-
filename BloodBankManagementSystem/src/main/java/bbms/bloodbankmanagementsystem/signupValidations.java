@@ -49,8 +49,6 @@ public class signupValidations {
         }
         return b;
     }
-
-
     public static boolean patternMatches(String Name, String pattern) {
         return Pattern.compile(pattern)
                 .matcher(Name)

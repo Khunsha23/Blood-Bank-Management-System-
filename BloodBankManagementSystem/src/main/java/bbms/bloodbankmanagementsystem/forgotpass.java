@@ -41,17 +41,12 @@ public class forgotpass extends logindonorcontrol {
         stage.show();
 
     }
-
-
     @FXML
     private Label Passserr;
-
     @FXML
     private TextField contact1;
-
     @FXML
     private TextField fp1;
-
     @FXML
     private Label numErr;
     public void update(ActionEvent e) {
@@ -72,7 +67,7 @@ public class forgotpass extends logindonorcontrol {
             }
             if (!ContactValidation(contact1.getText())) {
                 if (!passwordValidation(fp1.getText())) {
-                    String sql = "UPDATE donors SET Password=? WHERE ContactNumber=" + super.mobileNumber;
+                    String sql = "UPDATE donors SET Password=? WHERE ContactNumber=" + mobileNumber;
                     PreparedStatement preparedstatement = conn.prepareStatement(sql);
                     if (!fp1.getText().equals("")) {
                         preparedstatement.setString(1, fp1.getText());
@@ -91,7 +86,6 @@ public class forgotpass extends logindonorcontrol {
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
-
     }
 
     public void update2(ActionEvent e) {
@@ -107,7 +101,7 @@ public class forgotpass extends logindonorcontrol {
         if (fp.getText().isEmpty()) {
             passwordMsg.setText("Empty Field");
         } else if (passwordValidation(fp.getText())) {
-            passwordMsg.setText("At least 8 characters without space");
+            passwordMsg.setText("minimum 8 characters without space");
         }
         try {
             if (!ContactValidation(contact.getText())) {

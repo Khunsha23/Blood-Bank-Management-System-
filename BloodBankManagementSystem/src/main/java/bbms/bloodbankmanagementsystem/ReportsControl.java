@@ -24,18 +24,18 @@ public class ReportsControl {
     private Parent root;
     AnchorPane reportAnchorPane;
 
-    @FXML
-    public void print(ActionEvent actionEvent) throws JRException {
-
-        String sourceFileName = "E:\\Exam\\Blood-Bank-Management-System-\\BloodBankManagementSystem\\src\\main\\resources\\Reports\\r.jrxml";
-        JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
-        Map<String, Object> params = new HashMap<>();
-        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, MySqlConnection.ConnectDB());
-        JasperViewer jasperViewer = new JasperViewer(jasperPrint);
-        jasperViewer.setTitle("Total Donations");
-        jasperViewer.setVisible(true);
-
-    }
+//    @FXML
+//    public void print(ActionEvent actionEvent) throws JRException {
+//
+//        String sourceFileName = "E:\\Exam\\Blood-Bank-Management-System-\\BloodBankManagementSystem\\src\\main\\resources\\Reports\\r.jrxml";
+//        JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
+//        Map<String, Object> params = new HashMap<>();
+//        JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, MySqlConnection.ConnectDB());
+//        JasperViewer jasperViewer = new JasperViewer(jasperPrint);
+//        jasperViewer.setTitle("Total Donations");
+//        jasperViewer.setVisible(true);
+//
+//    }
     public void switchToDashboard(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
