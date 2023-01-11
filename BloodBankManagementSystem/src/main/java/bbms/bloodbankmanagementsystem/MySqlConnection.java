@@ -160,7 +160,8 @@ public class MySqlConnection {
                 String Contact = output.getString("ContactNumber");
                 String city = output.getString("City");
                 String bloodGroup = output.getString("BloodGroup");
-                List4.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup));
+                String status= output.getString("Status");
+                List4.add(new receivers(Integer.parseInt(ID),NAME,Contact,city,bloodGroup,status));
                 numberOfRequests++;
             }
             return List4;

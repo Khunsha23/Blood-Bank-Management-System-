@@ -36,7 +36,7 @@ public class LocationsForUsers implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
-    public void SwitchToStartPage(ActionEvent event) throws IOException {
+    public void SwitchToInfo(ActionEvent event) throws IOException {
 
         FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Receiverinfo.fxml"));
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
@@ -89,8 +89,8 @@ public class LocationsForUsers implements Initializable {
         TableViewLocations.setItems(sortedData);
     }
     @FXML
-    public void switchToReceiverInfo(ActionEvent event) throws IOException {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Receiverinfo.fxml"));
+    public void switchToDonorInfo(ActionEvent event) throws IOException {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Donorinfo.fxml"));
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         if (stage.isMaximized()) {

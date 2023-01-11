@@ -166,6 +166,7 @@ static String email;
     public void initialize(URL location, ResourceBundle resources) {
         try {
             ShowData();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

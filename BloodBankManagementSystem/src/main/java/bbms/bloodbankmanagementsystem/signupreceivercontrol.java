@@ -223,7 +223,6 @@ public class signupreceivercontrol extends signupValidations implements Validati
                                                 } catch (Exception e) {
                                                     System.out.println(e);
                                                 }
-                                                System.out.println("Hello Im Here");
                                                 ReceiverInfoControl.Information(mobileNumber);
                                                 FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Receiverinfo.fxml"));
                                                 Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();

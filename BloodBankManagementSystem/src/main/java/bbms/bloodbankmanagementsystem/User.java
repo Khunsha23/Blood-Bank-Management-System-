@@ -130,6 +130,16 @@ public class User {
     }
 
     int ID;
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    String status;
      String name;
     String email;
     String password;
@@ -201,6 +211,7 @@ public User(){
 }
  class receivers extends User{
 
+
     public receivers(int iD,
                      String name,
                      String email,
@@ -213,8 +224,9 @@ public User(){
         super(iD, name, email, password, contactNumber, bloodGroup, city , gender , birthDate);
 
     }
-    public receivers(int ID,String fullName, String contactNumber, String city, String bloodGroup){
+    public receivers(int ID,String fullName, String contactNumber, String city, String bloodGroup,String s){
         super(ID, fullName,  contactNumber, bloodGroup, city);
+        this.status=s;
     }
 
 

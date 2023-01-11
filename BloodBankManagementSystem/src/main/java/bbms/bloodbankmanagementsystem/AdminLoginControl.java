@@ -22,8 +22,7 @@ public class AdminLoginControl implements Validation{
     private Scene scene;
     private Parent root;
     public void switchToStartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("BankLocations.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         if (stage.isMaximized()) {

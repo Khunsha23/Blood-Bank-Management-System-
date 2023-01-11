@@ -32,6 +32,8 @@ public class RequestTableControl implements Initializable {
     private TableView<User> requests;
     @FXML
     private TableColumn<receivers, String> name;
+    @FXML
+    private TableColumn<receivers, String> status;
 
     @FXML
     private TableColumn<receivers, Integer> id;
@@ -214,6 +216,7 @@ public class RequestTableControl implements Initializable {
             Contact.setCellValueFactory(new PropertyValueFactory<>("contactNumber"));
             city_t.setCellValueFactory(new PropertyValueFactory<>("City"));
             bloodGroup.setCellValueFactory(new PropertyValueFactory<>("BloodGroup"));
+            status.setCellValueFactory(new PropertyValueFactory<>("Status"));
             ListM = MySqlConnection.getRequest();
             requests.setItems(ListM);
         } catch (Exception e) {

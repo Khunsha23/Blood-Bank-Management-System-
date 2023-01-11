@@ -62,7 +62,7 @@
                 </AnchorPane>
             </top>
          <left>
-            <AnchorPane prefHeight="361.0" prefWidth="261.0" BorderPane.alignment="CENTER">
+            <AnchorPane prefHeight="361.0" prefWidth="261.0" styleClass="background" stylesheets="@startpage.css" BorderPane.alignment="CENTER">
                <children>
                   <VBox layoutX="13.0" layoutY="23.0" prefHeight="337.0" prefWidth="179.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="13.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="23.0">
                      <children>
@@ -70,9 +70,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Donor Id">
+                              <Label text="Donor Id" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="45.0" HBox.hgrow="ALWAYS" />
@@ -84,9 +84,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Donor Name">
+                              <Label text="Donor Name" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="26.0" HBox.hgrow="ALWAYS" />
@@ -98,9 +98,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Blood Group">
+                              <Label text="Blood Group" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="28.0" HBox.hgrow="ALWAYS" />
@@ -128,9 +128,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Receiver Id">
+                              <Label text="Receiver Id" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="37.0" HBox.hgrow="ALWAYS" />
@@ -142,9 +142,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Receiver Name">
+                              <Label text="Receiver Name" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
@@ -156,9 +156,9 @@
                         <HBox VBox.vgrow="ALWAYS">
                            <children>
                               <Pane prefHeight="0.0" prefWidth="17.0" HBox.hgrow="ALWAYS" />
-                              <Label text="Amount">
+                              <Label text="Amount" textFill="WHITE">
                                  <font>
-                                    <Font size="11.0" />
+                                    <Font name="System Bold" size="10.0" />
                                  </font>
                               </Label>
                               <Pane layoutX="10.0" layoutY="10.0" prefHeight="25.0" prefWidth="50.0" HBox.hgrow="ALWAYS" />

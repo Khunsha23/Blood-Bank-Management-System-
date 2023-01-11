@@ -57,7 +57,7 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
     @FXML
     void switchToLocations(ActionEvent event) throws IOException {
 
-        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("LocationsForUsers.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("LocationForDonor.fxml"));
         Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
         stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
         if (stage.isMaximized()) {
@@ -89,6 +89,7 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
     {
         try {
             ShowData();
+
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

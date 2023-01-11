@@ -131,24 +131,24 @@ public class logindonorcontrol extends signupValidations implements Validation{
         }
 
         if (!nameValidations(FullName.getText())) {
-            System.out.println("1");
+
             if (!ContactValidation(MobileNum.getText())) {
-                System.out.println("2");
+
                 if (!EmailValidation(EmailAddress.getText())) {
-                    System.out.println("3");
+
                     if (!passwordValidation(CreatePassword.getText())) {
-                        System.out.println("4");
+
                         if (ReEnterPassword.getText().equals(CreatePassword.getText())) {
-                            System.out.println("5");
+
                             if (!(getGender().equals(null))) {
-                                System.out.println("6");
+
                                 if (!(BGComboBox.getValue().isEmpty())) {
-                                    System.out.println("7");
+
                                     if (!String.valueOf(dateOfBirth.getValue()).isEmpty()) {
-                                        System.out.println("8");
+
                                         Connection conn = MySqlConnection.ConnectDB();
                                         try {
-                                            System.out.println("9");
+
                                             System.out.println(BGComboBox.getValue());
                                             Class.forName("com.mysql.cj.jdbc.Driver");
                                             String sql = "INSERT INTO donors(FullName,ContactNumber,EmailAddress,BloodGroup,City,Gender,birthday,Password)VALUES(?,?,?,?,?,?,?,?)";
@@ -281,9 +281,14 @@ public class logindonorcontrol extends signupValidations implements Validation{
             loginmsg.setStyle("-fx-text-fill:Green;");
             loginmsg.setText("Logged in Successfully");
             try {
-                root = FXMLLoader.load(getClass().getResource("Donorinfo.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                scene = new Scene(root);
+                FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Donorinfo.fxml"));
+                Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+                stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+                if (stage.isMaximized()) {
+                    scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+                } else {
+                    scene = new Scene(fxmlLoader1.load());
+                }
                 stage.setScene(scene);
                 stage.show();
             }catch (Exception e){
