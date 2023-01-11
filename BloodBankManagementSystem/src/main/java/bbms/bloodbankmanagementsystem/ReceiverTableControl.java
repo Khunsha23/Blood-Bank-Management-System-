@@ -104,6 +104,8 @@ public class ReceiverTableControl implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         try {
             ShowData();
+            refresh();
+            ShowData();
         } catch (SQLException e) {
             System.out.println(e);
             throw new RuntimeException(e);

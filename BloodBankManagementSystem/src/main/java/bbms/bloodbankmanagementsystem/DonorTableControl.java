@@ -104,6 +104,8 @@ public class DonorTableControl implements Initializable{
     public void initialize(URL url,ResourceBundle resources){
         try {
             ShowData();
+            refresh();
+            ShowData();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

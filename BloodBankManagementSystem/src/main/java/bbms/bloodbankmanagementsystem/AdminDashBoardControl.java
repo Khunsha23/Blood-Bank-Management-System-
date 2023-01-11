@@ -110,7 +110,7 @@ public class AdminDashBoardControl implements Initializable {
     @FXML
     public void print(ActionEvent actionEvent) throws JRException {
 
-        String sourceFileName = "E:\\Exam\\Blood-Bank-Management-System-\\BloodBankManagementSystem\\src\\main\\resources\\Reports\\r.jrxml";
+        String sourceFileName = "F:\\BBMS\\Blood-Bank-Management-System-\\BloodBankManagementSystem\\src\\main\\resources\\Reports\\r.jrxml";
         JasperReport jasperReport = JasperCompileManager.compileReport(sourceFileName);
         Map<String, Object> params = new HashMap<>();
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, params, MySqlConnection.ConnectDB());

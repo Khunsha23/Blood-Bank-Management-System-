@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.image.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
 
 <BorderPane prefHeight="400.0" prefWidth="600.0" stylesheets="@startpage.css" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bbms.bloodbankmanagementsystem.BankLocationControl">
    <top>
@@ -88,8 +96,8 @@
                                     </ImageView>
                                  </graphic>
                               </JFXButton>
-                              <Pane layoutX="416.0" layoutY="10.0" prefHeight="29.0" prefWidth="65.0" />
-                              <TextField fx:id="filterField" focusTraversable="false" prefHeight="27.0" prefWidth="358.0" promptText="Enter City to Check our blood Banks" styleClass="paneDesign" />
+                              <Pane layoutX="416.0" layoutY="10.0" prefHeight="30.0" prefWidth="0.0" />
+                              <TextField fx:id="filterField" focusTraversable="false" prefHeight="27.0" prefWidth="358.0" promptText="Enter City" styleClass="paneDesign" />
                               <Pane prefHeight="29.0" prefWidth="77.0" HBox.hgrow="ALWAYS" />
                            </children>
                         </HBox>
