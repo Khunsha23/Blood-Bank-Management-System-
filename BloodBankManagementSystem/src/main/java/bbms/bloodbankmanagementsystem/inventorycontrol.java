@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -11,6 +12,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -34,19 +36,29 @@ public class inventorycontrol implements Initializable {
 
     public void switchToStartPage(ActionEvent event) throws IOException {
 
-        Parent root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
         public void switchToHome(ActionEvent event) throws IOException {
 
-    root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-    stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-    scene = new Scene(root);
-    stage.setScene(scene);
-    stage.show();
+            FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("AdminDashboard.fxml"));
+            Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+            if (stage.isMaximized()) {
+                scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+            } else {
+                scene = new Scene(fxmlLoader1.load());
+            }
+            stage.setScene(scene);
+            stage.show();
 }
     @FXML
     public void addstock(ActionEvent event) throws IOException {

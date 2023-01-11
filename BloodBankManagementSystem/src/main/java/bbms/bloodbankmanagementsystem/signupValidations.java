@@ -15,6 +15,26 @@ public class signupValidations {
         }
         return b;
     }
+    public static boolean IdValidation(String ID){
+        String regexPattern = "\\d+";
+        boolean b = false;
+        if (ID == null || ID.isEmpty()) {
+            b = false;
+        } else if (!(patternMatches(ID , regexPattern))) {
+            b = true;
+        }
+        return b;
+    }
+    public static boolean textValidation(String city){
+        String regexPattern ="[A-Za-z\\s]+";
+        boolean b = false;
+        if (city == null || city.isEmpty()) {
+            b = false;
+        } else if (!(patternMatches(city , regexPattern))) {
+            b = true;
+        }
+        return b;
+    }
     public static boolean ContactValidation(String contact){
         String regexPattern ="^((\\+92)?(0092)?(92)?(0)?)(3)([0-9]{9})$";
 

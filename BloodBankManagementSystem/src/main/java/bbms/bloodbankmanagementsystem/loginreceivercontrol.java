@@ -2,12 +2,14 @@ package bbms.bloodbankmanagementsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,16 +20,27 @@ public class loginreceivercontrol extends signupValidations implements Validatio
     private Scene scene;
     private Parent root;
     public void switchToStartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
     public void switchToReceiverSignup(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("signUpReceiver.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("signUpReceiver.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -76,11 +89,17 @@ public class loginreceivercontrol extends signupValidations implements Validatio
             loginmsg.setStyle("-fx-text-color:green;");
             loginmsg.setText("Logged in Successfully");
 
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Receiverinfo.fxml")));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
+            FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Receiverinfo.fxml"));
+            Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+            if (stage.isMaximized()) {
+                scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+            } else {
+                scene = new Scene(fxmlLoader1.load());
+            }
             stage.setScene(scene);
             stage.show();
+
         }else{
             loginmsg.setText("Invalid Credentials");
         }
@@ -90,9 +109,15 @@ public class loginreceivercontrol extends signupValidations implements Validatio
 
     }
     public void switchToForgetPassword(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("forgotpassreceiver.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("forgotpassreceiver.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }

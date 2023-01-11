@@ -7,19 +7,20 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.control.TextField;
 
 
 import java.io.IOException;
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.Period;
 
 public class signupreceivercontrol extends signupValidations implements Validation{
     @FXML
@@ -85,9 +86,14 @@ public class signupreceivercontrol extends signupValidations implements Validati
     private Scene scene;
     private Parent root;
     public void switchToHome(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -164,7 +170,9 @@ public class signupreceivercontrol extends signupValidations implements Validati
             if (dateOfBirth1.getValue() == null){
                 BirthdayErr1.setText("Please Select Birthday");
             }
-            System.out.println(getGender());
+
+
+
             System.out.println(BGComboBox1.getValue());
             System.out.println(dateOfBirth1.getValue());
 
@@ -188,39 +196,53 @@ public class signupreceivercontrol extends signupValidations implements Validati
                                 if (!(BGComboBox1.getValue().isEmpty())) {
                                     System.out.println("7");
                                     if (!String.valueOf(dateOfBirth1.getValue()).isEmpty()) {
-                                        System.out.println("8");
-                                        Connection conn = MySqlConnection.ConnectDB();
-                                        try {
-
-                                            MySqlConnection.InsertReceiver(FullName1.getText(),MobileNum1.getText(),
-                                                    EmailAddress1.getText(),BGComboBox1.getValue(),ReEnterPassword1.getText(),
-                                            citybox1.getValue(),getGender(), Date.valueOf(dateOfBirth1.getValue()));
+                                        LocalDate dateOfBirth = dateOfBirth1.getValue();
+                                        LocalDate currentDate = LocalDate.now();
+                                        Period age = Period.between(dateOfBirth, currentDate);
+                                        int years = age.getYears();
+                                        if(years>=18) {
+                                            System.out.println("8");
+                                            Connection conn = MySqlConnection.ConnectDB();
                                             try {
-                                                PreparedStatement Pst = conn.prepareStatement(query + MobileNum1.getText());
-                                                this.resultset = Pst.executeQuery(query + MobileNum1.getText());
-                                                while (resultset.next()){
-                                                    mobileNumber = resultset.getString("ContactNumber");
-                                                    password = resultset.getString("Password");
-                                                    bg = resultset.getString("BloodGroup");
-                                                    dob = resultset.getDate("birthday");
-                                                    email = resultset.getString("EmailAddress");
-                                                    Name = resultset.getString(2);
-                                                    receiverId = resultset.getString(1);
+
+                                                MySqlConnection.InsertReceiver(FullName1.getText(), MobileNum1.getText(),
+                                                        EmailAddress1.getText(), BGComboBox1.getValue(), ReEnterPassword1.getText(),
+                                                        citybox1.getValue(), getGender(), Date.valueOf(dateOfBirth1.getValue()));
+                                                try {
+                                                    PreparedStatement Pst = conn.prepareStatement(query + MobileNum1.getText());
+                                                    this.resultset = Pst.executeQuery(query + MobileNum1.getText());
+                                                    while (resultset.next()) {
+                                                        mobileNumber = resultset.getString("ContactNumber");
+                                                        password = resultset.getString("Password");
+                                                        bg = resultset.getString("BloodGroup");
+                                                        dob = resultset.getDate("birthday");
+                                                        email = resultset.getString("EmailAddress");
+                                                        Name = resultset.getString(2);
+                                                        receiverId = resultset.getString(1);
+                                                    }
+                                                } catch (Exception e) {
+                                                    System.out.println(e);
                                                 }
-                                            } catch (Exception e) {
+                                                System.out.println("Hello Im Here");
+                                                ReceiverInfoControl.Information(mobileNumber);
+                                                FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Receiverinfo.fxml"));
+                                                Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+                                                stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+                                                if (stage.isMaximized()) {
+                                                    scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+                                                } else {
+                                                    scene = new Scene(fxmlLoader1.load());
+                                                }
+                                                stage.setScene(scene);
+                                                stage.show();
+                                            } catch (SQLException e) {
+                                                numErr1.setText("This number Already Exists");
                                                 System.out.println(e);
+                                                throw new RuntimeException(e);
                                             }
-                                            System.out.println("Hello Im Here");
-                                            ReceiverInfoControl.Information(mobileNumber);
-                                            root = FXMLLoader.load(getClass().getResource("Receiverinfo.fxml"));
-                                            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                                            scene = new Scene(root);
-                                            stage.setScene(scene);
-                                            stage.show();
-                                        } catch (SQLException e) {
-                                            numErr1.setText("This number Already Exists");
-                                            System.out.println(e);
-                                            throw new RuntimeException(e);
+                                        }else {
+                                            Alert pending = new Alert(Alert.AlertType.INFORMATION, "your age is under 18 you cannot register", ButtonType.OK);
+                                            pending.showAndWait();
                                         }
                                     }
                                 }

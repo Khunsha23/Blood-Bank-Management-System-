@@ -4,10 +4,12 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -54,9 +56,15 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
     }
     @FXML
     void switchToLocations(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("LocationsForUsers.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("LocationsForUsers.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -64,8 +72,14 @@ public class Donorinfocontrol extends logindonorcontrol implements Initializable
 
     public void switchToStartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }

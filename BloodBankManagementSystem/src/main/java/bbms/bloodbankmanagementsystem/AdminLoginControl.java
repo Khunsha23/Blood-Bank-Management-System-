@@ -3,6 +3,7 @@ package bbms.bloodbankmanagementsystem;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,6 +11,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -21,21 +23,17 @@ public class AdminLoginControl implements Validation{
     private Parent root;
     public void switchToStartPage(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("BankLocations.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToDashboard(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-    @FXML
-    private Button LoginBtn;
 
     @FXML
     private TextField MobileNumberTextField;
@@ -61,9 +59,15 @@ public class AdminLoginControl implements Validation{
         }else if (passwordField.getText().isEmpty()){
             loginMsg.setText("Enter Password");
         } else if (MobileNumberTextField.getText().equals(mobileNumber)&& passwordField.getText().equals(password)) {
-            root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
+
+            FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("AdminDashboard.fxml"));
+            Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+            if (stage.isMaximized()) {
+                scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+            } else {
+                scene = new Scene(fxmlLoader1.load());
+            }
             stage.setScene(scene);
             stage.show();
         }else{

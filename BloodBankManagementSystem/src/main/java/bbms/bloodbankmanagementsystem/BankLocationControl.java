@@ -7,6 +7,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -17,6 +18,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -42,11 +44,15 @@ public class BankLocationControl implements Initializable {
     private TextField filterField;
 
     public void switchToDashboard(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("AdminDashboard.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("AdminDashboard.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
-        refresh();
         stage.show();
     }
     @FXML
@@ -55,6 +61,16 @@ public class BankLocationControl implements Initializable {
     private TextField Area;
     @FXML
     private Label Error;
+    ObservableList<BloodBanks> List;
+    @FXML
+    public void ShowSelected(MouseEvent event){
+        List = TableViewLcl.getSelectionModel().getSelectedItems();
+        for(int i = 0; i < List.size(); i++){
+            City.setText(String.valueOf(ListM.get(0).City));
+            Area.setText(String.valueOf(ListM.get(0).Area));
+        }
+
+    }
     public void AddLocation(ActionEvent event) throws SQLException {
         String c= City.getText();
         String a= Area.getText();
@@ -91,15 +107,18 @@ public class BankLocationControl implements Initializable {
 
             }
         }
-        else if(!(c.equals("Lahore")||c.equals("Karachi")||c.equals("Islamabad"))){
+        else {
             Error.setText("Invalid City");
         }
+        City.setText("");
+        Area.setText("");
     }
     public void DeleteLocation(ActionEvent event) throws SQLException {
         String c= City.getText();
         String a= Area.getText();
         Connection conn = MySqlConnection.ConnectDB();
-            if (c.equals("Lahore")) {
+        switch (c) {
+            case "Lahore", "Karachi" -> {
                 String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
                 PreparedStatement stm = conn.prepareStatement(query);
                 stm.setString(1, c);
@@ -108,17 +127,8 @@ public class BankLocationControl implements Initializable {
                 loadData();
                 refresh();
                 loadData();
-            } else if (c.equals("Karachi")) {
-                String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
-                PreparedStatement stm = conn.prepareStatement(query);
-                stm.setString(1, c);
-                stm.setString(2, a);
-                stm.executeUpdate();
-                loadData();
-                refresh();
-                loadData();
-
-            } else if (c.equals("Islamabad")) {
+            }
+            case "Islamabad" -> {
                 System.out.println("h");
                 String query = "DELETE FROM bloodcamps WHERE City=? AND Area=?";
                 PreparedStatement stm = conn.prepareStatement(query);
@@ -128,11 +138,11 @@ public class BankLocationControl implements Initializable {
                 loadData();
                 refresh();
                 loadData();
-
             }
         }
-
-
+        City.setText("");
+        Area.setText("");
+        }
         @FXML
     void search_user() {
         CityCl.setCellValueFactory(new PropertyValueFactory<>("City"));

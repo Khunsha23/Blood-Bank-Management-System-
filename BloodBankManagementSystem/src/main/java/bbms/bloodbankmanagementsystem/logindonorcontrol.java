@@ -6,11 +6,13 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -67,13 +69,7 @@ public class logindonorcontrol extends signupValidations implements Validation{
     private Label cityErr;
     @FXML
     private ComboBox<String> BGComboBox;
-    public void switchToDonorinfo(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("Donorinfo.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
     @FXML
     @Override
     public void SignupValidation(ActionEvent event) throws IOException {
@@ -182,9 +178,14 @@ public class logindonorcontrol extends signupValidations implements Validation{
                                                 System.out.println(e);
                                             }
                                             System.out.println("Hello Im Here");
-                                            root = FXMLLoader.load(getClass().getResource("Donorinfo.fxml"));
-                                            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                                            scene = new Scene(root);
+                                            FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("Donorinfo.fxml"));
+                                            Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+                                            stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+                                            if (stage.isMaximized()) {
+                                                scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+                                            } else {
+                                                scene = new Scene(fxmlLoader1.load());
+                                            }
                                             stage.setScene(scene);
                                             stage.show();
                                         } catch (SQLException | ClassNotFoundException e) {
@@ -204,16 +205,27 @@ public class logindonorcontrol extends signupValidations implements Validation{
 
 
     public void switchToStartPage(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("startpage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("startpage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
     public void switchToForgetPassword(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("forgotpass.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("forgotpass.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }
@@ -222,9 +234,15 @@ public class logindonorcontrol extends signupValidations implements Validation{
         citybox.setItems(list3);
     }
     public void switchToDonorSignup(ActionEvent event) throws IOException {
-        root = FXMLLoader.load(getClass().getResource("signUpPage.fxml"));
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
+
+        FXMLLoader fxmlLoader1 = new FXMLLoader(main1.class.getResource("signUpPage.fxml"));
+        Rectangle2D screenSize = Screen.getPrimary().getVisualBounds();
+        stage = (Stage) (((Node) event.getSource()).getScene().getWindow());
+        if (stage.isMaximized()) {
+            scene = new Scene(fxmlLoader1.load(), screenSize.getWidth(), screenSize.getHeight());
+        } else {
+            scene = new Scene(fxmlLoader1.load());
+        }
         stage.setScene(scene);
         stage.show();
     }

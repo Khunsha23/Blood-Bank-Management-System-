@@ -7,6 +7,7 @@ module bbms.bloodbankmanagementsystem {
     requires jasperreports;
 requires java.xml;
     requires java.management;
+    requires mysql.connector.j;
 
 
     opens bbms.bloodbankmanagementsystem to javafx.fxml;
